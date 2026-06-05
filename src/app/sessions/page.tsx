@@ -110,7 +110,7 @@ function SessionsContent() {
             INFO
           </Link>
           <Link href="/?tickets=true" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
-            EMAIL
+            CONTACT
           </Link>
         </nav>
       </header>
