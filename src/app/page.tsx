@@ -139,7 +139,7 @@ export default function Home() {
               </Link>
 
               {/* Decorative background texture */}
-              <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#FFFFFF 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+              <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
             </div>
 
             {/* Middle Image Block */}

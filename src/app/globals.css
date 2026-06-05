@@ -7,16 +7,18 @@
   --font-sora: "Sora", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-brand-orange: #FFFFFF;
+  --color-brand-orange: #F2F0EB;
   --color-brand-orange-light: #F2F0EB;
   --color-brand-accent: #02E1EE;
   --color-brand-bg-dark: #111317;
   --color-brand-surface-card: rgba(26, 26, 28, 0.8);
-  --color-glass-stroke: rgba(255, 255, 255, 0.12);
+  --color-glass-stroke: rgba(242, 240, 235, 0.12);
   --color-on-surface: #F2F0EB;
   --color-on-surface-variant: #ddc1ae;
   --color-surface-container-high: #282a2e;
   --color-surface-elevated: #1a1a1c;
+  
+  --color-white: #F2F0EB;
 }
 
 /* Custom Icons */
@@ -111,7 +113,7 @@
   background: rgba(26, 26, 28, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--color-glass-stroke);
 }
 
 .neon-border-orange {
@@ -141,24 +143,24 @@ body {
 /* Custom Play Session Button - Default State (White) */
 .play-session-btn {
   background-color: #111317 !important;
-  border: 1px solid #ffffff !important;
+  border: 1px solid var(--color-brand-orange) !important;
   border-radius: 12px !important;
-  color: #ffffff !important;
+  color: var(--color-brand-orange) !important;
   font-family: var(--font-mono) !important;
   font-weight: 500 !important;
   letter-spacing: 0.1em !important;
   padding: 8px 24px !important;
   height: 38px !important;
   box-sizing: border-box !important;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 4px rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 10px rgba(242, 240, 235, 0.2), inset 0 0 4px rgba(242, 240, 235, 0.1) !important;
   transition: all 0.3s ease !important;
   cursor: pointer !important;
 }
 
 .play-session-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
+  background-color: rgba(242, 240, 235, 0.1) !important;
+  box-shadow: 0 0 16px rgba(242, 240, 235, 0.4), inset 0 0 6px rgba(242, 240, 235, 0.2) !important;
+  color: var(--color-brand-orange) !important;
 }
 
 .play-session-btn:active {
