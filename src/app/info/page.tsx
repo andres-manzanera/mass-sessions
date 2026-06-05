@@ -6,10 +6,13 @@ export default function InfoPage() {
   return (
     <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black">
       {/* TopNavBar */}
-      <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-6 md:pr-16 h-20">
+      <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange">
           MASS SESSIONS
         </Link>
+        <a href="mailto:info@mass-sessions.com" className="md:hidden font-bold uppercase tracking-wider text-sm h-full flex items-center px-6 border-l-4 border-brand-orange text-brand-orange cursor-pointer">
+          CONTACT
+        </a>
         <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto">
           <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
