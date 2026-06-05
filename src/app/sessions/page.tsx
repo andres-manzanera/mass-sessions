@@ -249,7 +249,7 @@ function SessionsContent() {
               >
                 <div className="flex flex-col md:flex-row">
                   {/* Card Image */}
-                  <div className="w-full md:w-48 h-48 md:h-auto relative overflow-hidden flex-shrink-0">
+                  <div className="w-full md:w-48 aspect-square relative overflow-hidden flex-shrink-0">
                     <img 
                       alt={session.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
