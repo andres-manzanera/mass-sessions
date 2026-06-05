@@ -155,8 +155,8 @@ export default function Home() {
           <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter mix-blend-multiply opacity-15 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none">
             SOUND SYSTEM CULTURE
           </h2>
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <p className="text-3xl md:text-5xl font-black uppercase tracking-tight leading-tight select-none">
+          <div className="relative z-10 max-w-none mx-auto text-center px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-black uppercase tracking-tight leading-tight select-none sm:whitespace-nowrap">
               We construct environments where sound is a physical force. Enter the void.
             </p>
           </div>
