@@ -13,6 +13,7 @@ interface Session {
   genres: string[];
   image: string;
   audioUrl: string;
+  date: string;
   isNew?: boolean;
 }
 
@@ -24,16 +25,18 @@ const SESSIONS_DATA: Session[] = [
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
     image: "/session_dvs1_pattern.jpg",
-    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3"
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3",
+    date: "2018-06"
   },
   {
     id: "rodhad",
     title: "SUNSET RHYTHMS",
     artist: "RØDHÅD (BERLIN)",
-    duration: "1h 45m",
-    genres: ["DEEP HOUSE"],
+    duration: "48m 12s",
+    genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_rodhad_pattern.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2025/01/2025-01.mp3",
+    date: "2025-01",
     isNew: true
   },
   {
@@ -43,7 +46,8 @@ const SESSIONS_DATA: Session[] = [
     duration: "1h 12m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_blawan_pattern.jpg",
-    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-08.mp3"
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-08.mp3",
+    date: "2017-08"
   }
 ];
 
@@ -274,8 +278,8 @@ function SessionsContent() {
                             )}
                           </div>
                           {/* Styled Artist subtext */}
-                          <p className="text-sm font-semibold opacity-80 text-on-surface-variant font-sora mt-1">
-                            BY {session.artist}
+                          <p className="text-sm font-semibold opacity-80 text-on-surface-variant font-sora mt-1 uppercase">
+                            BY {session.artist} • {session.date}
                           </p>
                         </div>
                         {session.isNew && (
