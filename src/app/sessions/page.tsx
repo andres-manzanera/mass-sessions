@@ -292,7 +292,7 @@ function SessionsContent() {
                     </div>
 
                     <div className="flex justify-between items-end mt-8">
-                      <div className="flex gap-2 select-none">
+                      <div className="flex flex-col gap-2 select-none items-start">
                         {session.genres.map((g, idx) => (
                           <span key={idx} className="bg-surface-container-high px-2 py-1 rounded-sm font-sora text-xs text-on-surface border-l-2 border-l-brand-orange uppercase">
                             {g}
