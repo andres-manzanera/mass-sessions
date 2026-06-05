@@ -134,16 +134,42 @@ body {
   border-left: 4px solid var(--color-brand-orange) !important;
 }
 
+/* Custom Play Session Button */
+.play-session-btn {
+  background-color: #111317 !important;
+  border: 2px solid var(--color-brand-accent) !important;
+  border-radius: 12px !important;
+  color: #e5e7eb !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  padding: 8px 24px !important;
+  box-shadow: 0 0 10px rgba(255, 142, 0, 0.4), inset 0 0 4px rgba(255, 142, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.play-session-btn:hover {
+  background-color: rgba(255, 142, 0, 0.1) !important;
+  box-shadow: 0 0 16px rgba(255, 142, 0, 0.6), inset 0 0 6px rgba(255, 142, 0, 0.3) !important;
+  color: #FFFFFF !important;
+}
+
+.play-session-btn:active {
+  transform: scale(0.95) !important;
+}
+
 /* Play button playing animation and overrides */
-@keyframes pulse-orange {
-  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); }
-  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+@keyframes pulse-accent {
+  0% { box-shadow: 0 0 0 0 rgba(255, 142, 0, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 142, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 142, 0, 0); }
 }
 
 .play-btn-playing {
-  background-color: var(--color-brand-orange) !important;
-  color: #111317 !important;
-  animation: pulse-orange 2s infinite !important;
-  border-color: var(--color-brand-orange) !important;
+  background-color: var(--color-brand-accent) !important;
+  color: #000000 !important;
+  animation: pulse-accent 2s infinite !important;
+  border-color: var(--color-brand-accent) !important;
+  box-shadow: 0 0 12px var(--color-brand-accent) !important;
 }

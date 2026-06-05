@@ -213,14 +213,12 @@ function SessionsContent() {
                       </div>
                       <button 
                         onClick={() => handlePlayToggle(session.id)}
-                        className={`neon-border text-xs px-6 py-2 rounded-lg font-sora font-semibold tracking-wider cursor-pointer active:scale-95 transition-all duration-300 flex items-center justify-center min-w-[140px] ${
-                          isCurrent && isPlaying
-                            ? "play-btn-playing" 
-                            : "border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+                        className={`play-session-btn text-[11px] tracking-wider flex items-center justify-center min-w-[140px] ${
+                          isCurrent && isPlaying ? "play-btn-playing" : ""
                         }`}
                       >
                         {isCurrent && isPlaying ? (
-                          <span className="material-symbols-outlined text-base">play_arrow</span>
+                          <span className="material-symbols-outlined text-base">pause</span>
                         ) : (
                           "PLAY SESSION"
                         )}
