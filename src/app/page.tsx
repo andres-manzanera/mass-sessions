@@ -71,7 +71,7 @@ export default function Home() {
         {/* Hero Section - Massive Background Image & Text */}
         <section 
           className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 bg-img-gritty bg-cover bg-center" 
-          style={{ backgroundImage: 'url("/hero_turntable.jpg")' }}
+          style={{ backgroundImage: 'url("/hero.jpg")' }}
         >
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/60 pointer-events-none z-0"></div>
