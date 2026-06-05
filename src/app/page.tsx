@@ -123,7 +123,7 @@ export default function Home() {
               <div className="z-10">
                 <h2 className="text-4xl font-extrabold uppercase mb-4 tracking-tighter">NEXT<br />SESSION</h2>
                 <div className="font-mono text-xs font-semibold bg-brand-orange text-black inline-block px-3 py-1 mb-6">
-                  DATE: 08.24.2024
+                  DATE: 08.24.2026
                 </div>
                 <p className="text-sm uppercase opacity-85 max-w-xs font-semibold">
                   Explore our full catalog of raw high-fidelity recordings and live sets.
