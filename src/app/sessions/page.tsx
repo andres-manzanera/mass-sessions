@@ -10,7 +10,7 @@ interface Session {
   title: string;
   artist: string;
   duration: string;
-  genre: string;
+  genres: string[];
   image: string;
   audioUrl: string;
   isNew?: boolean;
@@ -22,7 +22,7 @@ const SESSIONS_DATA: Session[] = [
     title: "DEEP GROOVES VOL. 45",
     artist: "DVS1 (MINNEAPOLIS)",
     duration: "1h 09m",
-    genre: "DEEP HOUSE",
+    genres: ["DEEP HOUSE"],
     image: "/session_dvs1_pattern.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3"
   },
@@ -31,7 +31,7 @@ const SESSIONS_DATA: Session[] = [
     title: "SUNSET RHYTHMS",
     artist: "RØDHÅD (BERLIN)",
     duration: "1h 45m",
-    genre: "DEEP HOUSE",
+    genres: ["DEEP HOUSE"],
     image: "/session_rodhad_pattern.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3",
     isNew: true
@@ -40,8 +40,8 @@ const SESSIONS_DATA: Session[] = [
     id: "blawan",
     title: "MIDNIGHT PULSE",
     artist: "BLAWAN (LONDON)",
-    duration: "3h 00m",
-    genre: "MINIMAL",
+    duration: "1h 12m",
+    genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_blawan_pattern.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-08.mp3"
   }
@@ -293,9 +293,11 @@ function SessionsContent() {
 
                     <div className="flex justify-between items-end mt-8">
                       <div className="flex gap-2 select-none">
-                        <span className="bg-surface-container-high px-2 py-1 rounded-sm font-sora text-xs text-on-surface border-l-2 border-l-brand-orange">
-                          {session.genre}
-                        </span>
+                        {session.genres.map((g, idx) => (
+                          <span key={idx} className="bg-surface-container-high px-2 py-1 rounded-sm font-sora text-xs text-on-surface border-l-2 border-l-brand-orange uppercase">
+                            {g}
+                          </span>
+                        ))}
                       </div>
                       <button 
                         onClick={() => handlePlayToggle(session.id)}
