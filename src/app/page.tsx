@@ -111,17 +111,17 @@ export default function Home() {
                   DATE: 10.24.2024
                 </div>
                 <p className="text-sm uppercase opacity-85 max-w-xs font-semibold">
-                  Location coordinates will be released to ticket holders 2 hours before start.
+                  Explore our full catalog of raw high-fidelity recordings and live sets.
                 </p>
               </div>
 
-              <button 
-                onClick={() => setTicketModalOpen(true)}
+              <Link 
+                href="/sessions"
                 className="mt-12 bg-transparent border-4 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-colors w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
               >
-                SECURE ACCESS
+                EXPLORE SESSIONS
                 <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
-              </button>
+              </Link>
 
               {/* Decorative background texture */}
               <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#FFFFFF 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
