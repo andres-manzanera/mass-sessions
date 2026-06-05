@@ -21,8 +21,8 @@ const SESSIONS_DATA: Session[] = [
     id: "dvs1",
     title: "DEEP GROOVES VOL. 45",
     artist: "DVS1 (MINNEAPOLIS)",
-    duration: "2h 15m",
-    genre: "TECH HOUSE",
+    duration: "1h 09m",
+    genre: "DEEP HOUSE",
     image: "/session_dvs1_pattern.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3"
   },
