@@ -115,8 +115,7 @@
 }
 
 .neon-border-orange {
-  border: 1px solid var(--color-brand-accent) !important;
-  box-shadow: 0 0 12px rgba(255, 142, 0, 0.4) !important;
+  /* Removed orange borders and glows on card container per user request */
 }
 
 .neon-glow-brutalist {
