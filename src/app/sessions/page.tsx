@@ -22,7 +22,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "DVS1 (MINNEAPOLIS)",
     duration: "2h 15m",
     genre: "TECH HOUSE",
-    image: "/session_dvs1.png"
+    image: "/session_dvs1_color.png"
   },
   {
     id: "rodhad",
@@ -30,7 +30,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "RØDHÅD (BERLIN)",
     duration: "1h 45m",
     genre: "DEEP HOUSE",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBofOGhwVylsTkvlBOh2Q6AuohfRke-nwuopVl3Adj_uCRJIZYmj5Nc7kgUqAz_OofjiXJ0uUs66qnjeuZDcQujHNKkqq1A9lKe3Da7MlTsOKK8_8m5Y6Lhsf2ywg-9k9BXhtmh86vraqPC5vj55XQEFaZlCIezSJSiskTrXjvJfadL-zzaROKF-gj7eECMURM84rIRS_t4lo11Y62yITum-aF5dXLSKLD1cjM-qPnxGedPfABELJcu8ufopVhaLx7mf0MROZDQyLc",
+    image: "/session_rodhad_color.png",
     isNew: true
   },
   {
@@ -39,7 +39,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "BLAWAN (LONDON)",
     duration: "3h 00m",
     genre: "MINIMAL",
-    image: "/session_blawan.png"
+    image: "/session_blawan_color.png"
   }
 ];
 
