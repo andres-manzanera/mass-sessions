@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -12,6 +12,7 @@ interface Session {
   duration: string;
   genre: string;
   image: string;
+  audioUrl: string;
   isNew?: boolean;
 }
 
@@ -22,7 +23,8 @@ const SESSIONS_DATA: Session[] = [
     artist: "DVS1 (MINNEAPOLIS)",
     duration: "2h 15m",
     genre: "TECH HOUSE",
-    image: "/session_dvs1_pattern.jpg"
+    image: "/session_dvs1_pattern.jpg",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3"
   },
   {
     id: "rodhad",
@@ -31,6 +33,7 @@ const SESSIONS_DATA: Session[] = [
     duration: "1h 45m",
     genre: "DEEP HOUSE",
     image: "/session_rodhad_pattern.jpg",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3",
     isNew: true
   },
   {
@@ -39,7 +42,8 @@ const SESSIONS_DATA: Session[] = [
     artist: "BLAWAN (LONDON)",
     duration: "3h 00m",
     genre: "MINIMAL",
-    image: "/session_blawan_pattern.jpg"
+    image: "/session_blawan_pattern.jpg",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3"
   }
 ];
 
@@ -49,41 +53,123 @@ function SessionsContent() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [activeYear, setActiveYear] = useState("2026");
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [isMuted, setIsMuted] = useState(false);
+
+  // Initialize audio element on client side
+  useEffect(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio();
+      
+      const playHandler = () => setIsPlaying(true);
+      const pauseHandler = () => setIsPlaying(false);
+      const timeUpdateHandler = () => {
+        if (audioRef.current) {
+          setCurrentTime(audioRef.current.currentTime);
+          const dur = audioRef.current.duration || 0;
+          if (dur > 0) {
+            setProgress((audioRef.current.currentTime / dur) * 100);
+          }
+        }
+      };
+      const loadedMetadataHandler = () => {
+        if (audioRef.current) {
+          setDuration(audioRef.current.duration || 0);
+        }
+      };
+      const endedHandler = () => {
+        setIsPlaying(false);
+        setProgress(0);
+        setCurrentTime(0);
+      };
+
+      audioRef.current.addEventListener("play", playHandler);
+      audioRef.current.addEventListener("pause", pauseHandler);
+      audioRef.current.addEventListener("timeupdate", timeUpdateHandler);
+      audioRef.current.addEventListener("loadedmetadata", loadedMetadataHandler);
+      audioRef.current.addEventListener("ended", endedHandler);
+    }
+
+    return () => {
+      // Don't pause on cleanup of other effects, but cleanup on unmount
+    };
+  }, []);
+
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = "";
+      }
+    };
+  }, []);
+
+  const handlePlayToggle = (sessionId: string) => {
+    const session = SESSIONS_DATA.find(s => s.id === sessionId);
+    if (!session || !audioRef.current) return;
+
+    if (activeSessionId === sessionId) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(err => console.log("Playback error:", err));
+      }
+    } else {
+      setActiveSessionId(sessionId);
+      setProgress(0);
+      setCurrentTime(0);
+      audioRef.current.src = session.audioUrl || "";
+      audioRef.current.load();
+      audioRef.current.play().catch(err => console.log("Playback error:", err));
+    }
+  };
 
   // Handle autoplay if coming from the homepage links
   useEffect(() => {
     const autoplay = searchParams.get("autoplay");
     if (autoplay && SESSIONS_DATA.some(s => s.id === autoplay)) {
-      setActiveSessionId(autoplay);
-      setIsPlaying(true);
+      const timer = setTimeout(() => {
+        handlePlayToggle(autoplay);
+      }, 100);
+      return () => clearTimeout(timer);
     }
   }, [searchParams]);
 
-  // Simulate audio track progress timeline
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isPlaying && activeSessionId) {
-      interval = setInterval(() => {
-        setProgress(prev => {
-          if (prev >= 100) {
-            setIsPlaying(false);
-            return 0;
-          }
-          return prev + 1;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(interval);
-  }, [isPlaying, activeSessionId]);
+  const handleVolumeToggle = () => {
+    if (!audioRef.current) return;
+    const nextMute = !isMuted;
+    audioRef.current.muted = nextMute;
+    setIsMuted(nextMute);
+  };
 
-  const handlePlayToggle = (sessionId: string) => {
-    if (activeSessionId === sessionId) {
-      setIsPlaying(!isPlaying);
-    } else {
-      setActiveSessionId(sessionId);
-      setIsPlaying(true);
-      setProgress(0);
+  const handleTimelineClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!audioRef.current || !duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const width = rect.width;
+    const percentage = clickX / width;
+    const newTime = percentage * duration;
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime);
+    setProgress(percentage * 100);
+  };
+
+  const formatTime = (seconds: number) => {
+    if (isNaN(seconds) || seconds === 0) return "0:00";
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+
+    const formattedSecs = secs < 10 ? `0${secs}` : secs;
+
+    if (hrs > 0) {
+      const formattedMins = mins < 10 ? `0${mins}` : mins;
+      return `${hrs}:${formattedMins}:${formattedSecs}`;
     }
+    return `${mins}:${formattedSecs}`;
   };
 
   const getActiveSession = () => {
@@ -259,7 +345,15 @@ function SessionsContent() {
                 <span className="material-symbols-outlined text-2xl">skip_previous</span>
               </button>
               <button 
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={() => {
+                  if (audioRef.current) {
+                    if (isPlaying) {
+                      audioRef.current.pause();
+                    } else {
+                      audioRef.current.play().catch(err => console.log("Playback error:", err));
+                    }
+                  }
+                }}
                 className="bg-brand-orange text-black rounded-full p-2.5 hover:scale-105 transition-all cursor-pointer"
               >
                 <span className="material-symbols-outlined text-2xl font-bold">
@@ -272,27 +366,41 @@ function SessionsContent() {
             </div>
             {/* Timeline Progress Slider */}
             <div className="flex items-center gap-3 w-full font-mono text-[10px] text-white/50 select-none">
-              <span>0:00</span>
-              <div className="flex-grow h-1.5 bg-white/10 rounded-full overflow-hidden relative cursor-pointer group">
+              <span>{formatTime(currentTime)}</span>
+              <div 
+                onClick={handleTimelineClick}
+                className="flex-grow h-1.5 bg-white/10 rounded-full overflow-hidden relative cursor-pointer group"
+              >
                 <div 
                   className="absolute left-0 top-0 h-full bg-brand-orange rounded-full"
                   style={{ width: `${progress}%` }}
                 ></div>
                 <div className="absolute top-1/2 left-0 -translate-y-1/2 w-3 h-3 bg-white border border-black rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity" style={{ left: `calc(${progress}% - 6px)` }}></div>
               </div>
-              <span>{activeSession.duration}</span>
+              <span>{formatTime(duration) !== "0:00" ? formatTime(duration) : activeSession.duration}</span>
             </div>
           </div>
 
           {/* Volume / Extra buttons */}
           <div className="flex items-center gap-4 self-end md:self-center select-none">
-            <button className="text-white/60 hover:text-white transition-colors cursor-pointer">
-              <span className="material-symbols-outlined">volume_up</span>
+            <button 
+              onClick={handleVolumeToggle}
+              className="text-white/60 hover:text-white transition-colors cursor-pointer"
+            >
+              <span className="material-symbols-outlined">
+                {isMuted ? "volume_off" : "volume_up"}
+              </span>
             </button>
             <button 
               onClick={() => {
+                if (audioRef.current) {
+                  audioRef.current.pause();
+                  audioRef.current.src = "";
+                }
                 setIsPlaying(false);
                 setActiveSessionId(null);
+                setProgress(0);
+                setCurrentTime(0);
               }}
               className="text-white/40 hover:text-white/80 transition-colors cursor-pointer"
             >
