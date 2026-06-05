@@ -71,8 +71,11 @@ export default function Home() {
         {/* Hero Section - Massive Background Image & Text */}
         <section 
           className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 bg-img-gritty bg-cover bg-center" 
-          style={{ backgroundImage: 'url("/hero.jpg")' }}
+          style={{ backgroundImage: 'url("/hero_turntable.jpg")' }}
         >
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/60 pointer-events-none z-0"></div>
+
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
             <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
@@ -85,7 +88,7 @@ export default function Home() {
           </div>
 
           {/* Absolute brutalist elements */}
-          <div className="absolute top-8 right-8 border-4 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none hidden sm:block">
+          <div className="absolute top-8 right-8 border-4 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none hidden sm:block z-10">
             <span className="material-symbols-outlined text-4xl text-brand-orange">warning</span>
             <p className="font-mono text-xs uppercase tracking-widest mt-2">Volume Warning</p>
           </div>
