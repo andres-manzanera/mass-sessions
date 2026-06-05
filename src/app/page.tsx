@@ -73,7 +73,7 @@ export default function Home() {
           style={{ backgroundImage: 'url("/hero.jpg")' }}
         >
           {/* Subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/60 pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-0"></div>
 
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
