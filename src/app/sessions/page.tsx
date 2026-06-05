@@ -323,6 +323,10 @@ function SessionsContent() {
           <span className="material-symbols-outlined text-2xl font-bold">graphic_eq</span>
           <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
         </Link>
+        <Link href="/?info=true" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+          <span className="material-symbols-outlined text-2xl">info</span>
+          <span className="font-mono text-[9px] uppercase font-bold">Info</span>
+        </Link>
       </nav>
     </div>
   );

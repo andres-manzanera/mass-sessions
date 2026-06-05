@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,6 +8,15 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [ticketModalOpen, setTicketModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("info") === "true") {
+        setInfoOpen(true);
+      }
+    }
+  }, []);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,6 +190,10 @@ export default function Home() {
 
       {/* Mobile Bottom Navigation Bar */}
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-[101] bg-black border-t-4 border-brand-orange flex items-center justify-around h-20 select-none">
+        <Link href="/" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-4 border-brand-orange">
+          <span className="material-symbols-outlined text-2xl font-bold">home</span>
+          <span className="font-mono text-[9px] uppercase font-bold">Home</span>
+        </Link>
         <Link href="/sessions" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">graphic_eq</span>
           <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
@@ -188,10 +201,6 @@ export default function Home() {
         <button onClick={() => setInfoOpen(true)} className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">info</span>
           <span className="font-mono text-[9px] uppercase font-bold">Info</span>
-        </button>
-        <button onClick={() => setTicketModalOpen(true)} className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
-          <span className="material-symbols-outlined text-2xl">mail</span>
-          <span className="font-mono text-[9px] uppercase font-bold">Tickets</span>
         </button>
       </nav>
 
