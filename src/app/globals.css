@@ -177,3 +177,10 @@ body {
   box-shadow: 0 0 6px rgba(255, 142, 0, 0.25) !important;
   animation: pulse-accent 3s infinite !important;
 }
+
+.play-session-btn.play-btn-playing:hover {
+  background-color: #111317 !important;
+  box-shadow: 0 0 6px rgba(255, 142, 0, 0.25) !important;
+  color: var(--color-brand-accent) !important;
+  border-color: var(--color-brand-accent) !important;
+}
