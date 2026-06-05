@@ -129,8 +129,13 @@ body {
   padding: 0;
 }
 
-/* Specificity fix for session cards to force left orange border */
+/* Specificity fix for session cards to force left border to be white by default */
 .glass-panel.session-card {
+  border-left: 4px solid var(--color-brand-orange) !important;
+}
+
+/* When session card is active (neon-border-orange), its left border turns orange */
+.glass-panel.session-card.neon-border-orange {
   border-left: 4px solid var(--color-brand-accent) !important;
 }
 
