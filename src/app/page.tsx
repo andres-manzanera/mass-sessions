@@ -174,7 +174,7 @@ export default function Home() {
             MASS SESSIONS
           </div>
           <p className="font-mono text-xs uppercase opacity-80 select-none">
-            © 2026 SONIC PULSE. HIGH FIDELITY HOUSE MUSIC.
+            © 2026 ALL RIGHTS RESERVED. HIGH FIDELITY HOUSE MUSIC.
           </p>
         </div>
       </footer>
