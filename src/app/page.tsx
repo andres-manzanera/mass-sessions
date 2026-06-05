@@ -80,7 +80,22 @@ export default function Home() {
           <div className="z-10 relative select-none">
             <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
               MASS<br />
-              <span className="text-stroke">SESSIONS</span>
+              <svg 
+                viewBox="0 0 270 50" 
+                className="h-[0.85em] w-auto inline-block overflow-visible align-bottom select-none"
+              >
+                <text
+                  x="0"
+                  y="43"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
+                  className="font-extrabold uppercase font-sora tracking-normal text-[40px]"
+                >
+                  SESSIONS
+                </text>
+              </svg>
             </h1>
             <p className="font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-4 border-brand-orange inline-block sm:whitespace-nowrap">
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
