@@ -43,7 +43,7 @@ const SESSIONS_DATA: Session[] = [
     duration: "3h 00m",
     genre: "MINIMAL",
     image: "/session_blawan_pattern.jpg",
-    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3"
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-08.mp3"
   }
 ];
 
