@@ -279,7 +279,7 @@ function SessionsContent() {
                           </div>
                           {/* Styled Artist subtext */}
                           <p className="text-sm font-semibold opacity-80 text-on-surface-variant font-sora mt-1 uppercase">
-                            BY {session.artist} • {session.date}
+                            {session.date}
                           </p>
                         </div>
                         {session.isNew && (
