@@ -22,7 +22,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "DVS1 (MINNEAPOLIS)",
     duration: "2h 15m",
     genre: "TECH HOUSE",
-    image: "/session_dvs1_color.png"
+    image: "/session_dvs1_pattern.jpg"
   },
   {
     id: "rodhad",
@@ -30,7 +30,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "RØDHÅD (BERLIN)",
     duration: "1h 45m",
     genre: "DEEP HOUSE",
-    image: "/session_rodhad_color.png",
+    image: "/session_rodhad_pattern.jpg",
     isNew: true
   },
   {
@@ -39,7 +39,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "BLAWAN (LONDON)",
     duration: "3h 00m",
     genre: "MINIMAL",
-    image: "/session_blawan_color.png"
+    image: "/session_blawan_pattern.jpg"
   }
 ];
 
