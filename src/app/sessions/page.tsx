@@ -303,7 +303,7 @@ function SessionsContent() {
 
       {/* Unified Brutalist Footer */}
       <footer className="bg-black text-brand-orange w-full py-12 border-t-4 border-brand-orange pb-24 md:pb-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-between gap-6 md:flex-row text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-6 text-center">
           <div className="text-2xl font-extrabold tracking-widest border-4 border-brand-orange p-2 select-none inline-block">
             MASS SESSIONS
           </div>
