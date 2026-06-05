@@ -33,7 +33,7 @@ const SESSIONS_DATA: Session[] = [
     duration: "1h 45m",
     genres: ["DEEP HOUSE"],
     image: "/session_rodhad_pattern.jpg",
-    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2025/01/2025-01.mp3",
     isNew: true
   },
   {
