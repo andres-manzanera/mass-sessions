@@ -115,8 +115,8 @@
 }
 
 .neon-border-orange {
-  border: 1px solid var(--color-brand-orange);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--color-brand-accent) !important;
+  box-shadow: 0 0 12px rgba(255, 142, 0, 0.4) !important;
 }
 
 .neon-glow-brutalist {
@@ -131,35 +131,35 @@ body {
 
 /* Specificity fix for session cards to force left orange border */
 .glass-panel.session-card {
-  border-left: 4px solid var(--color-brand-orange) !important;
+  border-left: 4px solid var(--color-brand-accent) !important;
 }
 
-/* Custom Play Session Button */
+/* Custom Play Session Button - Default State (White) */
 .play-session-btn {
   background-color: #111317 !important;
-  border: 2px solid var(--color-brand-accent) !important;
+  border: 2px solid #ffffff !important;
   border-radius: 12px !important;
-  color: #e5e7eb !important;
+  color: #ffffff !important;
   font-family: var(--font-mono) !important;
   font-weight: 500 !important;
   letter-spacing: 0.1em !important;
   padding: 8px 24px !important;
-  box-shadow: 0 0 10px rgba(255, 142, 0, 0.4), inset 0 0 4px rgba(255, 142, 0, 0.2) !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), inset 0 0 4px rgba(255, 255, 255, 0.1) !important;
   transition: all 0.3s ease !important;
   cursor: pointer !important;
 }
 
 .play-session-btn:hover {
-  background-color: rgba(255, 142, 0, 0.1) !important;
-  box-shadow: 0 0 16px rgba(255, 142, 0, 0.6), inset 0 0 6px rgba(255, 142, 0, 0.3) !important;
-  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
 }
 
 .play-session-btn:active {
   transform: scale(0.95) !important;
 }
 
-/* Play button playing animation and overrides */
+/* Play button playing animation and overrides (Orange) */
 @keyframes pulse-accent {
   0% { box-shadow: 0 0 0 0 rgba(255, 142, 0, 0.6); }
   70% { box-shadow: 0 0 0 10px rgba(255, 142, 0, 0); }
@@ -167,9 +167,9 @@ body {
 }
 
 .play-btn-playing {
-  background-color: var(--color-brand-accent) !important;
-  color: #000000 !important;
-  animation: pulse-accent 2s infinite !important;
+  background-color: #111317 !important;
+  color: var(--color-brand-accent) !important;
   border-color: var(--color-brand-accent) !important;
-  box-shadow: 0 0 12px var(--color-brand-accent) !important;
+  box-shadow: 0 0 12px rgba(255, 142, 0, 0.5), inset 0 0 6px rgba(255, 142, 0, 0.25) !important;
+  animation: pulse-accent 2s infinite !important;
 }
