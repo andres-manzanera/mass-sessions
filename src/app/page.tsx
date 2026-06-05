@@ -61,7 +61,7 @@ export default function Home() {
               MASS<br />
               <span className="text-stroke">SESSIONS</span>
             </h1>
-            <p className="font-semibold text-sm sm:text-base md:text-xl max-w-2xl mt-4 bg-black p-4 border-4 border-brand-orange inline-block">
+            <p className="font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-4 border-brand-orange inline-block sm:whitespace-nowrap">
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
