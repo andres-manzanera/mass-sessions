@@ -140,10 +140,10 @@ export default function Home() {
 
             {/* Right Block List */}
             <div className="w-full md:w-1/3 bg-black p-0 flex flex-col justify-center select-none">
-              <Link href="/sessions?autoplay=dvs1" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
+              <Link href="/sessions?autoplay=rodhad" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
                 <div>
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">DVS1</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium">MINNEAPOLIS / 3HR SET</p>
+                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">SUNSET RHYTHMS</h3>
+                  <p className="font-mono text-xs opacity-60 font-medium">2025-01</p>
                 </div>
                 <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
               </Link>
