@@ -9,6 +9,7 @@
   
   --color-brand-orange: #FFFFFF;
   --color-brand-orange-light: #E5E7EB;
+  --color-brand-accent: #FF8E00;
   --color-brand-bg-dark: #111317;
   --color-brand-surface-card: rgba(26, 26, 28, 0.8);
   --color-glass-stroke: rgba(255, 255, 255, 0.12);
@@ -121,7 +122,7 @@
 }
 
 .neon-glow-brutalist {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 142, 0, 0.8), inset 0 0 10px rgba(255, 142, 0, 0.5);
 }
 
 /* Base resets */

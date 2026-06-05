@@ -99,7 +99,7 @@ export default function Home() {
 
               <button 
                 onClick={() => setTicketModalOpen(true)}
-                className="mt-12 bg-transparent border-4 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-orange hover:text-black transition-colors w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
+                className="mt-12 bg-transparent border-4 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-colors w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
               >
                 SECURE ACCESS
                 <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
@@ -127,7 +127,7 @@ export default function Home() {
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight">DVS1</h3>
                   <p className="font-mono text-xs opacity-60 font-medium">MINNEAPOLIS / 3HR SET</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
               </Link>
 
               <Link href="/sessions?autoplay=rodhad" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
@@ -135,7 +135,7 @@ export default function Home() {
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight">RØDHÅD</h3>
                   <p className="font-mono text-xs opacity-60 font-medium">BERLIN / CLOSING</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
               </Link>
 
               <Link href="/sessions?autoplay=blawan" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
@@ -143,7 +143,7 @@ export default function Home() {
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight">BLAWAN</h3>
                   <p className="font-mono text-xs opacity-60 font-medium">LONDON / LIVE MODULAR</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 transition-opacity">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
               </Link>
             </div>
 
