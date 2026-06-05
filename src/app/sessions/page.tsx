@@ -20,7 +20,7 @@ interface Session {
 const SESSIONS_DATA: Session[] = [
   {
     id: "dvs1",
-    title: "DEEP GROOVES VOL. 45",
+    title: "DEEP GROOVES",
     artist: "DVS1 (MINNEAPOLIS)",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
@@ -56,7 +56,7 @@ function SessionsContent() {
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [activeYear, setActiveYear] = useState("2026");
+  const [activeYear, setActiveYear] = useState("2025");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -221,7 +221,7 @@ function SessionsContent() {
 
         {/* Filters */}
         <div className="flex flex-wrap gap-2 mb-8 select-none">
-          {["2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year) => (
+          {["2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year) => (
             <button 
               key={year}
               onClick={() => setActiveYear(year)}
