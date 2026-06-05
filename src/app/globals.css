@@ -8,12 +8,12 @@
   --font-mono: "JetBrains Mono", monospace;
   
   --color-brand-orange: #FFFFFF;
-  --color-brand-orange-light: #E5E7EB;
+  --color-brand-orange-light: #F2F0EB;
   --color-brand-accent: #FF8E00;
   --color-brand-bg-dark: #111317;
   --color-brand-surface-card: rgba(26, 26, 28, 0.8);
   --color-glass-stroke: rgba(255, 255, 255, 0.12);
-  --color-on-surface: #e2e2e8;
+  --color-on-surface: #F2F0EB;
   --color-on-surface-variant: #ddc1ae;
   --color-surface-container-high: #282a2e;
   --color-surface-elevated: #1a1a1c;
