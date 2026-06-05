@@ -25,7 +25,7 @@ export default function Home() {
     <div className="bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black">
       {/* TopNavBar (Shared Component) - Overridden for Brutalist Theme */}
       <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-6 md:pr-16 h-20">
-        <Link href="/" className="font-extrabold tracking-tighter text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
+        <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS
         </Link>
         <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto">
