@@ -81,17 +81,18 @@ export default function Home() {
             <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
               MASS<br />
               <svg 
-                viewBox="0 0 270 50" 
-                className="h-[0.85em] w-auto inline-block overflow-visible align-bottom select-none"
+                viewBox="0 0 215 32" 
+                className="h-[0.95em] w-auto inline-block overflow-visible align-bottom select-none"
               >
                 <text
                   x="0"
-                  y="43"
+                  y="27"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinejoin="round"
-                  className="font-extrabold uppercase font-sora tracking-normal text-[40px]"
+                  vectorEffect="non-scaling-stroke"
+                  className="font-extrabold uppercase font-sora tracking-normal text-[32px]"
                 >
                   SESSIONS
                 </text>
