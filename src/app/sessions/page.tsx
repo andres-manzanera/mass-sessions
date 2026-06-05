@@ -192,7 +192,7 @@ function SessionsContent() {
         <a href="mailto:info@mass-sessions.com" className="md:hidden font-bold uppercase tracking-wider text-sm h-full flex items-center px-6 text-brand-orange cursor-pointer">
           CONTACT
         </a>
-        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto">
+        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-4 border-brand-orange pl-6 md:pl-16">
           <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
           </Link>
@@ -202,7 +202,7 @@ function SessionsContent() {
           <Link href="/info" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             INFO
           </Link>
-          <Link href="/?tickets=true" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
+          <Link href="/?tickets=true" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange cursor-pointer">
             CONTACT
           </Link>
         </nav>
