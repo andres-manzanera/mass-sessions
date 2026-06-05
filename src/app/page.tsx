@@ -15,6 +15,9 @@ export default function Home() {
       if (urlParams.get("info") === "true") {
         setInfoOpen(true);
       }
+      if (urlParams.get("tickets") === "true") {
+        setTicketModalOpen(true);
+      }
     }
   }, []);
 
@@ -44,12 +47,12 @@ export default function Home() {
           <Link href="/sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent">
             SESSIONS
           </Link>
-          <button 
-            onClick={() => setInfoOpen(true)}
-            className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent cursor-pointer"
+          <Link 
+            href="/info"
+            className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent"
           >
             INFO
-          </button>
+          </Link>
           <button 
             onClick={() => setTicketModalOpen(true)}
             className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent cursor-pointer"
@@ -198,10 +201,10 @@ export default function Home() {
           <span className="material-symbols-outlined text-2xl">graphic_eq</span>
           <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
         </Link>
-        <button onClick={() => setInfoOpen(true)} className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+        <Link href="/info" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">info</span>
           <span className="font-mono text-[9px] uppercase font-bold">Info</span>
-        </button>
+        </Link>
       </nav>
 
       {/* Modal - Info */}

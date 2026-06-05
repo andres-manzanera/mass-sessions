@@ -106,10 +106,10 @@ function SessionsContent() {
           <Link href="/sessions" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-4 border-brand-orange text-brand-orange">
             SESSIONS
           </Link>
-          <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
+          <Link href="/info" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             INFO
           </Link>
-          <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
+          <Link href="/?tickets=true" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             EMAIL
           </Link>
         </nav>
@@ -323,7 +323,7 @@ function SessionsContent() {
           <span className="material-symbols-outlined text-2xl font-bold">graphic_eq</span>
           <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
         </Link>
-        <Link href="/?info=true" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+        <Link href="/info" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">info</span>
           <span className="font-mono text-[9px] uppercase font-bold">Info</span>
         </Link>
