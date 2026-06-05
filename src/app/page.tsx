@@ -67,7 +67,7 @@ export default function Home() {
         
         {/* Hero Section - Massive Background Image & Text */}
         <section 
-          className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 md:p-16 bg-img-gritty bg-cover bg-center" 
+          className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 bg-img-gritty bg-cover bg-center" 
           style={{ backgroundImage: 'url("/hero.jpg")' }}
         >
           {/* Overlay Text */}
