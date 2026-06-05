@@ -60,7 +60,7 @@ export default function Home() {
         >
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
-            <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-tighter mix-blend-difference break-words text-brand-orange">
+            <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
               MASS<br />
               <span className="text-stroke">SESSIONS</span>
             </h1>
