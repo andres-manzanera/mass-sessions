@@ -22,7 +22,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "DVS1 (MINNEAPOLIS)",
     duration: "2h 15m",
     genre: "TECH HOUSE",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCYyamzW5v9HQCbapGp22d9FK-IEfYmwfiTKHMUhR1a8VIRG6IYDhER0HULftUbfWHHBuPNugc0MYsQdr9_-7G5_xR_OVQTmw4JZF00DbrSVUeFZsM0sthY0VvcPdKM2cyymjqaEM3QTHzEaZn0eDm_9OtESoYY1LZSqgjlbyajGcG4vn23-GMaP1nsnM7cy_-cs0E-GUoiQF90ijPIuLszlvDqZ0IsGLBybUhoQYd8PavvEcjS1OFj8H_Ac2JRTYZYYNHAlm-9u2U"
+    image: "/session_dvs1.png"
   },
   {
     id: "rodhad",
@@ -39,7 +39,7 @@ const SESSIONS_DATA: Session[] = [
     artist: "BLAWAN (LONDON)",
     duration: "3h 00m",
     genre: "MINIMAL",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD7rn6umUqDeD80yRVAVCUljvj30xyovwnN25tXekDZVrjJC12op5WsR66FC8-iEGktbBXf8tzeuj1N3BDk0IrigC4jPLjHLacdv5H_KkKxNs9sVl7h_g3hrgOs65M4-6ihPDr49SqMCH9-Aob97Cv5snNjAtUsgAtH1sYgAud7Wi1PBFbiIcyk_pJKV-EoKgp-ry6OyCxeQvFHvbs8YYou_XZzN_c69Rp7ZlU9tWV3e3XxW70Jgsr3jYXz9EzjkNjE0nyxxhZPEKE"
+    image: "/session_blawan.png"
   }
 ];
 
