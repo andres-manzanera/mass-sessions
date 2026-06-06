@@ -68,10 +68,15 @@ export default function Home() {
       <main className="pt-20 min-h-screen flex flex-col">
         
         {/* Hero Section - Massive Background Image & Text */}
-        <section 
-          className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 bg-img-gritty bg-cover bg-center" 
-          style={{ backgroundImage: 'url("/hero.jpg")' }}
-        >
+        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
+          {/* Zooming background image wrapper & multiplier overlay */}
+          <div className="absolute inset-0 overflow-hidden z-0 bg-img-gritty">
+            <div 
+              className="absolute inset-0 bg-cover bg-center animate-hero-zoom-out" 
+              style={{ backgroundImage: 'url("/hero.jpg")' }}
+            />
+          </div>
+
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-0"></div>
 
