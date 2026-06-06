@@ -69,10 +69,10 @@ export default function Home() {
         
         {/* Hero Section - Massive Background Image & Text */}
         <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
-          {/* Zooming background image wrapper & multiplier overlay */}
-          <div className="absolute inset-0 overflow-hidden z-0 bg-img-gritty">
+          {/* Zooming background image wrapper */}
+          <div className="absolute inset-0 overflow-hidden z-0">
             <div 
-              className="absolute inset-0 bg-cover bg-center animate-hero-zoom-out" 
+              className="absolute inset-0 bg-cover bg-center animate-hero-zoom-out bg-img-gritty" 
               style={{ backgroundImage: 'url("/hero.jpg")' }}
             />
           </div>
