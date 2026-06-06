@@ -14,7 +14,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   // If loading screen was already shown this session, skip hero animations
   const [skipAnim, setSkipAnim] = useState(false);
-  const [gearActive, setGearActive] = useState(false);
   const [activeTouchSession, setActiveTouchSession] = useState<number | null>(null);
   const [soundBgActive, setSoundBgActive] = useState(false);
 
@@ -185,10 +184,7 @@ export default function Home() {
 
             {/* Middle Image Block */}
             <div 
-              onClick={() => setGearActive(!gearActive)}
-              className={`w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative bg-img-gritty transition-all duration-500 cursor-pointer flex flex-col justify-between p-4 ${
-                gearActive ? "grayscale-0" : "grayscale"
-              } hover:grayscale-0 active:grayscale-0`}
+              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative bg-img-gritty transition-all duration-500 flex flex-col justify-between p-4 animate-intermittent-grayscale"
               style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw")' }}
             >
               <div></div>

@@ -549,3 +549,16 @@ body {
   animation: info-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: 1.8s;
 }
+
+@keyframes intermittent-grayscale {
+  0%, 48%, 53%, 58%, 63%, 100% {
+    filter: grayscale(100%);
+  }
+  50%, 55%, 60%, 62% {
+    filter: grayscale(0%);
+  }
+}
+
+.animate-intermittent-grayscale {
+  animation: intermittent-grayscale 8s infinite;
+}
