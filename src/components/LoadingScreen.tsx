@@ -7,6 +7,16 @@ export default function LoadingScreen() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
+    // Only show once per browser session
+    const alreadyShown = sessionStorage.getItem("ms_loading_shown");
+    if (alreadyShown) {
+      setVisible(false);
+      return;
+    }
+
+    // Mark as shown so navigating back won't trigger it again
+    sessionStorage.setItem("ms_loading_shown", "1");
+
     // Start fade-out after 4s, then fully unmount at 4.6s
     const fadeTimer = setTimeout(() => setFadeOut(true), 4000);
     const removeTimer = setTimeout(() => setVisible(false), 4600);
