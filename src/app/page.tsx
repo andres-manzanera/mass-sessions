@@ -16,6 +16,7 @@ export default function Home() {
   const [skipAnim, setSkipAnim] = useState(false);
   const [gearActive, setGearActive] = useState(false);
   const [activeTouchSession, setActiveTouchSession] = useState<number | null>(null);
+  const [soundBgActive, setSoundBgActive] = useState(false);
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("ms_loading_shown");
@@ -304,7 +305,8 @@ export default function Home() {
         {/* Massive Text Divider Section */}
         <section 
           ref={sectionRef}
-          className="w-full text-brand-orange border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group"
+          onClick={() => setSoundBgActive(!soundBgActive)}
+          className="w-full text-brand-orange border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group cursor-pointer"
         >
           {/* Zooming background image wrapper with parallax */}
           <div 
@@ -317,7 +319,9 @@ export default function Home() {
             <img 
               src="/sound-bg.jpg" 
               alt="High-fidelity sound background" 
-              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out ${
+                soundBgActive ? "scale-105" : "scale-100"
+              } group-hover:scale-105`} 
             />
           </div>
           {/* Dark overlay to ensure text contrast */}
