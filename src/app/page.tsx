@@ -127,7 +127,7 @@ export default function Home() {
       <main className="pt-20 min-h-screen flex flex-col">
         
         {/* Hero Section - Massive Background Image & Text */}
-        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
+        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] md:min-h-[700px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <Image
@@ -147,7 +147,7 @@ export default function Home() {
 
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
-            <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
+            <h1 className="text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
               <span className="hero-mass">MASS</span><br />
               <span className="hero-sessions"><svg 
                 viewBox="0 0 384 60" 
@@ -164,7 +164,7 @@ export default function Home() {
                 />
               </svg></span>
             </h1>
-            <p className="font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-2 border-brand-orange inline-block sm:whitespace-nowrap hero-tagline">
+            <p className="font-semibold text-sm sm:text-base md:text-xl mt-4 bg-black py-4 px-6 border-2 border-brand-orange inline-block max-w-[280px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-none lg:whitespace-nowrap hero-tagline">
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
