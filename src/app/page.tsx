@@ -13,23 +13,15 @@ export default function Home() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
-  // If loading screen was already shown this session, skip hero animations
-  const [skipAnim, setSkipAnim] = useState(false);
+  // If loading screen is skipped, run entrance animations with shorter delays
+  const [fastAnim, setFastAnim] = useState(false);
   const [activeTouchSession, setActiveTouchSession] = useState<number | null>(null);
   const [soundBgActive, setSoundBgActive] = useState(false);
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("ms_loading_shown");
-    // The key is set BEFORE the timers start in LoadingScreen, so if it exists
-    // AND the page was already visited (we check a second key), skip animations.
-    const alreadyVisited = sessionStorage.getItem("ms_hero_visited");
-    if (alreadyVisited) {
-      setSkipAnim(true);
-    } else {
-      // Mark that hero animation has played once
-      setTimeout(() => {
-        sessionStorage.setItem("ms_hero_visited", "1");
-      }, 7500);
+    if (alreadyShown) {
+      setFastAnim(true);
     }
   }, []);
 
@@ -102,9 +94,9 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black">
+    <div className={`bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black${fastAnim ? " fast-anim" : ""}`}>
       <LoadingScreen />
-      <header className={`fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20${skipAnim ? "" : " hero-navbar"}`}>
+      <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20 hero-navbar">
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS
         </Link>
@@ -150,8 +142,8 @@ export default function Home() {
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
             <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
-              <span className={skipAnim ? undefined : "hero-mass"}>MASS</span><br />
-              <span className={skipAnim ? undefined : "hero-sessions"}><svg 
+              <span className="hero-mass">MASS</span><br />
+              <span className="hero-sessions"><svg 
                 viewBox="0 0 384 60" 
                 className="h-[0.95em] w-auto inline-block overflow-visible align-bottom select-none"
               >
@@ -166,7 +158,7 @@ export default function Home() {
                 />
               </svg></span>
             </h1>
-            <p className={`font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-2 border-brand-orange inline-block sm:whitespace-nowrap${skipAnim ? "" : " hero-tagline"}`}>
+            <p className="font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-2 border-brand-orange inline-block sm:whitespace-nowrap hero-tagline">
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
