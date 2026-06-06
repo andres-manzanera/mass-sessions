@@ -33,13 +33,35 @@ function SessionsContent() {
   const searchParams = useSearchParams();
   const [activeYear, setActiveYear] = useState("ALL");
   const [animKey, setAnimKey] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   const { activeSession, isPlaying, playSession } = useAudio();
+
+  // Filter and sort sessions
+  const filteredSessions = SESSIONS_DATA.filter((session) => {
+    if (activeYear === "ALL") return true;
+    return session.date.startsWith(activeYear);
+  }).sort((a, b) => b.date.localeCompare(a.date));
+
+  const totalPages = Math.ceil(filteredSessions.length / itemsPerPage);
+  
+  // Slice sessions for the current page
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedSessions = filteredSessions.slice(startIndex, startIndex + itemsPerPage);
 
   // Handle autoplay and auto-scroll if coming from the homepage links
   useEffect(() => {
     const autoplay = searchParams.get("autoplay");
     if (autoplay && SESSIONS_DATA.some((s) => s.id === autoplay)) {
+      // Find the page this session is on
+      const sortedAll = [...SESSIONS_DATA].sort((a, b) => b.date.localeCompare(a.date));
+      const sessionIndex = sortedAll.findIndex((s) => s.id === autoplay);
+      if (sessionIndex !== -1) {
+        const targetPage = Math.ceil((sessionIndex + 1) / itemsPerPage);
+        setCurrentPage(targetPage);
+      }
+
       const timer = setTimeout(() => {
         playSession(autoplay);
         // Scroll to the active session card and center it in viewport
@@ -47,7 +69,7 @@ function SessionsContent() {
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
         }
-      }, 200);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [searchParams]);
@@ -122,7 +144,7 @@ function SessionsContent() {
           {["ALL", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year, i) => (
             <button
               key={year}
-              onClick={() => { setActiveYear(year); setAnimKey((k) => k + 1); }}
+              onClick={() => { setActiveYear(year); setCurrentPage(1); setAnimKey((k) => k + 1); }}
               aria-pressed={activeYear === year}
               aria-label={year === "ALL" ? "Mostrar todas las sesiones" : `Filtrar sesiones del año ${year}`}
               className={`session-tab-anim glass-panel text-sm px-4 py-2 rounded-full cursor-pointer hover:border-brand-orange transition-all duration-300 font-sora ${
@@ -140,12 +162,7 @@ function SessionsContent() {
         {/* Events List */}
         <div className="flex flex-col gap-6" role="list" aria-label="Lista de sesiones">
           {(() => {
-            const filteredSessions = SESSIONS_DATA.filter((session) => {
-              if (activeYear === "ALL") return true;
-              return session.date.startsWith(activeYear);
-            }).sort((a, b) => b.date.localeCompare(a.date));
-
-            if (filteredSessions.length === 0) {
+            if (paginatedSessions.length === 0) {
               return (
                 <div role="status" className="text-center py-16 border-2 border-dashed border-brand-orange/20 rounded-xl text-on-surface-variant uppercase font-mono select-none">
                   No recordings cataloged for {activeYear}.
@@ -153,11 +170,11 @@ function SessionsContent() {
               );
             }
 
-            return filteredSessions.map((session, i) => {
+            return paginatedSessions.map((session, i) => {
               const isCurrent = activeSession?.id === session.id;
               return (
                 <article
-                  key={`${animKey}-${session.id}`}
+                  key={`${animKey}-${currentPage}-${session.id}`}
                   id={`session-${session.id}`}
                   role="listitem"
                   aria-label={`Sesión: ${session.title} por ${session.artist}`}
@@ -245,6 +262,65 @@ function SessionsContent() {
             });
           })()}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <nav aria-label="Paginación de sesiones" className="flex items-center justify-center gap-3 mt-16 select-none flex-wrap">
+            <button
+              onClick={() => {
+                if (currentPage > 1) {
+                  setCurrentPage(currentPage - 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              disabled={currentPage === 1}
+              className={`border-2 px-4 py-2 font-mono text-xs uppercase font-bold transition-all ${
+                currentPage === 1
+                  ? "border-brand-orange/20 text-brand-orange/20 cursor-not-allowed"
+                  : "border-brand-orange text-brand-orange cursor-pointer hover:bg-brand-accent hover:border-brand-accent hover:text-black"
+              }`}
+            >
+              PREV
+            </button>
+            <div className="flex gap-2">
+              {Array.from({ length: totalPages }, (_, idx) => {
+                const pageNum = idx + 1;
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => {
+                      setCurrentPage(pageNum);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className={`w-9 h-9 border-2 font-mono text-xs font-bold transition-all flex items-center justify-center cursor-pointer ${
+                      currentPage === pageNum
+                        ? "border-brand-accent text-black bg-brand-accent"
+                        : "border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+            <button
+              onClick={() => {
+                if (currentPage < totalPages) {
+                  setCurrentPage(currentPage + 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              disabled={currentPage === totalPages}
+              className={`border-2 px-4 py-2 font-mono text-xs uppercase font-bold transition-all ${
+                currentPage === totalPages
+                  ? "border-brand-orange/20 text-brand-orange/20 cursor-not-allowed"
+                  : "border-brand-orange text-brand-orange cursor-pointer hover:bg-brand-accent hover:border-brand-accent hover:text-black"
+              }`}
+            >
+              NEXT
+            </button>
+          </nav>
+        )}
       </main>
 
       {/* Unified Brutalist Footer */}
