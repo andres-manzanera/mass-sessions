@@ -575,6 +575,6 @@ body {
 }
 
 .animate-color-fade {
-  animation: color-fade 16s ease-in-out infinite;
+  animation: color-fade 8s ease-in-out infinite;
   will-change: opacity;
 }
