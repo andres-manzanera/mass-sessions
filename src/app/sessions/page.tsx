@@ -186,7 +186,7 @@ function SessionsContent() {
     <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black relative">
       {/* Dots background texture */}
       <div 
-        className="absolute inset-0 opacity-[0.25] pointer-events-none z-0" 
+        className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" 
         style={{ 
           backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', 
           backgroundSize: '20px 20px'
@@ -238,7 +238,7 @@ function SessionsContent() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 py-8">
+      <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 py-8 relative z-10">
         
         {/* Page Header */}
         <div className="mb-8">
