@@ -551,14 +551,14 @@ body {
 }
 
 @keyframes intermittent-grayscale {
-  0%, 48%, 53%, 58%, 63%, 100% {
+  0%, 100% {
     filter: grayscale(100%);
   }
-  50%, 55%, 60%, 62% {
+  50% {
     filter: grayscale(0%);
   }
 }
 
 .animate-intermittent-grayscale {
-  animation: intermittent-grayscale 8s infinite;
+  animation: intermittent-grayscale 6s ease-in-out infinite;
 }
