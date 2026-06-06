@@ -7,9 +7,9 @@ export default function LoadingScreen() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Start fade-out after 1.8s, then fully unmount at 2.4s
-    const fadeTimer = setTimeout(() => setFadeOut(true), 1800);
-    const removeTimer = setTimeout(() => setVisible(false), 2400);
+    // Start fade-out after 4s, then fully unmount at 4.6s
+    const fadeTimer = setTimeout(() => setFadeOut(true), 4000);
+    const removeTimer = setTimeout(() => setVisible(false), 4600);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
