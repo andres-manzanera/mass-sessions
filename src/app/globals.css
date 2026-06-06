@@ -560,5 +560,5 @@ body {
 }
 
 .animate-intermittent-grayscale {
-  animation: intermittent-grayscale 6s ease-in-out infinite;
+  animation: intermittent-grayscale 16s linear infinite;
 }
