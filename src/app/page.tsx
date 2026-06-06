@@ -15,6 +15,7 @@ export default function Home() {
   // If loading screen was already shown this session, skip hero animations
   const [skipAnim, setSkipAnim] = useState(false);
   const [gearActive, setGearActive] = useState(false);
+  const [activeTouchSession, setActiveTouchSession] = useState<number | null>(null);
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("ms_loading_shown");
@@ -199,50 +200,101 @@ export default function Home() {
             <div className="w-full md:w-1/3 bg-black p-0 flex flex-col justify-center select-none">
               <Link 
                 href="/sessions?autoplay=rodhad" 
-                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+                onTouchStart={() => setActiveTouchSession(0)}
+                onTouchEnd={() => setActiveTouchSession(null)}
+                onTouchCancel={() => setActiveTouchSession(null)}
+                className={`relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                  activeTouchSession === 0 
+                    ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    : ""
+                } hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
               >
                 {/* Dots background texture on hover */}
                 <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" 
+                  className={`absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none ${
+                    activeTouchSession === 0 ? "opacity-10" : ""
+                  } group-hover:opacity-10`}
                   style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                 />
-                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left z-10">
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">SUNSET RHYTHMS</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">2025-01</p>
+                <div className={`transition-transform duration-300 ease-in-out origin-left z-10 ${
+                  activeTouchSession === 0 ? "scale-105" : ""
+                } group-hover:scale-105`}>
+                  <h3 className={`text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors ${
+                    activeTouchSession === 0 ? "text-brand-accent" : ""
+                  } group-hover:text-brand-accent`}>SUNSET RHYTHMS</h3>
+                  <p className={`font-mono text-xs opacity-60 font-medium transition-opacity ${
+                    activeTouchSession === 0 ? "opacity-90" : ""
+                  } group-hover:opacity-90`}>2025-01</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors z-10">play_circle</span>
+                <span className={`material-symbols-outlined text-4xl opacity-0 transition-colors z-10 ${
+                  activeTouchSession === 0 ? "opacity-100 text-brand-accent" : ""
+                } group-hover:opacity-100 group-hover:text-brand-accent`}>play_circle</span>
               </Link>
 
               <Link 
                 href="/sessions?autoplay=rodhad" 
-                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+                onTouchStart={() => setActiveTouchSession(1)}
+                onTouchEnd={() => setActiveTouchSession(null)}
+                onTouchCancel={() => setActiveTouchSession(null)}
+                className={`relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                  activeTouchSession === 1 
+                    ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    : ""
+                } hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
               >
                 {/* Dots background texture on hover */}
                 <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" 
+                  className={`absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none ${
+                    activeTouchSession === 1 ? "opacity-10" : ""
+                  } group-hover:opacity-10`}
                   style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                 />
-                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left z-10">
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">RØDHÅD</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">BERLIN / CLOSING</p>
+                <div className={`transition-transform duration-300 ease-in-out origin-left z-10 ${
+                  activeTouchSession === 1 ? "scale-105" : ""
+                } group-hover:scale-105`}>
+                  <h3 className={`text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors ${
+                    activeTouchSession === 1 ? "text-brand-accent" : ""
+                  } group-hover:text-brand-accent`}>RØDHÅD</h3>
+                  <p className={`font-mono text-xs opacity-60 font-medium transition-opacity ${
+                    activeTouchSession === 1 ? "opacity-90" : ""
+                  } group-hover:opacity-90`}>BERLIN / CLOSING</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors z-10">play_circle</span>
+                <span className={`material-symbols-outlined text-4xl opacity-0 transition-colors z-10 ${
+                  activeTouchSession === 1 ? "opacity-100 text-brand-accent" : ""
+                } group-hover:opacity-100 group-hover:text-brand-accent`}>play_circle</span>
               </Link>
 
               <Link 
                 href="/sessions?autoplay=blawan" 
-                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+                onTouchStart={() => setActiveTouchSession(2)}
+                onTouchEnd={() => setActiveTouchSession(null)}
+                onTouchCancel={() => setActiveTouchSession(null)}
+                className={`relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                  activeTouchSession === 2 
+                    ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    : ""
+                } hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
               >
                 {/* Dots background texture on hover */}
                 <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" 
+                  className={`absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none ${
+                    activeTouchSession === 2 ? "opacity-10" : ""
+                  } group-hover:opacity-10`}
                   style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
                 />
-                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left z-10">
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">BLAWAN</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">LONDON / LIVE MODULAR</p>
+                <div className={`transition-transform duration-300 ease-in-out origin-left z-10 ${
+                  activeTouchSession === 2 ? "scale-105" : ""
+                } group-hover:scale-105`}>
+                  <h3 className={`text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors ${
+                    activeTouchSession === 2 ? "text-brand-accent" : ""
+                  } group-hover:text-brand-accent`}>BLAWAN</h3>
+                  <p className={`font-mono text-xs opacity-60 font-medium transition-opacity ${
+                    activeTouchSession === 2 ? "opacity-90" : ""
+                  } group-hover:opacity-90`}>LONDON / LIVE MODULAR</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors z-10">play_circle</span>
+                <span className={`material-symbols-outlined text-4xl opacity-0 transition-colors z-10 ${
+                  activeTouchSession === 2 ? "opacity-100 text-brand-accent" : ""
+                } group-hover:opacity-100 group-hover:text-brand-accent`}>play_circle</span>
               </Link>
             </div>
 
