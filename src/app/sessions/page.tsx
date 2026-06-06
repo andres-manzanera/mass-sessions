@@ -238,7 +238,7 @@ function SessionsContent() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 py-8 relative z-10">
+      <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 pt-12 pb-20 md:pt-20 md:pb-32 relative z-10">
         
         {/* Page Header */}
         <div className="mb-8">
