@@ -48,6 +48,17 @@ const SESSIONS_DATA: Session[] = [
     image: "/session_blawan_pattern.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-08.mp3",
     date: "2017-08"
+  },
+  {
+    id: "kerri",
+    title: "RAW VIBRATIONS",
+    artist: "KERRI CHANDLER (NEW YORK)",
+    duration: "1h 00m",
+    genres: ["DEEP HOUSE", "HOUSE"],
+    image: "/session_kerri_pattern.png",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2024-01.mp3",
+    date: "2024-01",
+    isNew: true
   }
 ];
 
