@@ -71,9 +71,10 @@ export default function Home() {
         <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
-            <div 
-              className="absolute inset-0 bg-cover bg-center animate-hero-zoom-out" 
-              style={{ backgroundImage: 'url("/hero.jpg")' }}
+            <img 
+              src="/hero.jpg" 
+              alt="Mass Sessions Hero Background" 
+              className="absolute inset-0 w-full h-full object-cover object-center animate-hero-zoom-out" 
             />
             {/* Static dark overlay to replace the multiply blend mode (avoids browser GPU rendering bugs on animated layers) */}
             <div className="absolute inset-0 bg-black/60 pointer-events-none" />

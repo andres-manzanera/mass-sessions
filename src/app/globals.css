@@ -190,16 +190,30 @@ body {
 }
 
 /* Hero zoom out animation */
-@keyframes hero-zoom-out {
+@-webkit-keyframes hero-zoom-out {
   0% {
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
   }
   100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-zoom-out {
+  0% {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
 
 .animate-hero-zoom-out {
+  -webkit-animation: hero-zoom-out 20s ease-in-out infinite alternate;
   animation: hero-zoom-out 20s ease-in-out infinite alternate;
   will-change: transform;
 }
