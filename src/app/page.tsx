@@ -39,9 +39,6 @@ export default function Home() {
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS
         </Link>
-        <a href="mailto:info@mass-sessions.com" className="md:hidden font-bold uppercase tracking-wider text-sm h-full flex items-center px-6 text-brand-orange cursor-pointer">
-          CONTACT
-        </a>
         <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-4 border-brand-orange pl-6 md:pl-16">
           <Link href="/" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-4 border-brand-orange text-brand-orange">
             HOME
@@ -55,12 +52,6 @@ export default function Home() {
           >
             INFO
           </Link>
-          <button 
-            onClick={() => setTicketModalOpen(true)}
-            className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent cursor-pointer"
-          >
-            CONTACT
-          </button>
         </nav>
       </header>
 

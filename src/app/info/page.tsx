@@ -10,10 +10,7 @@ export default function InfoPage() {
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange">
           MASS SESSIONS
         </Link>
-        <a href="mailto:info@mass-sessions.com" className="md:hidden font-bold uppercase tracking-wider text-sm h-full flex items-center px-6 text-brand-orange cursor-pointer">
-          CONTACT
-        </a>
-        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto">
+        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-4 border-brand-orange pl-6 md:pl-16">
           <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
           </Link>
@@ -22,9 +19,6 @@ export default function InfoPage() {
           </Link>
           <Link href="/info" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-4 border-brand-orange text-brand-orange">
             INFO
-          </Link>
-          <Link href="/?tickets=true" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
-            CONTACT
           </Link>
         </nav>
       </header>
@@ -69,6 +63,14 @@ export default function InfoPage() {
             <p className="text-lg leading-relaxed text-on-surface uppercase font-medium">
               We construct environments where sound is a physical force. Our mission is to strip club culture back to its essentials: high fidelity audio, raw architecture, and zero digital distractions. By removing mobile phones, we restore the communion between dancer, DJ, and system.
             </p>
+            <div className="mt-8">
+              <a 
+                href="mailto:info@mass-sessions.com" 
+                className="inline-block border-4 border-brand-orange text-brand-orange font-extrabold uppercase tracking-wider text-sm px-8 py-4 bg-transparent hover:bg-brand-orange hover:text-black transition-colors duration-300 select-none cursor-pointer"
+              >
+                CONTACT US
+              </a>
+            </div>
           </div>
         </div>
       </main>
