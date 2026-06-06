@@ -184,39 +184,32 @@ function SessionsContent() {
 
   return (
     <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black relative">
-      {/* Dots background texture with non-uniform mask */}
+      {/* Dots background texture */}
       <div 
-        className="absolute inset-0 opacity-[0.18] pointer-events-none z-0" 
+        className="absolute inset-0 opacity-[0.25] pointer-events-none z-0" 
         style={{ 
           backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', 
-          backgroundSize: '20px 20px',
-          WebkitMaskImage: 'radial-gradient(circle at 20% 15%, black 20%, transparent 60%), radial-gradient(circle at 80% 35%, black 25%, transparent 65%), radial-gradient(circle at 45% 65%, black 30%, transparent 75%), radial-gradient(circle at 15% 85%, black 20%, transparent 55%), radial-gradient(circle at 85% 85%, black 25%, transparent 65%)',
-          maskImage: 'radial-gradient(circle at 20% 15%, black 20%, transparent 60%), radial-gradient(circle at 80% 35%, black 25%, transparent 65%), radial-gradient(circle at 45% 65%, black 30%, transparent 75%), radial-gradient(circle at 15% 85%, black 20%, transparent 55%), radial-gradient(circle at 85% 85%, black 25%, transparent 65%)'
+          backgroundSize: '20px 20px'
         }}
       />
 
-      {/* Background soft glowing spots (manchas) */}
+      {/* Dark "eraser" blobs that cover/fade the dots in irregular patches */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         <div 
-          className="absolute top-[10%] left-[10%] w-[60vw] h-[60vw] max-w-[650px] max-h-[650px] rounded-full blur-[130px]"
-          style={{ 
-            background: 'radial-gradient(circle, var(--color-brand-accent) 0%, transparent 70%)',
-            opacity: 0.06
-          }}
+          className="absolute top-[5%] left-[25%] w-[45vw] h-[45vw] max-w-[550px] max-h-[550px] rounded-full blur-[40px]"
+          style={{ background: 'radial-gradient(circle, #111317 30%, transparent 80%)', opacity: 0.95 }}
         />
         <div 
-          className="absolute bottom-[20%] right-[5%] w-[65vw] h-[65vw] max-w-[700px] max-h-[700px] rounded-full blur-[150px]"
-          style={{ 
-            background: 'radial-gradient(circle, var(--color-brand-orange) 0%, transparent 75%)',
-            opacity: 0.08
-          }}
+          className="absolute top-[35%] right-[10%] w-[55vw] h-[55vw] max-w-[650px] max-h-[650px] rounded-full blur-[50px]"
+          style={{ background: 'radial-gradient(circle, #111317 30%, transparent 80%)', opacity: 0.9 }}
         />
         <div 
-          className="absolute top-[50%] left-[35%] w-[50vw] h-[50vw] max-w-[550px] max-h-[550px] rounded-full blur-[110px]"
-          style={{ 
-            background: 'radial-gradient(circle, #ffffff 0%, transparent 70%)',
-            opacity: 0.04
-          }}
+          className="absolute bottom-[30%] left-[5%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full blur-[45px]"
+          style={{ background: 'radial-gradient(circle, #111317 30%, transparent 80%)', opacity: 0.95 }}
+        />
+        <div 
+          className="absolute bottom-[5%] right-[15%] w-[40vw] h-[40vw] max-w-[450px] max-h-[450px] rounded-full blur-[35px]"
+          style={{ background: 'radial-gradient(circle, #111317 30%, transparent 80%)', opacity: 0.9 }}
         />
       </div>
 
