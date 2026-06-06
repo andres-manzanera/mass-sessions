@@ -216,8 +216,19 @@ export default function Home() {
         </section>
 
         {/* Massive Text Divider Section */}
-        <section className="w-full bg-brand-orange text-black border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh]">
-          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter mix-blend-multiply opacity-15 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none">
+        <section className="w-full text-brand-orange border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group">
+          {/* Zooming background image wrapper */}
+          <div className="absolute inset-0 overflow-hidden z-0">
+            <img 
+              src="/sound-bg.jpg" 
+              alt="High-fidelity sound background" 
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
+            />
+            {/* Dark overlay to ensure text contrast */}
+            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+          </div>
+
+          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter mix-blend-overlay opacity-10 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none z-10">
             ANALOG ARCHITECTURE
           </h2>
           <div className="relative z-10 max-w-none mx-auto text-center px-4">
