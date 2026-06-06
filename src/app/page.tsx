@@ -165,9 +165,9 @@ export default function Home() {
             <div className="w-full md:w-1/3 bg-black p-0 flex flex-col justify-center select-none">
               <Link 
                 href="/sessions?autoplay=rodhad" 
-                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:scale-[1.04] hover:py-8 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
               >
-                <div>
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left">
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">SUNSET RHYTHMS</h3>
                   <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">2025-01</p>
                 </div>
@@ -176,9 +176,9 @@ export default function Home() {
 
               <Link 
                 href="/sessions?autoplay=rodhad" 
-                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:scale-[1.04] hover:py-8 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
               >
-                <div>
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left">
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">RØDHÅD</h3>
                   <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">BERLIN / CLOSING</p>
                 </div>
@@ -187,9 +187,9 @@ export default function Home() {
 
               <Link 
                 href="/sessions?autoplay=blawan" 
-                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:scale-[1.04] hover:py-8 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+                className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
               >
-                <div>
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left">
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">BLAWAN</h3>
                   <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">LONDON / LIVE MODULAR</p>
                 </div>
