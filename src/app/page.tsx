@@ -77,20 +77,20 @@ export default function Home() {
   return (
     <div className="bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black">
       <LoadingScreen />
-      <header className={`fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20${skipAnim ? "" : " hero-navbar"}`}>
-        <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
+      <header className={`fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20${skipAnim ? "" : " hero-navbar"}`}>
+        <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS
         </Link>
-        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-4 border-brand-orange pl-6 md:pl-16">
-          <Link href="/" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-4 border-brand-orange text-brand-orange">
+        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
+          <Link href="/" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
             HOME
           </Link>
-          <Link href="/sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent">
+          <Link href="/sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent">
             SESSIONS
           </Link>
           <Link 
             href="/info"
-            className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent"
+            className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent"
           >
             INFO
           </Link>
@@ -101,7 +101,7 @@ export default function Home() {
       <main className="pt-20 min-h-screen flex flex-col">
         
         {/* Hero Section - Massive Background Image & Text */}
-        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-4 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
+        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <img 
@@ -135,13 +135,13 @@ export default function Home() {
                 />
               </svg></span>
             </h1>
-            <p className={`font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-4 border-brand-orange inline-block sm:whitespace-nowrap${skipAnim ? "" : " hero-tagline"}`}>
+            <p className={`font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-2 border-brand-orange inline-block sm:whitespace-nowrap${skipAnim ? "" : " hero-tagline"}`}>
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
 
           {/* Absolute brutalist elements */}
-          <div className="absolute top-8 right-8 border-4 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none hidden sm:block z-10">
+          <div className="absolute top-8 right-8 border-2 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none hidden sm:block z-10">
             <span className="material-symbols-outlined text-4xl text-brand-orange">warning</span>
             <p className="font-mono text-xs uppercase tracking-widest mt-2">Volume Warning</p>
           </div>
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row w-full min-h-[60vh]">
             
             {/* Left Block */}
-            <div className="w-full md:w-1/3 bg-black border-b-4 md:border-b-0 md:border-r-4 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group">
+            <div className="w-full md:w-1/3 bg-black border-b-2 md:border-b-0 md:border-r-2 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group">
               <div className="z-10">
                 <h2 className="text-4xl font-extrabold uppercase mb-4 tracking-tighter">NEXT<br />SESSION</h2>
                 <div className="font-mono text-xs font-semibold bg-brand-orange text-black inline-block px-3 py-1 mb-6">
@@ -173,7 +173,7 @@ export default function Home() {
 
               <Link 
                 href="/sessions"
-                className="mt-12 bg-transparent border-4 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-colors w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
+                className="mt-12 bg-transparent border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-colors w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
               >
                 SECURE ACCESS
                 <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
@@ -186,7 +186,7 @@ export default function Home() {
             {/* Middle Image Block */}
             <div 
               onClick={() => setGearActive(!gearActive)}
-              className={`w-full md:w-1/3 border-b-4 md:border-b-0 md:border-r-4 border-brand-orange min-h-[400px] relative bg-img-gritty transition-all duration-500 cursor-pointer flex flex-col justify-between p-4 ${
+              className={`w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative bg-img-gritty transition-all duration-500 cursor-pointer flex flex-col justify-between p-4 ${
                 gearActive ? "grayscale-0" : "grayscale"
               } hover:grayscale-0 active:grayscale-0`}
               style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw")' }}
@@ -204,7 +204,7 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(0)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 0 
                     ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
                     : ""
@@ -237,7 +237,7 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(1)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 1 
                     ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
                     : ""
@@ -270,7 +270,7 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(2)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 2 
                     ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
                     : ""
@@ -306,7 +306,7 @@ export default function Home() {
         <section 
           ref={sectionRef}
           onClick={() => setSoundBgActive(!soundBgActive)}
-          className="w-full text-brand-orange border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group cursor-pointer"
+          className="w-full text-brand-orange border-t-2 border-b-2 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group cursor-pointer"
         >
           {/* Zooming background image wrapper with parallax */}
           <div 
@@ -340,9 +340,9 @@ export default function Home() {
       </main>
 
       {/* Footer (Shared Component) - Overridden for Brutalist */}
-      <footer className="bg-black text-brand-orange w-full py-12 border-t-4 border-brand-orange pb-24 md:pb-12">
+      <footer className="bg-black text-brand-orange w-full py-12 border-t-2 border-brand-orange pb-24 md:pb-12">
         <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-6 text-center">
-          <div className="text-2xl font-extrabold tracking-widest border-4 border-brand-orange p-2 select-none inline-block">
+          <div className="text-2xl font-extrabold tracking-widest border-2 border-brand-orange p-2 select-none inline-block">
             MASS SESSIONS
           </div>
           <p className="font-mono text-xs uppercase opacity-80 select-none">
@@ -352,8 +352,8 @@ export default function Home() {
       </footer>
 
       {/* Mobile Bottom Navigation Bar */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-[101] bg-black border-t-4 border-brand-orange flex items-center justify-around h-20 select-none">
-        <Link href="/" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-4 border-brand-orange">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-[101] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">
+        <Link href="/" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-2 border-brand-orange">
           <span className="material-symbols-outlined text-2xl font-bold">home</span>
           <span className="font-mono text-[9px] uppercase font-bold">Home</span>
         </Link>
@@ -379,9 +379,9 @@ export default function Home() {
             </button>
             <h3 className="text-3xl font-extrabold uppercase mb-4 tracking-tighter">THE RULES</h3>
             <div className="font-mono text-sm leading-relaxed space-y-4 uppercase">
-              <p className="border-l-4 border-brand-orange pl-3">1. No cellphones on the dancefloor. Experience the sound directly.</p>
-              <p className="border-l-4 border-brand-orange pl-3">2. Constructing high-fidelity setups in brutalist, raw warehouses.</p>
-              <p className="border-l-4 border-brand-orange pl-3">3. Respect the space, respect the artists, respect the bass.</p>
+              <p className="border-l-2 border-brand-orange pl-3">1. No cellphones on the dancefloor. Experience the sound directly.</p>
+              <p className="border-l-2 border-brand-orange pl-3">2. Constructing high-fidelity setups in brutalist, raw warehouses.</p>
+              <p className="border-l-2 border-brand-orange pl-3">3. Respect the space, respect the artists, respect the bass.</p>
             </div>
             <button 
               onClick={() => setInfoOpen(false)}

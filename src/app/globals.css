@@ -32,12 +32,12 @@
 
 /* Brutalist borders and layout classes */
 .brutalist-border {
-  border: 4px solid var(--color-brand-orange);
+  border: 2px solid var(--color-brand-orange);
 }
-.brutalist-border-t { border-top: 4px solid var(--color-brand-orange); }
-.brutalist-border-b { border-bottom: 4px solid var(--color-brand-orange); }
-.brutalist-border-l { border-left: 4px solid var(--color-brand-orange); }
-.brutalist-border-r { border-right: 4px solid var(--color-brand-orange); }
+.brutalist-border-t { border-top: 2px solid var(--color-brand-orange); }
+.brutalist-border-b { border-bottom: 2px solid var(--color-brand-orange); }
+.brutalist-border-l { border-left: 2px solid var(--color-brand-orange); }
+.brutalist-border-r { border-right: 2px solid var(--color-brand-orange); }
 
 /* Image overlay filters */
 .bg-img-gritty {
@@ -133,12 +133,12 @@ body {
 
 /* Specificity fix for session cards to force left border to be white by default */
 .glass-panel.session-card {
-  border-left: 4px solid var(--color-brand-orange) !important;
+  border-left: 2px solid var(--color-brand-orange) !important;
 }
 
 /* When session card is active (neon-border-orange), its left border turns orange */
 .glass-panel.session-card.neon-border-orange {
-  border-left: 4px solid var(--color-brand-accent) !important;
+  border-left: 2px solid var(--color-brand-accent) !important;
 }
 
 /* Custom Play Session Button - Default State (White) */

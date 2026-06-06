@@ -215,18 +215,18 @@ function SessionsContent() {
         />
       </div>
 
-      <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
-        <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange">
+      <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
+        <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange">
           MASS SESSIONS
         </Link>
-        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-4 border-brand-orange pl-6 md:pl-16">
-          <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
+        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
+          <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
           </Link>
-          <Link href="/sessions" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-4 border-brand-orange text-brand-orange">
+          <Link href="/sessions" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
             SESSIONS
           </Link>
-          <Link href="/info" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-4 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
+          <Link href="/info" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             INFO
           </Link>
         </nav>
@@ -273,7 +273,7 @@ function SessionsContent() {
 
             if (filteredSessions.length === 0) {
               return (
-                <div className="text-center py-16 border-4 border-dashed border-brand-orange/20 rounded-xl text-on-surface-variant uppercase font-mono select-none">
+                <div className="text-center py-16 border-2 border-dashed border-brand-orange/20 rounded-xl text-on-surface-variant uppercase font-mono select-none">
                   No recordings cataloged for {activeYear}.
                 </div>
               );
@@ -460,9 +460,9 @@ function SessionsContent() {
       )}
 
       {/* Unified Brutalist Footer */}
-      <footer className="relative z-10 bg-black text-brand-orange w-full py-12 border-t-4 border-brand-orange pb-24 md:pb-12">
+      <footer className="relative z-10 bg-black text-brand-orange w-full py-12 border-t-2 border-brand-orange pb-24 md:pb-12">
         <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-6 text-center">
-          <div className="text-2xl font-extrabold tracking-widest border-4 border-brand-orange p-2 select-none inline-block">
+          <div className="text-2xl font-extrabold tracking-widest border-2 border-brand-orange p-2 select-none inline-block">
             MASS SESSIONS
           </div>
           <p className="font-mono text-xs uppercase opacity-80 select-none">
@@ -472,12 +472,12 @@ function SessionsContent() {
       </footer>
 
       {/* Unified Brutalist Mobile bottom menu */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-4 border-brand-orange flex items-center justify-around h-20 select-none">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">
         <Link href="/" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">home</span>
           <span className="font-mono text-[9px] uppercase font-bold">Home</span>
         </Link>
-        <Link href="/sessions" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-4 border-brand-orange">
+        <Link href="/sessions" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-2 border-brand-orange">
           <span className="material-symbols-outlined text-2xl font-bold">graphic_eq</span>
           <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
         </Link>
