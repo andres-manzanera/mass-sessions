@@ -184,6 +184,10 @@ export default function Home() {
             // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
             // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
           </div>
+          <div className="marquee-content select-none" aria-hidden="true">
+            // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
+            // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
+          </div>
         </div>
 
         {/* Dense Grid Section */}
