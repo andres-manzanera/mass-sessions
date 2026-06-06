@@ -183,7 +183,13 @@ function SessionsContent() {
   const activeSession = getActiveSession();
 
   return (
-    <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black">
+    <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black relative">
+      {/* Dots background texture */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none z-0" 
+        style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+      />
+
       {/* TopNavBar (Web Only) - Unified Brutalist Header */}
       <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange">
