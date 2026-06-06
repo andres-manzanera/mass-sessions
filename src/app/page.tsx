@@ -233,7 +233,7 @@ export default function Home() {
               </Link>
 
               <Link 
-                href="/sessions?autoplay=rodhad" 
+                href="/sessions?autoplay=kerri" 
                 onTouchStart={() => setActiveTouchSession(1)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
@@ -255,10 +255,10 @@ export default function Home() {
                 } group-hover:scale-105`}>
                   <h3 className={`text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors ${
                     activeTouchSession === 1 ? "text-brand-accent" : ""
-                  } group-hover:text-brand-accent`}>RØDHÅD</h3>
+                  } group-hover:text-brand-accent`}>RAW VIBRATIONS</h3>
                   <p className={`font-mono text-xs opacity-60 font-medium transition-opacity ${
                     activeTouchSession === 1 ? "opacity-90" : ""
-                  } group-hover:opacity-90`}>BERLIN / CLOSING</p>
+                  } group-hover:opacity-90`}>NEW YORK / DEEP HOUSE</p>
                 </div>
                 <span className={`material-symbols-outlined text-4xl opacity-0 transition-colors z-10 ${
                   activeTouchSession === 1 ? "opacity-100 text-brand-accent" : ""
