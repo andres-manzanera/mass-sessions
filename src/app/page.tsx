@@ -28,6 +28,7 @@ export default function Home() {
   useEffect(() => {
     let sectionTop = 0;
     let sectionHeight = 0;
+    let ticking = false;
 
     const updateDimensions = () => {
       if (!sectionRef.current) return;
@@ -37,17 +38,22 @@ export default function Home() {
     };
 
     const handleScroll = () => {
-      if (!parallaxRef.current) return;
-      const currentScroll = window.scrollY;
-      const viewportHeight = window.innerHeight;
-      
-      // Calculate how far the section center is from the viewport center
-      const sectionCenter = sectionTop + sectionHeight / 2;
-      const viewportCenter = currentScroll + viewportHeight / 2;
-      const distanceFromCenter = sectionCenter - viewportCenter;
-      
-      // Using translate3d explicitly forces GPU hardware acceleration, avoiding scroll lag on Safari/Chrome
-      parallaxRef.current.style.transform = `translate3d(0, ${-0.15 * distanceFromCenter}px, 0)`;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (parallaxRef.current) {
+            const currentScroll = window.scrollY;
+            const viewportHeight = window.innerHeight;
+            const sectionCenter = sectionTop + sectionHeight / 2;
+            const viewportCenter = currentScroll + viewportHeight / 2;
+            const distanceFromCenter = sectionCenter - viewportCenter;
+            
+            // translate3d combined with rAF gives perfectly fluid scroll performance at native frame rates
+            parallaxRef.current.style.transform = `translate3d(0, ${-0.15 * distanceFromCenter}px, 0)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     // Calculate dimensions initially
