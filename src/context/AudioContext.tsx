@@ -218,7 +218,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 {activeSession.title}
               </h4>
               <p className="font-mono text-[10px] text-brand-orange uppercase line-clamp-1">
-                {activeSession.artist}
+                {activeSession.date}
               </p>
             </div>
           </div>
