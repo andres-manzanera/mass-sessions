@@ -550,15 +550,16 @@ body {
   animation-delay: 1.8s;
 }
 
-@keyframes intermittent-grayscale {
+@keyframes color-fade {
   0%, 100% {
-    filter: grayscale(100%);
+    opacity: 0;
   }
   50% {
-    filter: grayscale(0%);
+    opacity: 1;
   }
 }
 
-.animate-intermittent-grayscale {
-  animation: intermittent-grayscale 16s linear infinite;
+.animate-color-fade {
+  animation: color-fade 16s ease-in-out infinite;
+  will-change: opacity;
 }

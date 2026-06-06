@@ -192,19 +192,31 @@ export default function Home() {
 
             {/* Middle Image Block */}
             <div
-              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden transition-all duration-500 flex flex-col justify-between p-4 animate-intermittent-grayscale"
+              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden transition-all duration-500 flex flex-col justify-between p-4"
               aria-label="Gear Porn — imágenes de equipamiento de sonido"
             >
+              {/* Grayscale background layer */}
               <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw"
                 alt="Equipamiento de sonido de alta fidelidad — mesa de mezclas y reproductores analógicos"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center"
+                className="object-cover object-center grayscale pointer-events-none"
                 unoptimized
               />
+              {/* Color overlay layer that fades in/out */}
+              <div className="absolute inset-0 animate-color-fade pointer-events-none">
+                <Image
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover object-center"
+                  unoptimized
+                />
+              </div>
               {/* Dark gritty overlay */}
-              <div className="absolute inset-0 bg-black/60 mix-blend-multiply pointer-events-none" aria-hidden="true" />
+              <div className="absolute inset-0 bg-black/60 mix-blend-multiply pointer-events-none z-0" aria-hidden="true" />
               <div></div>
               <div className="bg-brand-orange text-black font-mono text-xs px-2 py-1 uppercase font-semibold self-start z-10 select-none relative">
                 GEAR PORN
