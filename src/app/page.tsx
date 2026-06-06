@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export default function Home() {
   const [ticketModalOpen, setTicketModalOpen] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +56,7 @@ export default function Home() {
 
   return (
     <div className="bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black">
+      <LoadingScreen />
       <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS

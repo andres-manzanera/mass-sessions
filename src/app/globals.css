@@ -217,3 +217,90 @@ body {
   animation: hero-zoom-out 20s ease-in-out infinite alternate;
   will-change: transform;
 }
+
+/* ── Loading Screen ─────────────────────────────────────────────────────── */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #111317;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  pointer-events: none;
+}
+
+/* Brand name above the waveform */
+.loading-brand {
+  font-family: var(--font-sora);
+  font-weight: 800;
+  font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(242, 240, 235, 0.35);
+  margin: 0;
+}
+
+/* Waveform container */
+.loading-wave {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 100px;
+}
+
+/* Individual waveform bar */
+.loading-bar {
+  display: inline-block;
+  width: 4px;
+  border-radius: 99px;
+  background: linear-gradient(
+    to top,
+    #02E1EE 0%,
+    rgba(2, 225, 238, 0.5) 60%,
+    rgba(2, 225, 238, 0.1) 100%
+  );
+  box-shadow: 0 0 8px rgba(2, 225, 238, 0.6);
+  animation: wave-bar 0.9s ease-in-out infinite alternate;
+  min-height: var(--bar-min, 8px);
+}
+
+@keyframes wave-bar {
+  0%   { height: var(--bar-min, 8px); }
+  100% { height: var(--bar-max, 80px); }
+}
+
+/* Loading text */
+.loading-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(242, 240, 235, 0.5);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Animated trailing dots */
+.loading-dots::after {
+  content: '...';
+  display: inline-block;
+  animation: dots-cycle 1.4s steps(4, end) infinite;
+  width: 1.5ch;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+@keyframes dots-cycle {
+  0%   { content: '';   }
+  25%  { content: '.';  }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+}
+
