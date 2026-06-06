@@ -287,7 +287,7 @@ function SessionsContent() {
                   className={`session-card-anim glass-panel session-card rounded-xl overflow-hidden group hover:bg-surface-elevated transition-colors duration-300 relative ${
                     isCurrent && isPlaying ? "neon-border-orange" : ""
                   }`}
-                  style={{ "--i": i } as React.CSSProperties}
+                  style={{ "--i": Math.min(i, 8) } as React.CSSProperties}
                 >
                   <div className="flex flex-col md:flex-row">
                     {/* Card Image */}
