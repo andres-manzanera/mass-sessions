@@ -12,6 +12,23 @@ export default function Home() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
   const [loading, setLoading] = useState(true);
+  // If loading screen was already shown this session, skip hero animations
+  const [skipAnim, setSkipAnim] = useState(false);
+
+  useEffect(() => {
+    const alreadyShown = sessionStorage.getItem("ms_loading_shown");
+    // The key is set BEFORE the timers start in LoadingScreen, so if it exists
+    // AND the page was already visited (we check a second key), skip animations.
+    const alreadyVisited = sessionStorage.getItem("ms_hero_visited");
+    if (alreadyVisited) {
+      setSkipAnim(true);
+    } else {
+      // Mark that hero animation has played once
+      setTimeout(() => {
+        sessionStorage.setItem("ms_hero_visited", "1");
+      }, 7500);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +74,7 @@ export default function Home() {
   return (
     <div className="bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black">
       <LoadingScreen />
-      <header className="fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
+      <header className={`fixed top-0 w-full z-[100] bg-black border-b-4 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20${skipAnim ? "" : " hero-navbar"}`}>
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-4 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS
         </Link>
@@ -99,8 +116,8 @@ export default function Home() {
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
             <h1 className="text-[12vw] sm:text-[9vw] md:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
-              MASS<br />
-              <svg 
+              <span className={skipAnim ? undefined : "hero-mass"}>MASS</span><br />
+              <span className={skipAnim ? undefined : "hero-sessions"}><svg 
                 viewBox="0 0 384 60" 
                 className="h-[0.95em] w-auto inline-block overflow-visible align-bottom select-none"
               >
@@ -113,9 +130,9 @@ export default function Home() {
                   strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
                 />
-              </svg>
+              </svg></span>
             </h1>
-            <p className="font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-4 border-brand-orange inline-block sm:whitespace-nowrap">
+            <p className={`font-semibold text-sm sm:text-base md:text-xl max-w-none mt-4 bg-black py-4 px-6 border-4 border-brand-orange inline-block sm:whitespace-nowrap${skipAnim ? "" : " hero-tagline"}`}>
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
