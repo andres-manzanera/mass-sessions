@@ -19,7 +19,7 @@
   --color-surface-elevated: #1a1a1c;
   
   --color-white: #F2F0EB;
-  --color-black: #222222;
+  --color-black: #121212;
 }
 
 /* Custom Icons */
@@ -67,7 +67,7 @@
   overflow: hidden;
   white-space: nowrap;
   background-color: var(--color-brand-orange);
-  color: #222222;
+  color: #121212;
   padding: 1rem 0;
   box-sizing: border-box;
 }
