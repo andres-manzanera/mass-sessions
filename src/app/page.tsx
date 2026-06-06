@@ -34,21 +34,45 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current || !parallaxRef.current) return;
+    let sectionTop = 0;
+    let sectionHeight = 0;
+
+    const updateDimensions = () => {
+      if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
+      sectionTop = rect.top + window.scrollY;
+      sectionHeight = rect.height;
+    };
+
+    const handleScroll = () => {
+      if (!parallaxRef.current) return;
+      const currentScroll = window.scrollY;
       const viewportHeight = window.innerHeight;
-      const sectionCenter = rect.top + rect.height / 2;
-      const distanceFromCenter = sectionCenter - viewportHeight / 2;
-      // Direct style mutation avoids React re-renders, keeping the scroll fluid
+      
+      // Calculate how far the section center is from the viewport center
+      const sectionCenter = sectionTop + sectionHeight / 2;
+      const viewportCenter = currentScroll + viewportHeight / 2;
+      const distanceFromCenter = sectionCenter - viewportCenter;
+      
+      // Direct style mutation avoids React re-renders, and using cached offsets prevents layout thrashing
       parallaxRef.current.style.transform = `translateY(${-0.15 * distanceFromCenter}px)`;
     };
 
+    // Calculate dimensions initially
+    updateDimensions();
+    
+    // Delay to ensure the DOM is fully rendered and image dimensions are stable
+    const timeoutId = setTimeout(() => {
+      updateDimensions();
+      handleScroll();
+    }, 150);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    const timeoutId = setTimeout(handleScroll, 50);
+    window.addEventListener("resize", updateDimensions, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateDimensions);
       clearTimeout(timeoutId);
     };
   }, []);
