@@ -14,12 +14,13 @@ export default function LoadingScreen() {
       return;
     }
 
-    // Mark as shown so navigating back won't trigger it again
-    sessionStorage.setItem("ms_loading_shown", "1");
-
     // Start fade-out after 4s, then fully unmount at 4.6s
     const fadeTimer = setTimeout(() => setFadeOut(true), 4000);
-    const removeTimer = setTimeout(() => setVisible(false), 4600);
+    const removeTimer = setTimeout(() => {
+      setVisible(false);
+      // Mark as shown only after unmounting so home page knows it is the first load
+      sessionStorage.setItem("ms_loading_shown", "1");
+    }, 4600);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
