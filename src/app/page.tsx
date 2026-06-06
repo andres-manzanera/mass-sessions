@@ -167,33 +167,48 @@ export default function Home() {
                 href="/sessions?autoplay=rodhad" 
                 className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
               >
-                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left">
+                {/* Dots background texture on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" 
+                  style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                />
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left z-10">
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">SUNSET RHYTHMS</h3>
                   <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">2025-01</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors z-10">play_circle</span>
               </Link>
 
               <Link 
                 href="/sessions?autoplay=rodhad" 
                 className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
               >
-                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left">
+                {/* Dots background texture on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" 
+                  style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                />
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left z-10">
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">RØDHÅD</h3>
                   <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">BERLIN / CLOSING</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors z-10">play_circle</span>
               </Link>
 
               <Link 
                 href="/sessions?autoplay=blawan" 
                 className="relative w-full border-b-4 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
               >
-                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left">
+                {/* Dots background texture on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" 
+                  style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+                />
+                <div className="transition-transform duration-300 ease-in-out group-hover:scale-105 origin-left z-10">
                   <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">BLAWAN</h3>
                   <p className="font-mono text-xs opacity-60 font-medium group-hover:opacity-90 transition-opacity">LONDON / LIVE MODULAR</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors z-10">play_circle</span>
               </Link>
             </div>
 
