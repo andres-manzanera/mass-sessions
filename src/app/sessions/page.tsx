@@ -61,6 +61,8 @@ function SessionsContent() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
+  // Increments each time the year filter changes, forcing card re-animation
+  const [animKey, setAnimKey] = useState(0);
 
   // Initialize audio element on client side
   useEffect(() => {
@@ -243,15 +245,16 @@ function SessionsContent() {
 
         {/* Filters */}
         <div className="flex flex-wrap gap-2 mb-8 select-none">
-          {["ALL", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year) => (
+          {["ALL", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year, i) => (
             <button 
               key={year}
-              onClick={() => setActiveYear(year)}
-              className={`glass-panel text-sm px-4 py-2 rounded-full cursor-pointer hover:border-brand-orange transition-all duration-300 font-sora ${
+              onClick={() => { setActiveYear(year); setAnimKey(k => k + 1); }}
+              className={`session-tab-anim glass-panel text-sm px-4 py-2 rounded-full cursor-pointer hover:border-brand-orange transition-all duration-300 font-sora ${
                 activeYear === year 
                   ? "border-brand-orange text-brand-orange bg-brand-orange/10 font-bold" 
                   : "text-on-surface-variant hover:text-white"
               }`}
+              style={{ "--i": i } as React.CSSProperties}
             >
               {year}
             </button>
@@ -276,14 +279,15 @@ function SessionsContent() {
               );
             }
 
-            return filteredSessions.map((session) => {
+            return filteredSessions.map((session, i) => {
               const isCurrent = activeSessionId === session.id;
               return (
                 <div 
-                  key={session.id}
-                  className={`glass-panel session-card rounded-xl overflow-hidden group hover:bg-surface-elevated transition-colors duration-300 relative ${
+                  key={`${animKey}-${session.id}`}
+                  className={`session-card-anim glass-panel session-card rounded-xl overflow-hidden group hover:bg-surface-elevated transition-colors duration-300 relative ${
                     isCurrent && isPlaying ? "neon-border-orange" : ""
                   }`}
+                  style={{ "--i": i } as React.CSSProperties}
                 >
                   <div className="flex flex-col md:flex-row">
                     {/* Card Image */}
