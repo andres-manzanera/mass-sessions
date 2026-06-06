@@ -54,8 +54,8 @@ export default function Home() {
       const viewportCenter = currentScroll + viewportHeight / 2;
       const distanceFromCenter = sectionCenter - viewportCenter;
       
-      // Direct style mutation avoids React re-renders, and using cached offsets prevents layout thrashing
-      parallaxRef.current.style.transform = `translateY(${-0.15 * distanceFromCenter}px)`;
+      // Using translate3d explicitly forces GPU hardware acceleration, avoiding scroll lag on Safari/Chrome
+      parallaxRef.current.style.transform = `translate3d(0, ${-0.15 * distanceFromCenter}px, 0)`;
     };
 
     // Calculate dimensions initially
@@ -367,7 +367,9 @@ export default function Home() {
             ref={parallaxRef}
             className="absolute inset-0 w-full h-[140%] -top-[20%] pointer-events-none z-0 overflow-hidden"
             style={{ 
-              willChange: 'transform'
+              willChange: 'transform',
+              transform: 'translate3d(0,0,0)',
+              backfaceVisibility: 'hidden'
             }}
           >
             <Image
