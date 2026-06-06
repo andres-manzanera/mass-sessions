@@ -190,32 +190,19 @@ body {
 }
 
 /* Hero zoom out animation */
-@-webkit-keyframes hero-zoom-out {
-  0% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
 @keyframes hero-zoom-out {
   0% {
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
+    transform: scale(1.15) translate3d(0, 0, 0);
   }
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 
 .animate-hero-zoom-out {
-  -webkit-animation: hero-zoom-out 20s ease-in-out infinite alternate;
   animation: hero-zoom-out 20s ease-in-out infinite alternate;
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 /* ── Loading Screen ─────────────────────────────────────────────────────── */
