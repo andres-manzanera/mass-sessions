@@ -11,7 +11,7 @@ export default function Home() {
   const [infoOpen, setInfoOpen] = useState(false);
   const [ticketModalOpen, setTicketModalOpen] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [scrollY, setScrollY] = useState(0);
+  const parallaxRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   // If loading screen was already shown this session, skip hero animations
   const [skipAnim, setSkipAnim] = useState(false);
@@ -35,19 +35,22 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!sectionRef.current || !parallaxRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const sectionCenter = rect.top + rect.height / 2;
       const distanceFromCenter = sectionCenter - viewportHeight / 2;
-      // Adjust translation multiplier for a subtle, smooth parallax effect
-      setScrollY(-0.15 * distanceFromCenter);
+      // Direct style mutation avoids React re-renders, keeping the scroll fluid
+      parallaxRef.current.style.transform = `translateY(${-0.15 * distanceFromCenter}px)`;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    const timeoutId = setTimeout(handleScroll, 50);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {
@@ -321,9 +324,9 @@ export default function Home() {
         >
           {/* Zooming background image wrapper with parallax */}
           <div 
+            ref={parallaxRef}
             className="absolute inset-0 w-full h-[140%] -top-[20%] pointer-events-none z-0 overflow-hidden"
             style={{ 
-              transform: `translateY(${scrollY}px)`,
               willChange: 'transform'
             }}
           >
