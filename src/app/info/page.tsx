@@ -37,7 +37,6 @@ export default function InfoPage() {
                 {char === " " ? "\u00A0" : char}
               </span>
             ))}
-            <span className="typewriter-cursor">|</span>
           </h1>
           <p className="font-mono text-sm text-brand-accent uppercase tracking-widest mt-2 info-subtitle-anim">
             MASS SESSIONS // RAW CONCEPT
