@@ -127,7 +127,7 @@ export default function Home() {
       <main className="pt-20 min-h-screen flex flex-col">
         
         {/* Hero Section - Massive Background Image & Text */}
-        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] md:min-h-[700px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 md:pb-52 overflow-hidden">
+        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] md:min-h-[700px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 md:pb-44 overflow-hidden">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <Image
