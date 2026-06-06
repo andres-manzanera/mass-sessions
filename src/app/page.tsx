@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
@@ -80,15 +81,16 @@ export default function Home() {
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer">
           MASS SESSIONS
         </Link>
-        <nav className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
-          <Link href="/" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
+        <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
+          <Link href="/" aria-current="page" aria-label="Inicio — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
             HOME
           </Link>
-          <Link href="/sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent">
+          <Link href="/sessions" aria-label="Ver sesiones" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent">
             SESSIONS
           </Link>
-          <Link 
+          <Link
             href="/info"
+            aria-label="Ver información sobre Mass Sessions"
             className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent"
           >
             INFO
@@ -103,13 +105,16 @@ export default function Home() {
         <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 overflow-hidden">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
-            <img 
-              src="/hero.jpg" 
-              alt="Mass Sessions Hero Background" 
-              className="absolute inset-0 w-full h-full object-cover object-center animate-hero-zoom-out" 
+            <Image
+              src="/hero.jpg"
+              alt="Mass Sessions — Sesión de música house en directo en un espacio industrial"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center animate-hero-zoom-out"
             />
-            {/* Static dark overlay to replace the multiply blend mode (avoids browser GPU rendering bugs on animated layers) */}
-            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+            {/* Static dark overlay */}
+            <div className="absolute inset-0 bg-black/60 pointer-events-none" aria-hidden="true" />
           </div>
 
           {/* Subtle gradient overlay */}
@@ -183,12 +188,22 @@ export default function Home() {
             </div>
 
             {/* Middle Image Block */}
-            <div 
-              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative bg-img-gritty transition-all duration-500 flex flex-col justify-between p-4 animate-intermittent-grayscale"
-              style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw")' }}
+            <div
+              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden transition-all duration-500 flex flex-col justify-between p-4 animate-intermittent-grayscale"
+              aria-label="Gear Porn — imágenes de equipamiento de sonido"
             >
+              <Image
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw"
+                alt="Equipamiento de sonido de alta fidelidad — mesa de mezclas y reproductores analógicos"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover object-center"
+                unoptimized
+              />
+              {/* Dark gritty overlay */}
+              <div className="absolute inset-0 bg-black/60 mix-blend-multiply pointer-events-none" aria-hidden="true" />
               <div></div>
-              <div className="bg-brand-orange text-black font-mono text-xs px-2 py-1 uppercase font-semibold self-start z-10 select-none">
+              <div className="bg-brand-orange text-black font-mono text-xs px-2 py-1 uppercase font-semibold self-start z-10 select-none relative">
                 GEAR PORN
               </div>
             </div>
@@ -312,12 +327,14 @@ export default function Home() {
               willChange: 'transform'
             }}
           >
-            <img 
-              src="/sound-bg.jpg" 
-              alt="High-fidelity sound background" 
-              className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out ${
+            <Image
+              src="/sound-bg.jpg"
+              alt="Fondo de alta fidelidad — tocadiscos y sistema de sonido en sala oscura"
+              fill
+              sizes="100vw"
+              className={`object-cover object-center transition-transform duration-700 ease-out ${
                 soundBgActive ? "scale-105" : "scale-100"
-              } group-hover:scale-105`} 
+              } group-hover:scale-105`}
             />
           </div>
           {/* Dark overlay to ensure text contrast */}
