@@ -270,7 +270,7 @@ function SessionsContent() {
         <div className="mb-8">
           <h1 className="font-sora text-[48px] font-extrabold tracking-tighter text-white mb-2 leading-none uppercase">SESSIONS</h1>
           <p className="text-lg text-on-surface-variant font-sora">
-            Curated mixes, live recordings & sets.
+            Curated mixes, live recordings & deep sets.
           </p>
         </div>
 
