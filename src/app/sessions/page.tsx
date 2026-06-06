@@ -36,13 +36,18 @@ function SessionsContent() {
 
   const { activeSession, isPlaying, playSession } = useAudio();
 
-  // Handle autoplay if coming from the homepage links
+  // Handle autoplay and auto-scroll if coming from the homepage links
   useEffect(() => {
     const autoplay = searchParams.get("autoplay");
     if (autoplay && SESSIONS_DATA.some((s) => s.id === autoplay)) {
       const timer = setTimeout(() => {
         playSession(autoplay);
-      }, 100);
+        // Scroll to the active session card and center it in viewport
+        const element = document.getElementById(`session-${autoplay}`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 200);
       return () => clearTimeout(timer);
     }
   }, [searchParams]);
@@ -153,6 +158,7 @@ function SessionsContent() {
               return (
                 <article
                   key={`${animKey}-${session.id}`}
+                  id={`session-${session.id}`}
                   role="listitem"
                   aria-label={`Sesión: ${session.title} por ${session.artist}`}
                   className={`session-card-anim glass-panel session-card rounded-xl overflow-hidden group hover:bg-surface-elevated transition-colors duration-300 relative ${
