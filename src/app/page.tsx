@@ -163,28 +163,37 @@ export default function Home() {
 
             {/* Right Block List */}
             <div className="w-full md:w-1/3 bg-black p-0 flex flex-col justify-center select-none">
-              <Link href="/sessions?autoplay=rodhad" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
+              <Link 
+                href="/sessions?autoplay=rodhad" 
+                className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-accent hover:text-black transition-all duration-300 cursor-pointer group flex justify-between items-center"
+              >
                 <div>
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">SUNSET RHYTHMS</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium">2025-01</p>
+                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors">SUNSET RHYTHMS</h3>
+                  <p className="font-mono text-xs opacity-70 font-medium transition-opacity group-hover:opacity-100">2025-01</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">play_circle</span>
               </Link>
 
-              <Link href="/sessions?autoplay=rodhad" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
+              <Link 
+                href="/sessions?autoplay=rodhad" 
+                className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-accent hover:text-black transition-all duration-300 cursor-pointer group flex justify-between items-center"
+              >
                 <div>
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">RØDHÅD</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium">BERLIN / CLOSING</p>
+                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors">RØDHÅD</h3>
+                  <p className="font-mono text-xs opacity-70 font-medium transition-opacity group-hover:opacity-100">BERLIN / CLOSING</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">play_circle</span>
               </Link>
 
-              <Link href="/sessions?autoplay=blawan" className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-orange/10 transition-colors cursor-pointer group flex justify-between items-center">
+              <Link 
+                href="/sessions?autoplay=blawan" 
+                className="w-full border-b-4 border-brand-orange p-6 hover:bg-brand-accent hover:text-black transition-all duration-300 cursor-pointer group flex justify-between items-center"
+              >
                 <div>
-                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight group-hover:text-brand-accent transition-colors">BLAWAN</h3>
-                  <p className="font-mono text-xs opacity-60 font-medium">LONDON / LIVE MODULAR</p>
+                  <h3 className="text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors">BLAWAN</h3>
+                  <p className="font-mono text-xs opacity-70 font-medium transition-opacity group-hover:opacity-100">LONDON / LIVE MODULAR</p>
                 </div>
-                <span className="material-symbols-outlined text-4xl opacity-0 group-hover:opacity-100 group-hover:text-brand-accent transition-colors">play_circle</span>
+                <span className="material-symbols-outlined text-4xl opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">play_circle</span>
               </Link>
             </div>
 
