@@ -27,10 +27,19 @@ export default function InfoPage() {
       <main className="flex-grow w-full max-w-4xl mx-auto px-6 md:px-16 py-16 flex flex-col justify-center">
         {/* Page Title */}
         <div className="mb-12 border-b-4 border-brand-orange pb-6">
-          <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none text-white">
-            THE PHILOSOPHY
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none text-white select-none flex items-center flex-wrap">
+            {"THE PHILOSOPHY".split("").map((char, index) => (
+              <span 
+                key={index} 
+                className="char-typewriter"
+                style={{ "--char-index": index } as React.CSSProperties}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+            <span className="typewriter-cursor">|</span>
           </h1>
-          <p className="font-mono text-sm text-brand-accent uppercase tracking-widest mt-2">
+          <p className="font-mono text-sm text-brand-accent uppercase tracking-widest mt-2 info-subtitle-anim">
             MASS SESSIONS // RAW CONCEPT
           </p>
         </div>
@@ -38,7 +47,7 @@ export default function InfoPage() {
         {/* Info Content Grid */}
         <div className="space-y-12">
           {/* Rules Block */}
-          <div>
+          <div className="rules-block-anim">
             <h2 className="text-2xl md:text-3xl font-extrabold uppercase mb-6 tracking-tight text-white">
               THE RULES
             </h2>
@@ -56,7 +65,7 @@ export default function InfoPage() {
           </div>
 
           {/* About Block */}
-          <div className="border-t-4 border-brand-orange pt-12">
+          <div className="border-t-4 border-brand-orange pt-12 about-block-anim">
             <h2 className="text-2xl md:text-3xl font-extrabold uppercase mb-6 tracking-tight text-white">
               SOUND SYSTEM CULTURE
             </h2>
