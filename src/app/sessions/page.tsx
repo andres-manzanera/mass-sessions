@@ -57,7 +57,17 @@ const SESSIONS_DATA: Session[] = [
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_kerri_pattern.png",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2024-01.mp3",
-    date: "2024-01",
+    date: "2024-01"
+  },
+  {
+    id: "analog-sync",
+    title: "ANALOG SYNC",
+    artist: "BEN KLOCK (BERLIN)",
+    duration: "1h 03m",
+    genres: ["DEEP HOUSE", "HOUSE"],
+    image: "/session_2024_02.jpg",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/03/2024-02.mp3",
+    date: "2024-02",
     isNew: true
   }
 ];
