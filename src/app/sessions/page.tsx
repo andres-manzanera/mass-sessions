@@ -67,7 +67,17 @@ const SESSIONS_DATA: Session[] = [
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2024_02.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/03/2024-02.mp3",
-    date: "2024-02",
+    date: "2024-02"
+  },
+  {
+    id: "dust-vinyl",
+    title: "DUST & VINYL",
+    artist: "THEO PARRISH (DETROIT)",
+    duration: "1h 09m",
+    genres: ["DEEP HOUSE"],
+    image: "/session_vintage_pattern.png",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2022/08/Mass-Sessions_2024-07-online-audio-converter.com_.mp3",
+    date: "2024-07",
     isNew: true
   }
 ];
