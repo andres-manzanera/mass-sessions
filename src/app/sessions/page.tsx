@@ -71,7 +71,7 @@ const SESSIONS_DATA: Session[] = [
   },
   {
     id: "dust-vinyl",
-    title: "DUST & VINYL",
+    title: "DUST & DIGITAL",
     artist: "THEO PARRISH (DETROIT)",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
