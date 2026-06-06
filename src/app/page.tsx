@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,6 +8,25 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [ticketModalOpen, setTicketModalOpen] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const sectionCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = sectionCenter - viewportHeight / 2;
+      // Adjust translation multiplier for a subtle, smooth parallax effect
+      setScrollY(-0.15 * distanceFromCenter);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -207,22 +226,31 @@ export default function Home() {
         </section>
 
         {/* Massive Text Divider Section */}
-        <section className="w-full text-brand-orange border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group">
-          {/* Zooming background image wrapper */}
-          <div className="absolute inset-0 overflow-hidden z-0">
+        <section 
+          ref={sectionRef}
+          className="w-full text-brand-orange border-t-4 border-b-4 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group"
+        >
+          {/* Zooming background image wrapper with parallax */}
+          <div 
+            className="absolute inset-0 w-full h-[140%] -top-[20%] pointer-events-none z-0 overflow-hidden"
+            style={{ 
+              transform: `translateY(${scrollY}px)`,
+              willChange: 'transform'
+            }}
+          >
             <img 
               src="/sound-bg.jpg" 
               alt="High-fidelity sound background" 
               className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105" 
             />
-            {/* Dark overlay to ensure text contrast */}
-            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
           </div>
+          {/* Dark overlay to ensure text contrast */}
+          <div className="absolute inset-0 bg-black/60 pointer-events-none z-10" />
 
-          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter mix-blend-overlay opacity-10 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none z-10">
+          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter mix-blend-overlay opacity-10 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none z-20">
             ANALOG ARCHITECTURE
           </h2>
-          <div className="relative z-10 max-w-none mx-auto text-center px-4">
+          <div className="relative z-20 max-w-none mx-auto text-center px-4">
             <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-black uppercase tracking-tight leading-tight select-none sm:whitespace-nowrap">
               High-fidelity sound designed for dark rooms and open minds.
             </p>
