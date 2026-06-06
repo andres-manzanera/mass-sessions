@@ -258,7 +258,7 @@ export default function Home() {
                   } group-hover:text-brand-accent`}>RAW VIBRATIONS</h3>
                   <p className={`font-mono text-xs opacity-60 font-medium transition-opacity ${
                     activeTouchSession === 1 ? "opacity-90" : ""
-                  } group-hover:opacity-90`}>NEW YORK / DEEP HOUSE</p>
+                  } group-hover:opacity-90`}>2024-01</p>
                 </div>
                 <span className={`material-symbols-outlined text-4xl opacity-0 transition-colors z-10 ${
                   activeTouchSession === 1 ? "opacity-100 text-brand-accent" : ""
