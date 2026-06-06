@@ -206,7 +206,7 @@ export default function Home() {
 
               <Link 
                 href="/sessions"
-                className="mt-12 bg-transparent border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-colors w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
+                className="mt-12 bg-transparent border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-all duration-300 ease-in-out w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
               >
                 SECURE ACCESS
                 <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
