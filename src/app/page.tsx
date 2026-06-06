@@ -72,9 +72,11 @@ export default function Home() {
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <div 
-              className="absolute inset-0 bg-cover bg-center animate-hero-zoom-out bg-img-gritty" 
+              className="absolute inset-0 bg-cover bg-center animate-hero-zoom-out" 
               style={{ backgroundImage: 'url("/hero.jpg")' }}
             />
+            {/* Static dark overlay to replace the multiply blend mode (avoids browser GPU rendering bugs on animated layers) */}
+            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
           </div>
 
           {/* Subtle gradient overlay */}
