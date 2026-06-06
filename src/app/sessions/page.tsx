@@ -261,10 +261,12 @@ function SessionsContent() {
         {/* Events List */}
         <div className="flex flex-col gap-6">
           {(() => {
-            const filteredSessions = SESSIONS_DATA.filter((session) => {
-              if (activeYear === "ALL") return true;
-              return session.date.startsWith(activeYear);
-            });
+            const filteredSessions = SESSIONS_DATA
+              .filter((session) => {
+                if (activeYear === "ALL") return true;
+                return session.date.startsWith(activeYear);
+              })
+              .sort((a, b) => b.date.localeCompare(a.date));
 
             if (filteredSessions.length === 0) {
               return (
