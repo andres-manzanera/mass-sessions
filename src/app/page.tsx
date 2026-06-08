@@ -370,14 +370,13 @@ export default function Home() {
               backfaceVisibility: 'hidden'
             }}
           >
-            <Image
-              src="/sound-bg.jpg"
-              alt="Fondo de alta fidelidad — tocadiscos y sistema de sonido en sala oscura"
-              fill
-              sizes="100vw"
-              className={`object-cover object-center transition-transform duration-700 ease-out ${
-                soundBgActive ? "scale-105" : "scale-100"
-              } group-hover:scale-105`}
+            <video
+              src="/video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover scale-[1.08] pointer-events-none"
             />
           </div>
           {/* Dark overlay to ensure text contrast */}
