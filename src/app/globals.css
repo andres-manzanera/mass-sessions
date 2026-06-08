@@ -203,6 +203,7 @@ body {
 
 .animate-hero-zoom-out {
   animation: hero-zoom-out 20s ease-in-out infinite alternate;
+  will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }

@@ -310,13 +310,23 @@ export default function Home() {
           className="w-full text-brand-orange border-t-2 border-b-2 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group cursor-pointer"
         >
           {/* Background video wrapper */}
-          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <div 
+            className="absolute inset-0 pointer-events-none z-0 overflow-hidden"
+            style={{ 
+              transform: 'translate3d(0,0,0)', 
+              willChange: 'transform' 
+            }}
+          >
             <video
               src="/video.mp4"
               autoPlay
               loop
               muted
               playsInline
+              style={{ 
+                transform: 'translate3d(0,0,0)', 
+                willChange: 'transform' 
+              }}
               className="w-full h-full object-cover scale-[1.08] pointer-events-none"
             />
           </div>
