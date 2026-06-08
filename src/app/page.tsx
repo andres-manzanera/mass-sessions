@@ -331,9 +331,6 @@ export default function Home() {
           {/* Dark overlay to ensure text contrast */}
           <div className="absolute inset-0 bg-black/60 pointer-events-none z-10" />
 
-          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter opacity-10 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none z-20 text-brand-orange">
-            ANALOG ARCHITECTURE
-          </h2>
           <div className="relative z-20 max-w-none mx-auto text-center px-4">
             <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-black uppercase tracking-tight leading-tight select-none sm:whitespace-nowrap">
               High-fidelity sound designed for dark rooms and open minds.
