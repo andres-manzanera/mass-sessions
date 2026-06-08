@@ -97,7 +97,7 @@ export default function Home() {
 
           {/* Overlay Text */}
           <div className="z-10 relative select-none">
-            <h1 className="text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8vw] leading-none uppercase font-extrabold tracking-normal mix-blend-difference break-words text-brand-orange">
+            <h1 className="text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8vw] leading-none uppercase font-extrabold tracking-normal break-words text-brand-orange">
               <span className="hero-mass">MASS</span><br />
               <span className="hero-sessions"><svg 
                 viewBox="0 0 384 60" 
@@ -192,7 +192,7 @@ export default function Home() {
                 />
               </div>
               {/* Dark gritty overlay */}
-              <div className="absolute inset-0 bg-black/60 mix-blend-multiply pointer-events-none z-0" aria-hidden="true" />
+              <div className="absolute inset-0 bg-black/75 pointer-events-none z-0" aria-hidden="true" />
               <div></div>
               <div className="bg-brand-orange text-black font-mono text-xs px-2 py-1 uppercase font-semibold self-start z-10 select-none relative">
                 GEAR PORN
@@ -333,7 +333,7 @@ export default function Home() {
           {/* Dark overlay to ensure text contrast */}
           <div className="absolute inset-0 bg-black/60 pointer-events-none z-10" />
 
-          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter mix-blend-overlay opacity-10 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none z-20">
+          <h2 className="text-[8vw] font-black uppercase text-center leading-none tracking-tighter opacity-10 absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none z-20 text-brand-orange">
             ANALOG ARCHITECTURE
           </h2>
           <div className="relative z-20 max-w-none mx-auto text-center px-4">
