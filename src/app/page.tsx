@@ -10,8 +10,6 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [ticketModalOpen, setTicketModalOpen] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const parallaxRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(true);
   // If loading screen is skipped, run entrance animations with shorter delays
   const [fastAnim, setFastAnim] = useState(false);
@@ -25,55 +23,7 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    let sectionTop = 0;
-    let sectionHeight = 0;
-    let ticking = false;
 
-    const updateDimensions = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      sectionTop = rect.top + window.scrollY;
-      sectionHeight = rect.height;
-    };
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          if (parallaxRef.current) {
-            const currentScroll = window.scrollY;
-            const viewportHeight = window.innerHeight;
-            const sectionCenter = sectionTop + sectionHeight / 2;
-            const viewportCenter = currentScroll + viewportHeight / 2;
-            const distanceFromCenter = sectionCenter - viewportCenter;
-            
-            // translate3d combined with rAF gives perfectly fluid scroll performance at native frame rates
-            parallaxRef.current.style.transform = `translate3d(0, ${-0.15 * distanceFromCenter}px, 0)`;
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    // Calculate dimensions initially
-    updateDimensions();
-    
-    // Delay to ensure the DOM is fully rendered and image dimensions are stable
-    const timeoutId = setTimeout(() => {
-      updateDimensions();
-      handleScroll();
-    }, 150);
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", updateDimensions, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateDimensions);
-      clearTimeout(timeoutId);
-    };
-  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -356,20 +306,11 @@ export default function Home() {
 
         {/* Massive Text Divider Section */}
         <section 
-          ref={sectionRef}
           onClick={() => setSoundBgActive(!soundBgActive)}
           className="w-full text-brand-orange border-t-2 border-b-2 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group cursor-pointer"
         >
-          {/* Zooming background image wrapper with parallax */}
-          <div 
-            ref={parallaxRef}
-            className="absolute inset-0 w-full h-[140%] -top-[20%] pointer-events-none z-0 overflow-hidden"
-            style={{ 
-              willChange: 'transform',
-              transform: 'translate3d(0,0,0)',
-              backfaceVisibility: 'hidden'
-            }}
-          >
+          {/* Background video wrapper */}
+          <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
             <video
               src="/video.mp4"
               autoPlay
