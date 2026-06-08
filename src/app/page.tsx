@@ -168,27 +168,25 @@ export default function Home() {
 
             {/* Middle Image Block */}
             <div
-              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden transition-all duration-500 flex flex-col justify-between p-4"
+              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden flex flex-col justify-between p-4"
               aria-label="Gear Porn — imágenes de equipamiento de sonido"
             >
               {/* Grayscale background layer */}
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw"
+                src="/gear.jpg"
                 alt="Equipamiento de sonido de alta fidelidad — mesa de mezclas y reproductores analógicos"
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover object-center grayscale pointer-events-none"
-                unoptimized
               />
               {/* Color overlay layer that fades in/out */}
               <div className="absolute inset-0 animate-color-fade pointer-events-none">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVoTVe-1HLc45UMAYLECL2h4Nn3n1OSwVbNVtXoEBd-lmc_GeYbW8FWePBnHm42IMbB3VJanpgbSL0WpBQenCs04uHY4coOYfa3L6FqTI2N4bGqB-kD2h6a-cexJSm_KLG7jrkaL6WEznkBMECMaHtctMuCiM5hl4mpCKy19xhMdPPgWTAOGhpjmygDdcikbqsGw2hNB7SlWAvnXH3Ljb_w2Kq94ZDfu28HNKRxvCAv8bUYQbU3Ylgy1_3SV5jQmEEzmEjfFgLTQw"
+                  src="/gear.jpg"
                   alt=""
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover object-center"
-                  unoptimized
                 />
               </div>
               {/* Dark gritty overlay */}
@@ -206,11 +204,11 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(0)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-[background-color,box-shadow,color] duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 0 
-                    ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
                     : ""
-                } hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
+                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
               >
                 {/* Dots background texture on hover */}
                 <div 
@@ -239,11 +237,11 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(1)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-[background-color,box-shadow,color] duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 1 
-                    ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
                     : ""
-                } hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
+                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
               >
                 {/* Dots background texture on hover */}
                 <div 
@@ -272,11 +270,11 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(2)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-[background-color,box-shadow,color] duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 2 
-                    ? "z-10 py-9 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
                     : ""
-                } hover:z-10 hover:py-9 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
+                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
               >
                 {/* Dots background texture on hover */}
                 <div 
@@ -324,10 +322,10 @@ export default function Home() {
               muted
               playsInline
               style={{ 
-                transform: 'translate3d(0,0,0)', 
+                transform: 'translate3d(0,0,0) scale(1.08)', 
                 willChange: 'transform' 
               }}
-              className="w-full h-full object-cover scale-[1.08] pointer-events-none"
+              className="w-full h-full object-cover pointer-events-none"
             />
           </div>
           {/* Dark overlay to ensure text contrast */}
