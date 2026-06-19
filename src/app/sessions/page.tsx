@@ -1,11 +1,121 @@
 "use client";
 
-import { useState, Suspense, useEffect } from "react";
+import { useState, Suspense, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useAudio } from "@/context/AudioContext";
 import { SESSIONS_DATA } from "@/data/sessions";
+
+function SessionCard({ session, index, activeSession, isPlaying, playSession }: any) {
+  const isCurrent = activeSession?.id === session.id;
+  const [isVisible, setIsVisible] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        } else {
+          setIsInitialLoad(false);
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  const animClass = isVisible 
+    ? (isInitialLoad ? "session-card-anim" : "session-card-scroll-anim")
+    : "opacity-0";
+
+  return (
+    <div ref={ref} style={{ "--i": index } as React.CSSProperties} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 lg:border-0 lg:bg-transparent ${animClass} ${index > 0 ? "lg:border-t lg:border-brand-orange" : ""}`}>
+      
+      {/* Image Column */}
+      <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
+        <Image 
+          alt={session.title} 
+           className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-active:scale-105 ${isCurrent ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`} 
+          src={session.image}
+          fill
+          sizes="(max-width: 1024px) 100vw, 300px"
+        />
+      </div>
+
+      {/* Info Column */}
+      <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden">
+        <div>
+
+          <div className="flex items-center gap-4 mb-4">
+            <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white group-hover:text-[#02E1EE] group-active:text-[#02E1EE]"}`}>
+              {session.title}
+            </h2>
+            {isCurrent && isPlaying && (
+              <div className="sound-wave select-none flex gap-1 items-end h-3">
+                <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.1s", height: "100%" }}></div>
+                <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.4s", height: "60%" }}></div>
+                <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.2s", height: "80%" }}></div>
+                <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.5s", height: "40%" }}></div>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
+            <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white"}`}>{session.date}</div>
+          </div>
+          <div className="text-right lg:text-left">
+            <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
+            <div className="flex flex-wrap justify-end lg:justify-start gap-2 mt-1">
+              {session.genres.map((g: string, idx: number) => (
+                <span key={idx} className="font-mono text-[10px] text-brand-orange uppercase bg-transparent px-2 py-0.5 border border-brand-orange">
+                  {g}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Separator */}
+      <div className="lg:hidden mx-6 border-t border-brand-orange"></div>
+
+      {/* Technical / Action Column */}
+      <div className="w-full lg:w-[250px] shrink-0 p-6 flex flex-col justify-between overflow-hidden">
+        <div className="flex justify-between lg:flex-col lg:space-y-4">
+          <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
+            <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">BPM</span>
+            <span className="font-mono text-sm text-brand-orange">124.00</span>
+          </div>
+          <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
+            <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">DURATION</span>
+            <span className="font-mono text-sm text-brand-orange">{session.duration}</span>
+          </div>
+        </div>
+        
+        <button 
+          onClick={() => playSession(session.id)}
+          className={`w-full mt-4 lg:mt-0 py-3 border text-[10px] font-mono transition-all uppercase tracking-widest shrink-0 cursor-pointer ${
+            isCurrent && isPlaying
+              ? "border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
+              : "border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-black"
+          }`}
+        >
+          {isCurrent && isPlaying ? "PAUSE SESSION" : "PLAY SESSION"}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function GridContent() {
   const [activeYear, setActiveYear] = useState("ALL");
@@ -99,94 +209,18 @@ function GridContent() {
         <div className="flex flex-col gap-6 lg:gap-0 lg:block lg:border lg:border-brand-orange lg:bg-black/40">
           {paginatedSessions.length === 0 ? (
             <div className="p-16 text-center text-on-surface-variant font-mono uppercase">
-              No sessions found in the archive for {activeYear}.
             </div>
           ) : (
-            paginatedSessions.map((session, index) => {
-              const isCurrent = activeSession?.id === session.id;
-              
-              return (
-                <div key={session.id} style={{ "--i": index } as React.CSSProperties} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 lg:border-0 lg:bg-transparent session-card-anim ${index > 0 ? "lg:border-t lg:border-brand-orange" : ""}`}>
-                  
-                  {/* Image Column */}
-                  <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
-                    <Image 
-                      alt={session.title} 
-                       className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-active:scale-105 ${isCurrent ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`} 
-                      src={session.image}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 300px"
-                    />
-                  </div>
-
-                  {/* Info Column */}
-                  <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden">
-                    <div>
-
-                      <div className="flex items-center gap-4 mb-4">
-                        <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white group-hover:text-[#02E1EE] group-active:text-[#02E1EE]"}`}>
-                          {session.title}
-                        </h2>
-                        {isCurrent && isPlaying && (
-                          <div className="sound-wave select-none flex gap-1 items-end h-3">
-                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.1s", height: "100%" }}></div>
-                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.4s", height: "60%" }}></div>
-                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.2s", height: "80%" }}></div>
-                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.5s", height: "40%" }}></div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
-                        <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white"}`}>{session.date}</div>
-                      </div>
-                      <div className="text-right lg:text-left">
-                        <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
-                        <div className="flex flex-wrap justify-end lg:justify-start gap-2 mt-1">
-                          {session.genres.map((g, idx) => (
-                            <span key={idx} className="font-mono text-[10px] text-brand-orange uppercase bg-transparent px-2 py-0.5 border border-brand-orange">
-                              {g}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Mobile Separator */}
-                  <div className="lg:hidden mx-6 border-t border-brand-orange"></div>
-
-                  {/* Technical / Action Column */}
-                  <div className="w-full lg:w-[250px] shrink-0 p-6 flex flex-col justify-between overflow-hidden">
-                    <div className="flex justify-between lg:flex-col lg:space-y-4">
-                      <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
-                        <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">BPM</span>
-                        <span className="font-mono text-sm text-brand-orange">124.00</span>
-                      </div>
-                      <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
-                        <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">DURATION</span>
-                        <span className="font-mono text-sm text-brand-orange">{session.duration}</span>
-                      </div>
-                    </div>
-                    
-                    <button 
-                      onClick={() => playSession(session.id)}
-                      className={`w-full mt-4 lg:mt-0 py-3 border text-[10px] font-mono transition-all uppercase tracking-widest shrink-0 cursor-pointer ${
-                        isCurrent && isPlaying
-                          ? "border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
-                          : "border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-black"
-                      }`}
-                    >
-                      {isCurrent && isPlaying ? "PAUSE SESSION" : "PLAY SESSION"}
-                    </button>
-                  </div>
-
-                </div>
-              );
-            })
+            paginatedSessions.map((session, index) => (
+              <SessionCard 
+                key={session.id} 
+                session={session} 
+                index={index} 
+                activeSession={activeSession} 
+                isPlaying={isPlaying} 
+                playSession={playSession} 
+              />
+            ))
           )}
         </div>
 
