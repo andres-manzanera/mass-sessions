@@ -152,7 +152,7 @@ function SessionsContent() {
 
         {/* Filters */}
         <div role="group" aria-label="Filtrar sesiones por año" className="flex flex-wrap gap-2 mb-8 select-none">
-          {["ALL", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year, i) => (
+          {["ALL", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year, i) => (
             <button
               key={year}
               onClick={() => { setActiveYear(year); setCurrentPage(1); setAnimKey((k) => k + 1); }}
@@ -199,7 +199,7 @@ function SessionsContent() {
                     <div className="w-full md:w-[226px] h-48 md:h-[226px] relative overflow-hidden flex-shrink-0">
                       <Image
                         alt={`Portada de ${session.title} por ${session.artist}`}
-                        className={`object-cover transition-all duration-700 group-hover:scale-105 ${isCurrent && isPlaying ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`}
+                        className={`object-cover transition-all duration-700 group-hover:scale-105 ${isCurrent ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`}
                         src={session.image}
                         fill
                         sizes="(max-width: 768px) 100vw, 226px"

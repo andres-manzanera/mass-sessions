@@ -61,20 +61,21 @@ function GridContent() {
         </div>
 
         {/* Filters Grid */}
-        <div className="mb-8 grid grid-cols-4 md:grid-cols-7 border border-brand-orange bg-black/40">
-          {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year, i) => (
+        <div className="mb-8 flex flex-wrap border-l border-t border-brand-orange bg-black/40">
+          {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year) => (
             <button
               key={year}
               onClick={() => { setActiveYear(year); setCurrentPage(1); }}
-              className={`cursor-pointer p-4 border-brand-orange transition-colors font-mono text-sm ${
+              className={`cursor-pointer p-4 w-1/4 md:w-[calc(100%/7)] border-r border-b border-brand-orange transition-colors font-mono text-sm ${
                 activeYear === year
                   ? "bg-brand-orange text-black font-bold"
                   : "text-brand-orange hover:bg-white/10"
-              } border-r ${i % 4 === 3 || i === 13 ? "border-r-0" : ""} ${i % 7 === 6 ? "md:border-r-0" : "md:border-r"} ${i >= 12 ? "col-span-2 md:col-span-1" : ""} border-b ${i >= 12 ? "border-b-0" : ""} ${i >= 7 ? "md:border-b-0" : "md:border-b"}`}
+              }`}
             >
               {year}
             </button>
           ))}
+          <div className="flex-grow border-r border-b border-brand-orange pointer-events-none"></div>
         </div>
 
         {/* The Grid List */}
@@ -94,7 +95,7 @@ function GridContent() {
                   <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
                     <Image 
                       alt={session.title} 
-                       className={`w-full h-full object-cover transition-all duration-500 ${isCurrent && isPlaying ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`} 
+                       className={`w-full h-full object-cover transition-all duration-500 ${isCurrent ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`} 
                       src={session.image}
                       fill
                       sizes="(max-width: 1024px) 100vw, 300px"
