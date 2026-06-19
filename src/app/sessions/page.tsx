@@ -40,7 +40,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
     : "opacity-0";
 
   return (
-    <div ref={ref} style={{ "--i": index } as React.CSSProperties} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 lg:border-0 lg:bg-transparent ${animClass} ${index > 0 ? "lg:border-t lg:border-brand-orange" : ""}`}>
+    <div ref={ref} style={{ "--i": index } as React.CSSProperties} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}>
       
       {/* Image Column */}
       <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
@@ -225,9 +225,9 @@ function GridContent() {
         </div>
 
         {/* The Grid List */}
-        <div id="sessions-grid" className="flex flex-col gap-6 lg:gap-0 lg:block lg:border lg:border-brand-orange lg:bg-black/40">
+        <div id="sessions-grid" className="flex flex-col gap-6 lg:gap-0 lg:block">
           {paginatedSessions.length === 0 ? (
-            <div style={{ "--i": 0 } as React.CSSProperties} className="p-16 text-center text-brand-orange/60 font-mono text-sm uppercase tracking-widest session-card-page-anim">
+            <div style={{ "--i": 0 } as React.CSSProperties} className="p-16 text-center text-brand-orange/60 font-mono text-sm uppercase tracking-widest session-card-page-anim lg:border lg:border-brand-orange lg:bg-black/40">
               No sessions available for {activeYear} yet.
             </div>
           ) : (
