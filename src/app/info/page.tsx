@@ -14,9 +14,7 @@ export default function InfoPage() {
           <Link href="/" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
           </Link>
-          <Link href="/grid" aria-label="Ver The Grid" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
-            THE GRID
-          </Link>
+
           <Link href="/sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             SESSIONS
           </Link>
@@ -93,10 +91,6 @@ export default function InfoPage() {
         <Link href="/" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl font-bold">home</span>
           <span className="font-mono text-[9px] uppercase font-bold">Home</span>
-        </Link>
-        <Link href="/grid" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
-          <span className="material-symbols-outlined text-2xl">grid_view</span>
-          <span className="font-mono text-[9px] uppercase font-bold">Grid</span>
         </Link>
         <Link href="/sessions" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">graphic_eq</span>
