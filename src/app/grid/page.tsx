@@ -103,7 +103,7 @@ function GridContent() {
                   </div>
 
                   {/* Info Column */}
-                  <div className="flex-grow p-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-brand-orange overflow-hidden">
+                  <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden">
                     <div>
                       <div className="font-mono text-[10px] tracking-widest text-brand-orange mb-2 uppercase">
                         {session.id} // {session.title}
@@ -140,6 +140,9 @@ function GridContent() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Mobile Separator */}
+                  <div className="lg:hidden mx-6 border-t border-brand-orange"></div>
 
                   {/* Technical / Action Column */}
                   <div className="w-full lg:w-[250px] shrink-0 p-6 flex flex-col justify-between overflow-hidden">
