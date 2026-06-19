@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { useAudio } from "@/context/AudioContext";
 import { SESSIONS_DATA } from "@/data/sessions";
 
@@ -11,6 +12,24 @@ function GridContent() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const { activeSession, isPlaying, playSession } = useAudio();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const autoplayId = searchParams.get("autoplay");
+    if (autoplayId) {
+      const sessionToPlay = SESSIONS_DATA.find(s => s.id === autoplayId);
+      if (sessionToPlay) {
+        const year = sessionToPlay.date.substring(0, 4);
+        setActiveYear(year);
+        // Ensure we only trigger play if it's not already playing this session
+        if (activeSession?.id !== autoplayId) {
+          // Add a tiny delay to ensure AudioContext can handle it after navigation
+          setTimeout(() => playSession(autoplayId), 100);
+        }
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   // Filter and sort sessions
   const filteredSessions = SESSIONS_DATA.filter((session) => {
