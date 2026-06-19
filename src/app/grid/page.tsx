@@ -150,10 +150,6 @@ function GridContent() {
                         <span className="font-mono text-sm text-brand-orange">124.00</span>
                       </div>
                       <div className="flex justify-between border-b border-brand-orange pb-2">
-                        <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">KEY</span>
-                        <span className="font-mono text-sm text-brand-orange">AMIN</span>
-                      </div>
-                      <div className="flex justify-between border-b border-brand-orange pb-2">
                         <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">DURATION</span>
                         <span className="font-mono text-sm text-brand-orange">{session.duration}</span>
                       </div>
