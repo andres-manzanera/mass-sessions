@@ -129,10 +129,10 @@ function GridContent() {
                         </h2>
                         {isCurrent && isPlaying && (
                           <div className="sound-wave select-none flex gap-1 items-end h-3">
-                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.1s", height: "100%" }}></div>
-                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.4s", height: "60%" }}></div>
-                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.2s", height: "80%" }}></div>
-                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.1s", height: "100%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.4s", height: "60%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.2s", height: "80%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.5s", height: "40%" }}></div>
                           </div>
                         )}
                       </div>

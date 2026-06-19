@@ -102,12 +102,17 @@
   background-color: var(--color-brand-orange);
   border-radius: 2px;
   transform-origin: bottom;
-  animation: bounce 0.8s ease-in-out infinite alternate;
+  animation: sound-bounce 0.8s ease-in-out infinite alternate;
 }
 
-@keyframes bounce {
+@keyframes sound-bounce {
   0% { transform: scaleY(0.25); }
   100% { transform: scaleY(1); }
+}
+
+.animate-sound-bounce {
+  animation: sound-bounce 0.8s ease-in-out infinite alternate;
+  transform-origin: bottom;
 }
 
 /* Glassmorphism panel */
