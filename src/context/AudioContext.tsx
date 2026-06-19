@@ -237,11 +237,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
               <button 
                 onClick={togglePlay}
                 aria-label={isPlaying ? "Pausar reproducción" : "Iniciar reproducción"}
-                className={`rounded-full p-2 hover:scale-105 transition-all cursor-pointer flex items-center justify-center ${
-                  !isPlaying
-                    ? "border-2 border-brand-accent text-brand-accent bg-black/50 animate-pulse shadow-[0_0_15px_rgba(2,225,238,0.3)]"
-                    : "bg-brand-orange text-black shadow-[0_0_15px_rgba(242,240,235,0.3)] border-2 border-transparent"
-                }`}
+                className="bg-brand-orange text-black rounded-full p-2 hover:scale-105 transition-all cursor-pointer shadow-[0_0_15px_rgba(242,240,235,0.3)]"
               >
                 <span className="material-symbols-outlined text-2xl font-bold">
                   {isPlaying ? "pause" : "play_arrow"}
