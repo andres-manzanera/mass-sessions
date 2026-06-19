@@ -21,20 +21,20 @@ function GridContent() {
       
       {/* Existing Global Header */}
       <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
-        <Link href="/" aria-label="Ir a la página principal de Mass Sessions" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-[#FF8E00] px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-[#FF8E00] whitespace-nowrap">
+        <Link href="/" aria-label="Ir a la página principal de Mass Sessions" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange whitespace-nowrap">
           MASS SESSIONS
         </Link>
-        <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-[#FF8E00] pl-6 md:pl-16">
-          <Link href="/" aria-label="Inicio" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-[#FF8E00]">
+        <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
+          <Link href="/" aria-label="Inicio" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
           </Link>
-          <Link href="/grid" aria-current="page" aria-label="Grid — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-[#FF8E00] text-[#FF8E00]">
+          <Link href="/grid" aria-current="page" aria-label="Grid — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
             THE GRID
           </Link>
-          <Link href="/sessions" aria-label="Sesiones" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-[#FF8E00]">
+          <Link href="/sessions" aria-label="Sesiones" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             SESSIONS
           </Link>
-          <Link href="/info" aria-label="Información sobre Mass Sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-[#FF8E00]">
+          <Link href="/info" aria-label="Información sobre Mass Sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             INFO
           </Link>
         </nav>
@@ -175,20 +175,20 @@ function GridContent() {
       </main>
 
       {/* Unified Brutalist Mobile bottom menu */}
-      <nav aria-label="Navegación móvil" className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-2 border-[#FF8E00] flex items-center justify-around h-20 select-none">
-        <Link href="/" aria-label="Inicio" className="text-[#FF8E00] flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+      <nav aria-label="Navegación móvil" className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">
+        <Link href="/" aria-label="Inicio" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl" aria-hidden="true">home</span>
           <span className="font-mono text-[9px] uppercase font-bold">Home</span>
         </Link>
-        <Link href="/grid" aria-current="page" aria-label="Grid — página actual" className="text-[#FF8E00] flex flex-col items-center gap-1 p-2 border-t-2 border-[#FF8E00]">
+        <Link href="/grid" aria-current="page" aria-label="Grid — página actual" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-2 border-brand-orange">
           <span className="material-symbols-outlined text-2xl font-bold" aria-hidden="true">grid_view</span>
           <span className="font-mono text-[9px] uppercase font-bold">Grid</span>
         </Link>
-        <Link href="/sessions" aria-label="Sesiones" className="text-[#FF8E00] flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+        <Link href="/sessions" aria-label="Sesiones" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl" aria-hidden="true">graphic_eq</span>
           <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
         </Link>
-        <Link href="/info" aria-label="Información" className="text-[#FF8E00] flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+        <Link href="/info" aria-label="Información" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl" aria-hidden="true">info</span>
           <span className="font-mono text-[9px] uppercase font-bold">Info</span>
         </Link>
