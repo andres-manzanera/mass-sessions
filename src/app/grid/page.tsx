@@ -8,6 +8,8 @@ import { SESSIONS_DATA } from "@/data/sessions";
 
 function GridContent() {
   const [activeYear, setActiveYear] = useState("ALL");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
   const { activeSession, isPlaying, playSession } = useAudio();
 
   // Filter and sort sessions
@@ -15,6 +17,10 @@ function GridContent() {
     if (activeYear === "ALL") return true;
     return session.date.startsWith(activeYear);
   }).sort((a, b) => b.date.localeCompare(a.date));
+
+  const totalPages = Math.ceil(filteredSessions.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedSessions = filteredSessions.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-20 md:pb-32 relative">
@@ -59,11 +65,11 @@ function GridContent() {
           {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year, i) => (
             <button
               key={year}
-              onClick={() => setActiveYear(year)}
-              className={`p-4 border-brand-orange transition-colors font-mono text-sm ${
+              onClick={() => { setActiveYear(year); setCurrentPage(1); }}
+              className={`cursor-pointer p-4 border-brand-orange transition-colors font-mono text-sm ${
                 activeYear === year
                   ? "bg-brand-orange text-black font-bold"
-                  : "text-brand-orange hover:bg-surface-container"
+                  : "text-brand-orange hover:bg-white/10"
               } border-r ${i % 4 === 3 || i === 13 ? "border-r-0" : ""} ${i % 7 === 6 ? "md:border-r-0" : "md:border-r"} ${i >= 12 ? "col-span-2 md:col-span-1" : ""} border-b ${i >= 12 ? "border-b-0" : ""} ${i >= 7 ? "md:border-b-0" : "md:border-b"}`}
             >
               {year}
@@ -73,12 +79,12 @@ function GridContent() {
 
         {/* The Grid List */}
         <div className="border border-brand-orange bg-black/40">
-          {filteredSessions.length === 0 ? (
+          {paginatedSessions.length === 0 ? (
             <div className="p-16 text-center text-on-surface-variant font-mono uppercase">
               No sessions found in the archive for {activeYear}.
             </div>
           ) : (
-            filteredSessions.map((session, index) => {
+            paginatedSessions.map((session, index) => {
               const isCurrent = activeSession?.id === session.id;
               
               return (
@@ -172,6 +178,65 @@ function GridContent() {
             })
           )}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <nav aria-label="Paginación de sesiones" className="flex items-center justify-center gap-3 mt-12 select-none flex-wrap">
+            <button
+              onClick={() => {
+                if (currentPage > 1) {
+                  setCurrentPage(currentPage - 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              disabled={currentPage === 1}
+              className={`border-2 px-4 py-2 font-mono text-xs uppercase font-bold transition-all ${
+                currentPage === 1
+                  ? "border-brand-orange/20 text-brand-orange/20 cursor-not-allowed"
+                  : "border-brand-orange text-brand-orange cursor-pointer hover:bg-brand-accent hover:border-brand-accent hover:text-black"
+              }`}
+            >
+              PREV
+            </button>
+            <div className="flex gap-2">
+              {Array.from({ length: totalPages }, (_, idx) => {
+                const pageNum = idx + 1;
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => {
+                      setCurrentPage(pageNum);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className={`w-9 h-9 border-2 font-mono text-xs font-bold transition-all flex items-center justify-center cursor-pointer ${
+                      currentPage === pageNum
+                        ? "border-brand-accent text-black bg-brand-accent"
+                        : "border-brand-orange text-brand-orange hover:bg-brand-orange/10"
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+            <button
+              onClick={() => {
+                if (currentPage < totalPages) {
+                  setCurrentPage(currentPage + 1);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              disabled={currentPage === totalPages}
+              className={`border-2 px-4 py-2 font-mono text-xs uppercase font-bold transition-all ${
+                currentPage === totalPages
+                  ? "border-brand-orange/20 text-brand-orange/20 cursor-not-allowed"
+                  : "border-brand-orange text-brand-orange cursor-pointer hover:bg-brand-accent hover:border-brand-accent hover:text-black"
+              }`}
+            >
+              NEXT
+            </button>
+          </nav>
+        )}
       </main>
 
       {/* Unified Brutalist Mobile bottom menu */}
