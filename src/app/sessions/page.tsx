@@ -155,10 +155,10 @@ function SessionsContent() {
               onClick={() => { setActiveYear(year); setCurrentPage(1); setAnimKey((k) => k + 1); }}
               aria-pressed={activeYear === year}
               aria-label={year === "ALL" ? "Mostrar todas las sesiones" : `Filtrar sesiones del año ${year}`}
-              className={`session-tab-anim glass-panel text-sm px-4 py-2 rounded-full cursor-pointer hover:border-brand-orange transition-all duration-300 font-sora ${
+              className={`session-tab-anim text-sm px-4 py-2 rounded-full cursor-pointer hover:border-brand-orange transition-all duration-300 font-sora ${
                 activeYear === year
-                  ? "border-brand-orange text-black bg-brand-orange font-extrabold"
-                  : "text-on-surface-variant hover:text-white"
+                  ? "border-orange-500 text-black bg-orange-500 font-extrabold"
+                  : "glass-panel text-on-surface-variant hover:text-white"
               }`}
               style={{ "--i": i } as React.CSSProperties}
             >
