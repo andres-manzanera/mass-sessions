@@ -127,6 +127,9 @@ function SessionsContent() {
           <Link href="/" aria-label="Inicio" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
             HOME
           </Link>
+          <Link href="/grid" aria-label="Ver The Grid" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
+            THE GRID
+          </Link>
           <Link href="/sessions" aria-current="page" aria-label="Sesiones — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
             SESSIONS
           </Link>
@@ -338,6 +341,10 @@ function SessionsContent() {
         <Link href="/" aria-label="Inicio" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl" aria-hidden="true">home</span>
           <span className="font-mono text-[9px] uppercase font-bold">Home</span>
+        </Link>
+        <Link href="/grid" aria-label="The Grid" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+          <span className="material-symbols-outlined text-2xl" aria-hidden="true">grid_view</span>
+          <span className="font-mono text-[9px] uppercase font-bold">Grid</span>
         </Link>
         <Link href="/sessions" aria-current="page" aria-label="Sesiones — página actual" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-2 border-brand-orange">
           <span className="material-symbols-outlined text-2xl font-bold" aria-hidden="true">graphic_eq</span>

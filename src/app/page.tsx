@@ -60,6 +60,9 @@ export default function Home() {
           <Link href="/" aria-current="page" aria-label="Inicio — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
             HOME
           </Link>
+          <Link href="/grid" aria-label="Ver The Grid" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent">
+            THE GRID
+          </Link>
           <Link href="/sessions" aria-label="Ver sesiones" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent">
             SESSIONS
           </Link>
@@ -347,6 +350,10 @@ export default function Home() {
         <Link href="/" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-2 border-brand-orange">
           <span className="material-symbols-outlined text-2xl font-bold">home</span>
           <span className="font-mono text-[9px] uppercase font-bold">Home</span>
+        </Link>
+        <Link href="/grid" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
+          <span className="material-symbols-outlined text-2xl">grid_view</span>
+          <span className="font-mono text-[9px] uppercase font-bold">Grid</span>
         </Link>
         <Link href="/sessions" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
           <span className="material-symbols-outlined text-2xl">graphic_eq</span>
