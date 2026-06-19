@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function InfoPage() {
   return (
-    <div className="bg-brand-bg-dark bg-wavy-lines text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black">
+    <div className="bg-brand-bg-dark bg-wavy-lines text-white font-sora min-h-screen flex flex-col pt-20 pb-0 selection:bg-brand-orange selection:text-black">
       {/* TopNavBar */}
       <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
         <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange whitespace-nowrap">
@@ -83,17 +83,7 @@ export default function InfoPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black text-brand-orange w-full py-12 border-t-2 border-brand-orange pb-24 md:pb-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-6 text-center">
-          <div className="text-2xl font-extrabold tracking-widest border-2 border-brand-orange p-2 select-none inline-block">
-            MASS SESSIONS
-          </div>
-          <p className="font-mono text-xs uppercase opacity-80 select-none">
-            © 2026 ALL RIGHTS RESERVED. <br className="md:hidden" />HIGH FIDELITY HOUSE MUSIC.
-          </p>
-        </div>
-      </footer>
+
 
       {/* Mobile Bottom Menu */}
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">

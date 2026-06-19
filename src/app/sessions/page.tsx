@@ -54,12 +54,20 @@ function SessionsContent() {
   useEffect(() => {
     const autoplay = searchParams.get("autoplay");
     if (autoplay && SESSIONS_DATA.some((s) => s.id === autoplay)) {
-      // Find the page this session is on
-      const sortedAll = [...SESSIONS_DATA].sort((a, b) => b.date.localeCompare(a.date));
-      const sessionIndex = sortedAll.findIndex((s) => s.id === autoplay);
-      if (sessionIndex !== -1) {
-        const targetPage = Math.ceil((sessionIndex + 1) / itemsPerPage);
-        setCurrentPage(targetPage);
+      const session = SESSIONS_DATA.find((s) => s.id === autoplay);
+      if (session) {
+        // Set the active year filter to the session's specific year
+        const sessionYear = session.date.substring(0, 4);
+        setActiveYear(sessionYear);
+        
+        // Find the page this session is on within that specific year filter
+        const filteredAll = SESSIONS_DATA.filter((s) => s.date.startsWith(sessionYear))
+                                         .sort((a, b) => b.date.localeCompare(a.date));
+        const sessionIndex = filteredAll.findIndex((s) => s.id === autoplay);
+        if (sessionIndex !== -1) {
+          const targetPage = Math.ceil((sessionIndex + 1) / itemsPerPage);
+          setCurrentPage(targetPage);
+        }
       }
 
       const timer = setTimeout(() => {
@@ -69,13 +77,13 @@ function SessionsContent() {
         if (element) {
           element.scrollIntoView({ behavior: "smooth", block: "center" });
         }
-      }, 300);
+      }, 400);
       return () => clearTimeout(timer);
     }
   }, [searchParams]);
 
   return (
-    <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-24 md:pb-0 selection:bg-brand-orange selection:text-black relative">
+    <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-0 selection:bg-brand-orange selection:text-black relative">
       {/* JSON-LD Structured Data for SEO */}
       <script
         type="application/ld+json"
@@ -133,7 +141,7 @@ function SessionsContent() {
 
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="font-sora text-[48px] font-extrabold tracking-tighter text-white mb-2 leading-none uppercase">SESSIONS</h1>
+          <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">SESSIONS</h1>
           <p className="text-lg text-on-surface-variant font-sora">
             Curated mixes, live recordings &amp; deep sets.
           </p>
@@ -323,17 +331,7 @@ function SessionsContent() {
         )}
       </main>
 
-      {/* Unified Brutalist Footer */}
-      <footer className="relative z-10 bg-black text-brand-orange w-full py-12 border-t-2 border-brand-orange pb-24 md:pb-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-6 text-center">
-          <div className="text-2xl font-extrabold tracking-widest border-2 border-brand-orange p-2 select-none inline-block">
-            MASS SESSIONS
-          </div>
-          <p className="font-mono text-xs uppercase opacity-80 select-none">
-            © 2026 ALL RIGHTS RESERVED. <br className="md:hidden" />HIGH FIDELITY HOUSE MUSIC.
-          </p>
-        </div>
-      </footer>
+
 
       {/* Unified Brutalist Mobile bottom menu */}
       <nav aria-label="Navegación móvil" className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">

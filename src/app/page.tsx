@@ -120,7 +120,7 @@ export default function Home() {
           </div>
 
           {/* Absolute brutalist elements */}
-          <div className="absolute top-8 right-8 border-2 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none hidden sm:block z-10">
+          <div className="absolute top-8 right-8 border-2 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none block z-10">
             <span className="material-symbols-outlined text-4xl text-brand-orange">warning</span>
             <p className="font-mono text-xs uppercase tracking-widest mt-2">Volume Warning</p>
           </div>
@@ -156,8 +156,8 @@ export default function Home() {
 
               <Link 
                 href="/sessions"
-                className="mt-12 bg-transparent border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-all duration-300 ease-in-out w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer bg-black"
-              >
+                className="mt-12 bg-black border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-all duration-300 ease-in-out w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer"
+>
                 SECURE ACCESS
                 <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
               </Link>
@@ -204,11 +204,11 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(0)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-[background-color,box-shadow,color] duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 0 
-                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-10" 
                     : ""
-                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
+                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:py-10`}
               >
                 {/* Dots background texture on hover */}
                 <div 
@@ -237,11 +237,11 @@ export default function Home() {
                 onTouchStart={() => setActiveTouchSession(1)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-[background-color,box-shadow,color] duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 1 
-                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-10" 
                     : ""
-                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
+                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:py-10`}
               >
                 {/* Dots background texture on hover */}
                 <div 
@@ -266,15 +266,15 @@ export default function Home() {
               </Link>
 
               <Link 
-                href="/sessions?autoplay=blawan" 
+                href="/sessions?autoplay=frequencies" 
                 onTouchStart={() => setActiveTouchSession(2)}
                 onTouchEnd={() => setActiveTouchSession(null)}
                 onTouchCancel={() => setActiveTouchSession(null)}
-                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-[background-color,box-shadow,color] duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
+                className={`relative w-full border-b-2 border-brand-orange py-6 px-6 bg-black transition-all duration-300 ease-in-out cursor-pointer group flex justify-between items-center z-0 ${
                   activeTouchSession === 2 
-                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)]" 
+                    ? "z-10 bg-[#18181b] shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-10" 
                     : ""
-                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)]`}
+                } hover:z-10 hover:bg-[#18181b] hover:shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:py-10`}
               >
                 {/* Dots background texture on hover */}
                 <div 
@@ -288,10 +288,10 @@ export default function Home() {
                 } group-hover:scale-105`}>
                   <h3 className={`text-2xl font-extrabold uppercase mb-1 tracking-tight transition-colors ${
                     activeTouchSession === 2 ? "text-brand-accent" : ""
-                  } group-hover:text-brand-accent`}>BLAWAN</h3>
+                  } group-hover:text-brand-accent`}>FREQUENCIES</h3>
                   <p className={`font-mono text-xs opacity-60 font-medium transition-opacity ${
                     activeTouchSession === 2 ? "opacity-90" : ""
-                  } group-hover:opacity-90`}>LONDON / LIVE MODULAR</p>
+                  } group-hover:opacity-90`}>2020-08</p>
                 </div>
                 <span className={`material-symbols-outlined text-4xl opacity-0 transition-colors z-10 ${
                   activeTouchSession === 2 ? "opacity-100 text-brand-accent" : ""
@@ -305,7 +305,7 @@ export default function Home() {
         {/* Massive Text Divider Section */}
         <section 
           onClick={() => setSoundBgActive(!soundBgActive)}
-          className="w-full text-brand-orange border-t-2 border-b-2 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group cursor-pointer"
+          className="w-full text-brand-orange border-t-2 border-b-2 border-brand-orange p-16 md:p-32 overflow-hidden relative flex items-center justify-center min-h-[40vh] group"
         >
           {/* Background video wrapper */}
           <div 
@@ -340,17 +340,7 @@ export default function Home() {
 
       </main>
 
-      {/* Footer (Shared Component) - Overridden for Brutalist */}
-      <footer className="bg-black text-brand-orange w-full py-12 border-t-2 border-brand-orange pb-24 md:pb-12">
-        <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col items-center justify-center gap-6 text-center">
-          <div className="text-2xl font-extrabold tracking-widest border-2 border-brand-orange p-2 select-none inline-block">
-            MASS SESSIONS
-          </div>
-          <p className="font-mono text-xs uppercase opacity-80 select-none">
-            © 2026 ALL RIGHTS RESERVED. <br className="md:hidden" />HIGH FIDELITY HOUSE MUSIC.
-          </p>
-        </div>
-      </footer>
+
 
       {/* Mobile Bottom Navigation Bar */}
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-[101] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">
