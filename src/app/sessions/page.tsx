@@ -7,7 +7,9 @@ import { useSearchParams } from "next/navigation";
 import { useAudio } from "@/context/AudioContext";
 import { SESSIONS_DATA } from "@/data/sessions";
 
-function SessionCard({ session, index, activeSession, isPlaying, playSession }: any) {
+let hasLoadedGridInitially = false;
+
+function SessionCard({ session, index, activeSession, isPlaying, playSession, isInitialGridLoad }: any) {
   const isCurrent = activeSession?.id === session.id;
   const [isVisible, setIsVisible] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
@@ -32,7 +34,9 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession }: 
   }, []);
 
   const animClass = isVisible 
-    ? (isInitialLoad ? "session-card-anim" : "session-card-scroll-anim")
+    ? (isInitialLoad 
+        ? (isInitialGridLoad ? "session-card-anim" : "session-card-page-anim") 
+        : "session-card-scroll-anim")
     : "opacity-0";
 
   return (
@@ -123,6 +127,13 @@ function GridContent() {
   const itemsPerPage = 6;
   const { activeSession, isPlaying, playSession } = useAudio();
   const searchParams = useSearchParams();
+  const [isInitialGridLoad, setIsInitialGridLoad] = useState(!hasLoadedGridInitially);
+
+  useEffect(() => {
+    hasLoadedGridInitially = true;
+    const t = setTimeout(() => setIsInitialGridLoad(false), 2000);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const autoplayId = searchParams.get("autoplay");
@@ -219,6 +230,7 @@ function GridContent() {
                 activeSession={activeSession} 
                 isPlaying={isPlaying} 
                 playSession={playSession} 
+                isInitialGridLoad={isInitialGridLoad}
               />
             ))
           )}
