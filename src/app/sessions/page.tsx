@@ -203,7 +203,15 @@ function GridContent() {
             <button
               key={year}
               style={{ "--i": idx } as React.CSSProperties}
-              onClick={() => { setActiveYear(year); setCurrentPage(1); }}
+              onClick={() => {
+                setActiveYear(year);
+                setCurrentPage(1);
+                const grid = document.getElementById("sessions-grid");
+                if (grid) {
+                  const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+                  window.scrollTo({ top: y, behavior: "smooth" });
+                }
+              }}
               className={`cursor-pointer p-4 w-1/4 md:w-[calc(100%/7)] border-r border-b border-brand-orange transition-colors font-mono text-sm ${
                 activeYear === year
                   ? "bg-brand-orange text-black font-bold"
@@ -217,7 +225,7 @@ function GridContent() {
         </div>
 
         {/* The Grid List */}
-        <div className="flex flex-col gap-6 lg:gap-0 lg:block lg:border lg:border-brand-orange lg:bg-black/40">
+        <div id="sessions-grid" className="flex flex-col gap-6 lg:gap-0 lg:block lg:border lg:border-brand-orange lg:bg-black/40">
           {paginatedSessions.length === 0 ? (
             <div className="p-16 text-center text-on-surface-variant font-mono uppercase">
             </div>
@@ -243,7 +251,11 @@ function GridContent() {
               onClick={() => {
                 if (currentPage > 1) {
                   setCurrentPage(currentPage - 1);
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  const grid = document.getElementById("sessions-grid");
+                  if (grid) {
+                    const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
                 }
               }}
               disabled={currentPage === 1}
@@ -263,7 +275,11 @@ function GridContent() {
                     key={pageNum}
                     onClick={() => {
                       setCurrentPage(pageNum);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      const grid = document.getElementById("sessions-grid");
+                      if (grid) {
+                        const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+                        window.scrollTo({ top: y, behavior: "smooth" });
+                      }
                     }}
                     className={`w-9 h-9 border-2 font-mono text-xs font-bold transition-all flex items-center justify-center cursor-pointer ${
                       currentPage === pageNum
@@ -280,7 +296,11 @@ function GridContent() {
               onClick={() => {
                 if (currentPage < totalPages) {
                   setCurrentPage(currentPage + 1);
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  const grid = document.getElementById("sessions-grid");
+                  if (grid) {
+                    const y = grid.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
                 }
               }}
               disabled={currentPage === totalPages}
