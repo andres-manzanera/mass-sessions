@@ -44,26 +44,26 @@ function GridContent() {
       <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 pt-8 relative z-10">
         
         {/* Page Header */}
-        <div className="mb-8 border border-[#FF8E00] p-8 bg-black/40">
+        <div className="mb-8 border border-[#02E1EE] p-8 bg-black/40">
           <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">SESSIONS</h1>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <p className="text-lg text-on-surface-variant font-sora max-w-md">
               Synchronized archival of high-fidelity auditory experiences. Technical performance logs.
             </p>
-            <div className="font-mono text-xs text-[#FF8E00]">STATUS: ONLINE // VERSION 2.0.6</div>
+            <div className="font-mono text-xs text-[#02E1EE]">STATUS: ONLINE // VERSION 2.0.6</div>
           </div>
         </div>
 
         {/* Filters Grid */}
-        <div className="mb-8 grid grid-cols-4 md:grid-cols-7 border border-[#FF8E00] bg-black/40">
+        <div className="mb-8 grid grid-cols-4 md:grid-cols-7 border border-[#02E1EE] bg-black/40">
           {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014"].map((year, i) => (
             <button
               key={year}
               onClick={() => setActiveYear(year)}
-              className={`p-4 border-[#FF8E00] transition-colors font-mono text-sm ${
+              className={`p-4 border-[#02E1EE] transition-colors font-mono text-sm ${
                 activeYear === year
-                  ? "bg-[#FF8E00] text-black font-bold"
-                  : "text-[#FF8E00] hover:bg-surface-container"
+                  ? "bg-[#02E1EE] text-black font-bold"
+                  : "text-[#02E1EE] hover:bg-surface-container"
               } border-r ${i % 4 === 3 || i === 13 ? "border-r-0" : ""} ${i % 7 === 6 ? "md:border-r-0" : "md:border-r"} ${i >= 12 ? "col-span-2 md:col-span-1" : ""} border-b ${i >= 12 ? "border-b-0" : ""} ${i >= 7 ? "md:border-b-0" : "md:border-b"}`}
             >
               {year}
@@ -72,7 +72,7 @@ function GridContent() {
         </div>
 
         {/* The Grid List */}
-        <div className="border border-[#FF8E00] bg-black/40">
+        <div className="border border-[#02E1EE] bg-black/40">
           {filteredSessions.length === 0 ? (
             <div className="p-16 text-center text-on-surface-variant font-mono uppercase">
               No sessions found in the archive for {activeYear}.
@@ -82,10 +82,10 @@ function GridContent() {
               const isCurrent = activeSession?.id === session.id;
               
               return (
-                <div key={session.id} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group ${index > 0 ? "border-t border-[#FF8E00]" : ""}`}>
+                <div key={session.id} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group ${index > 0 ? "border-t border-[#02E1EE]" : ""}`}>
                   
                   {/* Image Column */}
-                  <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-[#FF8E00] relative overflow-hidden">
+                  <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-[#02E1EE] relative overflow-hidden">
                     <Image 
                       alt={session.title} 
                       className={`w-full h-full object-cover transition-all duration-500 ${isCurrent && isPlaying ? "grayscale-0" : "grayscale group-hover:grayscale-0"}`} 
@@ -93,7 +93,7 @@ function GridContent() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 300px"
                     />
-                    <div className="absolute top-2 left-2 px-2 py-1 bg-black/80 font-mono text-[10px] text-[#FF8E00] border border-[#FF8E00]">
+                    <div className="absolute top-2 left-2 px-2 py-1 bg-black/80 font-mono text-[10px] text-[#02E1EE] border border-[#02E1EE]">
                       {session.id}.RAW
                     </div>
                     {session.isNew && (
@@ -104,9 +104,9 @@ function GridContent() {
                   </div>
 
                   {/* Info Column */}
-                  <div className="flex-grow p-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#FF8E00] overflow-hidden">
+                  <div className="flex-grow p-6 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-[#02E1EE] overflow-hidden">
                     <div>
-                      <div className="font-mono text-[10px] tracking-widest text-[#FF8E00] mb-2 uppercase">
+                      <div className="font-mono text-[10px] tracking-widest text-[#02E1EE] mb-2 uppercase">
                         {session.id} // {session.title}
                       </div>
                       <div className="flex items-center gap-4 mb-4">
@@ -115,24 +115,24 @@ function GridContent() {
                         </h2>
                         {isCurrent && isPlaying && (
                           <div className="sound-wave select-none flex gap-1 items-end h-3">
-                            <div className="w-[2px] bg-[#FF8E00] animate-pulse" style={{ animationDelay: "0.1s", height: "100%" }}></div>
-                            <div className="w-[2px] bg-[#FF8E00] animate-pulse" style={{ animationDelay: "0.4s", height: "60%" }}></div>
-                            <div className="w-[2px] bg-[#FF8E00] animate-pulse" style={{ animationDelay: "0.2s", height: "80%" }}></div>
-                            <div className="w-[2px] bg-[#FF8E00] animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
+                            <div className="w-[2px] bg-[#02E1EE] animate-pulse" style={{ animationDelay: "0.1s", height: "100%" }}></div>
+                            <div className="w-[2px] bg-[#02E1EE] animate-pulse" style={{ animationDelay: "0.4s", height: "60%" }}></div>
+                            <div className="w-[2px] bg-[#02E1EE] animate-pulse" style={{ animationDelay: "0.2s", height: "80%" }}></div>
+                            <div className="w-[2px] bg-[#02E1EE] animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
                           </div>
                         )}
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <div className="font-mono text-[10px] tracking-widest text-[#FF8E00]">DATE</div>
+                          <div className="font-mono text-[10px] tracking-widest text-[#02E1EE]">DATE</div>
                           <div className="font-mono text-sm mt-1">{session.date}</div>
                         </div>
                         <div>
-                          <div className="font-mono text-[10px] tracking-widest text-[#FF8E00]">TAGS</div>
+                          <div className="font-mono text-[10px] tracking-widest text-[#02E1EE]">TAGS</div>
                           <div className="flex flex-wrap gap-2 mt-1">
                             {session.genres.map((g, idx) => (
-                              <span key={idx} className="font-mono text-[10px] text-[#FF8E00] uppercase bg-transparent px-2 py-0.5 border border-[#FF8E00]">
+                              <span key={idx} className="font-mono text-[10px] text-[#02E1EE] uppercase bg-transparent px-2 py-0.5 border border-[#02E1EE]">
                                 {g}
                               </span>
                             ))}
@@ -145,13 +145,13 @@ function GridContent() {
                   {/* Technical / Action Column */}
                   <div className="w-full lg:w-[250px] shrink-0 p-6 flex flex-col justify-between overflow-hidden">
                     <div className="space-y-4">
-                      <div className="flex justify-between border-b border-[#FF8E00] pb-2">
-                        <span className="font-mono text-[10px] tracking-widest text-[#FF8E00] uppercase">BPM</span>
-                        <span className="font-mono text-sm text-[#FF8E00]">124.00</span>
+                      <div className="flex justify-between border-b border-[#02E1EE] pb-2">
+                        <span className="font-mono text-[10px] tracking-widest text-[#02E1EE] uppercase">BPM</span>
+                        <span className="font-mono text-sm text-[#02E1EE]">124.00</span>
                       </div>
-                      <div className="flex justify-between border-b border-[#FF8E00] pb-2">
-                        <span className="font-mono text-[10px] tracking-widest text-[#FF8E00] uppercase">DURATION</span>
-                        <span className="font-mono text-sm text-[#FF8E00]">{session.duration}</span>
+                      <div className="flex justify-between border-b border-[#02E1EE] pb-2">
+                        <span className="font-mono text-[10px] tracking-widest text-[#02E1EE] uppercase">DURATION</span>
+                        <span className="font-mono text-sm text-[#02E1EE]">{session.duration}</span>
                       </div>
                     </div>
                     
@@ -160,7 +160,7 @@ function GridContent() {
                       className={`w-full mt-4 lg:mt-0 py-3 border text-[10px] font-mono transition-all uppercase tracking-widest shrink-0 ${
                         isCurrent && isPlaying
                           ? "border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
-                          : "border-[#FF8E00] text-[#FF8E00] hover:bg-[#FF8E00] hover:text-black"
+                          : "border-[#02E1EE] text-[#02E1EE] hover:bg-[#02E1EE] hover:text-black"
                       }`}
                     >
                       {isCurrent && isPlaying ? "PAUSE_PLAYBACK" : "INITIALIZE_PLAYBACK"}
@@ -201,7 +201,7 @@ export default function GridPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen bg-brand-bg-dark flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-[#FF8E00]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-[#02E1EE]"></div>
       </div>
     }>
       <GridContent />
