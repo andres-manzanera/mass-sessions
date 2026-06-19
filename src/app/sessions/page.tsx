@@ -129,10 +129,10 @@ function GridContent() {
                         </h2>
                         {isCurrent && isPlaying && (
                           <div className="sound-wave select-none flex gap-1 items-end h-3">
-                            <div className="w-[2px] bg-brand-orange animate-pulse" style={{ animationDelay: "0.1s", height: "100%" }}></div>
-                            <div className="w-[2px] bg-brand-orange animate-pulse" style={{ animationDelay: "0.4s", height: "60%" }}></div>
-                            <div className="w-[2px] bg-brand-orange animate-pulse" style={{ animationDelay: "0.2s", height: "80%" }}></div>
-                            <div className="w-[2px] bg-brand-orange animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.1s", height: "100%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.4s", height: "60%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.2s", height: "80%" }}></div>
+                            <div className="w-[2px] bg-brand-accent animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
                           </div>
                         )}
                       </div>
@@ -141,7 +141,7 @@ function GridContent() {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
-                        <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent && isPlaying ? "text-brand-accent" : "text-white"}`}>{session.date}</div>
+                        <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white"}`}>{session.date}</div>
                       </div>
                       <div className="text-right lg:text-left">
                         <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
