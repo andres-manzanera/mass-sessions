@@ -120,6 +120,7 @@ function GridContent() {
                             <div className="w-[2px] bg-brand-orange animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
                           </div>
                         )}
+                      </div>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-4">
