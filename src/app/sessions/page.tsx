@@ -255,7 +255,7 @@ function SessionsContent() {
                           onClick={() => playSession(session.id)}
                           aria-label={isCurrent && isPlaying ? `Pausar ${session.title}` : `Reproducir ${session.title} de ${session.artist}`}
                           aria-pressed={isCurrent && isPlaying}
-                          className={`play-session-btn text-[11px] tracking-wider flex items-center justify-center min-w-[140px] ${
+                          className={`play-session-btn cursor-pointer text-[11px] tracking-wider flex items-center justify-center min-w-[140px] ${
                             isCurrent && isPlaying ? "play-btn-playing" : ""
                           }`}
                         >
