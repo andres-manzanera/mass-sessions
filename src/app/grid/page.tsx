@@ -120,22 +120,21 @@ function GridContent() {
                             <div className="w-[2px] bg-brand-orange animate-pulse" style={{ animationDelay: "0.5s", height: "40%" }}></div>
                           </div>
                         )}
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
+                        <div className="font-mono text-sm mt-1">{session.date}</div>
                       </div>
-                      
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
-                          <div className="font-mono text-sm mt-1">{session.date}</div>
-                        </div>
-                        <div>
-                          <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
-                          <div className="flex flex-wrap gap-2 mt-1">
-                            {session.genres.map((g, idx) => (
-                              <span key={idx} className="font-mono text-[10px] text-brand-orange uppercase bg-transparent px-2 py-0.5 border border-brand-orange">
-                                {g}
-                              </span>
-                            ))}
-                          </div>
+                      <div>
+                        <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          {session.genres.map((g, idx) => (
+                            <span key={idx} className="font-mono text-[10px] text-brand-orange uppercase bg-transparent px-2 py-0.5 border border-brand-orange">
+                              {g}
+                            </span>
+                          ))}
                         </div>
                       </div>
                     </div>
