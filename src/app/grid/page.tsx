@@ -94,19 +94,11 @@ function GridContent() {
                   <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
                     <Image 
                       alt={session.title} 
-                      className={`w-full h-full object-cover transition-all duration-500 ${isCurrent && isPlaying ? "grayscale-0" : "grayscale group-hover:grayscale-0"}`} 
+                       className={`w-full h-full object-cover transition-all duration-500 ${isCurrent && isPlaying ? "grayscale-0" : "grayscale group-hover:grayscale-0"}`} 
                       src={session.image}
                       fill
                       sizes="(max-width: 1024px) 100vw, 300px"
                     />
-                    <div className="absolute top-2 left-2 px-2 py-1 bg-black/80 font-mono text-[10px] text-brand-orange border border-brand-orange">
-                      {session.id}.RAW
-                    </div>
-                    {session.isNew && (
-                      <div className="absolute top-2 right-2 px-2 py-1 bg-brand-accent text-black font-mono text-[10px] uppercase font-bold animate-pulse">
-                        New_Record
-                      </div>
-                    )}
                   </div>
 
                   {/* Info Column */}
