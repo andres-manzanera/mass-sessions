@@ -205,7 +205,7 @@ function GridContent() {
         </div>
 
         {/* Filters Grid */}
-        <div className="mb-8 flex flex-wrap border-l border-t border-brand-orange bg-black/40">
+        <div className="mb-8 flex flex-wrap border-l border-t border-brand-orange bg-black/40 session-tab-anim" style={{ "--i": 0 } as React.CSSProperties}>
           {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year, idx) => (
             <button
               key={year}
