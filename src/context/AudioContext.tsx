@@ -204,7 +204,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         <div 
           role="region" 
           aria-label="Reproductor de audio"
-          className="fixed bottom-24 md:bottom-8 right-4 md:right-8 w-[calc(100%-2rem)] md:w-[420px] z-[120] bg-white/10 backdrop-blur-[32px] border border-white/20 rounded-2xl p-4 shadow-2xl flex flex-col gap-3 animate-fade-up-in"
+          className="fixed bottom-24 md:bottom-8 right-4 md:right-8 w-[calc(100%-2rem)] md:w-[420px] z-[120] bg-black/40 backdrop-blur-[32px] border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-3 animate-fade-up-in"
         >
           {/* Top Row: Art, Info, and Controls */}
           <div className="flex gap-4 items-center">
