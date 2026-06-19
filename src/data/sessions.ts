@@ -194,16 +194,6 @@ export const SESSIONS_DATA: Session[] = [
     date: "2017-11"
   },
   {
-    id: "january-echo",
-    title: "JANUARY ECHO",
-    artist: "MASS RESIDENT (MADRID)",
-    duration: "1h 31m",
-    genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2016_01.jpg",
-    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2016-01.mp3",
-    date: "2016-01"
-  },
-  {
     id: "solstice-sync",
     title: "SOLSTICE SYNC",
     artist: "MASS RESIDENT (MADRID)",
