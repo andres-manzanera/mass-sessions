@@ -47,7 +47,7 @@ function GridContent() {
       <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 pt-8 relative z-10">
         
         {/* Page Header */}
-        <div className="mb-8 border border-brand-orange p-8 bg-black/40">
+        <div className="mb-8 border border-brand-orange p-8 bg-black/40 session-tab-anim">
           <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">SESSIONS</h1>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <p className="text-lg text-on-surface-variant font-sora max-w-md">
@@ -59,15 +59,16 @@ function GridContent() {
 
         {/* Filters Grid */}
         <div className="mb-8 flex flex-wrap border-l border-t border-brand-orange bg-black/40">
-          {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year) => (
+          {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year, idx) => (
             <button
               key={year}
+              style={{ "--i": idx } as React.CSSProperties}
               onClick={() => { setActiveYear(year); setCurrentPage(1); }}
               className={`cursor-pointer p-4 w-1/4 md:w-[calc(100%/7)] border-r border-b border-brand-orange transition-colors font-mono text-sm ${
                 activeYear === year
                   ? "bg-brand-orange text-black font-bold"
                   : "text-brand-orange hover:bg-white/10"
-              }`}
+              } session-tab-anim`}
             >
               {year}
             </button>
@@ -86,7 +87,7 @@ function GridContent() {
               const isCurrent = activeSession?.id === session.id;
               
               return (
-                <div key={session.id} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 lg:border-0 lg:bg-transparent ${index > 0 ? "lg:border-t lg:border-brand-orange" : ""}`}>
+                <div key={session.id} style={{ "--i": index } as React.CSSProperties} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 lg:border-0 lg:bg-transparent session-card-anim ${index > 0 ? "lg:border-t lg:border-brand-orange" : ""}`}>
                   
                   {/* Image Column */}
                   <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
@@ -141,12 +142,12 @@ function GridContent() {
 
                   {/* Technical / Action Column */}
                   <div className="w-full lg:w-[250px] shrink-0 p-6 flex flex-col justify-between overflow-hidden">
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b border-brand-orange pb-2">
+                    <div className="flex justify-between lg:flex-col lg:space-y-4">
+                      <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
                         <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">BPM</span>
                         <span className="font-mono text-sm text-brand-orange">124.00</span>
                       </div>
-                      <div className="flex justify-between border-b border-brand-orange pb-2">
+                      <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
                         <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">DURATION</span>
                         <span className="font-mono text-sm text-brand-orange">{session.duration}</span>
                       </div>
