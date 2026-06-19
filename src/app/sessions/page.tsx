@@ -157,7 +157,7 @@ function SessionsContent() {
               aria-label={year === "ALL" ? "Mostrar todas las sesiones" : `Filtrar sesiones del año ${year}`}
               className={`session-tab-anim glass-panel text-sm px-4 py-2 rounded-full cursor-pointer hover:border-brand-orange transition-all duration-300 font-sora ${
                 activeYear === year
-                  ? "border-brand-orange text-brand-orange bg-brand-orange/10 font-bold"
+                  ? "border-brand-orange text-black bg-brand-orange font-extrabold"
                   : "text-on-surface-variant hover:text-white"
               }`}
               style={{ "--i": i } as React.CSSProperties}
