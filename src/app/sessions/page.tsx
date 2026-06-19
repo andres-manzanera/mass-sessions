@@ -168,7 +168,7 @@ function GridContent() {
                       </div>
                       <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
                         <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">DURATION</span>
-                        <span className="font-mono text-sm text-brand-orange">{session.duration}</span>
+                        <span className={`font-mono text-sm transition-colors ${isCurrent && isPlaying ? "text-brand-accent" : "text-brand-orange"}`}>{session.duration}</span>
                       </div>
                     </div>
                     
