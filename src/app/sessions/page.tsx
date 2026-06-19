@@ -213,7 +213,7 @@ function SessionsContent() {
                         <div className="flex justify-between items-start mb-2">
                           <div>
                             <div className="flex items-center gap-4">
-                              <h2 className="text-xl md:text-3xl font-extrabold uppercase tracking-tight text-white font-sora group-hover:text-[#02E1EE] group-active:text-[#02E1EE] transition-colors duration-300">
+                              <h2 className={`text-xl md:text-3xl font-extrabold uppercase tracking-tight font-sora transition-colors duration-300 ${isCurrent ? "text-[#02E1EE]" : "text-white group-hover:text-[#02E1EE] group-active:text-[#02E1EE]"}`}>
                                 {session.title}
                               </h2>
                               {isCurrent && isPlaying && (

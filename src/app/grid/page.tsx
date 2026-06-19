@@ -108,7 +108,7 @@ function GridContent() {
                         {session.id} // {session.title}
                       </div>
                       <div className="flex items-center gap-4 mb-4">
-                        <h2 className="font-sora text-2xl md:text-3xl font-bold uppercase text-white group-hover:text-[#02E1EE] group-active:text-[#02E1EE] transition-colors">
+                        <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white group-hover:text-[#02E1EE] group-active:text-[#02E1EE]"}`}>
                           {session.title}
                         </h2>
                         {isCurrent && isPlaying && (
