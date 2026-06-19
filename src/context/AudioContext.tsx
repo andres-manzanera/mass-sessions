@@ -199,44 +199,45 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     >
       {children}
 
-      {/* Global Floating Bottom Player */}
+      {/* Floating Bottom Right Player Widget */}
       {activeSession && (
         <div 
           role="region" 
           aria-label="Reproductor de audio"
-          className="sticky bottom-0 left-0 w-full z-[120] bg-black/90 backdrop-blur-2xl border-t-2 border-brand-orange/80 py-4 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="fixed bottom-24 md:bottom-8 right-4 md:right-8 w-[calc(100%-2rem)] md:w-[420px] z-[120] bg-[#1a1a1c]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-3 animate-fade-up-in"
         >
-          {/* Thumbnail / Meta */}
-          <div className="flex items-center gap-4 self-start md:self-center">
+          {/* Top Row: Art, Info, and Controls */}
+          <div className="flex gap-4 items-center">
+            {/* Album Art */}
             <img 
               alt={`Portada de la sesión ${activeSession.title}`} 
               src={activeSession.image} 
-              className="w-12 h-12 object-cover border border-white/20 rounded"
+              className="w-16 h-16 object-cover rounded-md border border-white/5 shadow-md flex-shrink-0"
             />
-            <div>
-              <h4 className="font-extrabold text-sm uppercase tracking-tight text-white line-clamp-1 font-sora">
+            
+            {/* Meta Info */}
+            <div className="flex-1 min-w-0 flex flex-col justify-center">
+              <h4 className="font-extrabold text-sm uppercase tracking-tight text-white truncate font-sora">
                 {activeSession.title}
               </h4>
-              <p className="font-mono text-[10px] text-brand-orange uppercase line-clamp-1">
+              <p className="font-mono text-[10px] text-brand-orange uppercase truncate mt-0.5">
                 {activeSession.date}
               </p>
             </div>
-          </div>
 
-          {/* Controls / Progress */}
-          <div className="flex flex-col items-center gap-2 flex-grow max-w-xl w-full">
-            <div className="flex items-center gap-6">
+            {/* Main Controls */}
+            <div className="flex items-center gap-1.5 md:gap-3 flex-shrink-0">
               <button 
                 onClick={playPrevious}
                 aria-label="Sesión anterior"
-                className="text-white/60 hover:text-white transition-colors cursor-pointer select-none"
+                className="text-white/60 hover:text-white transition-colors cursor-pointer"
               >
                 <span className="material-symbols-outlined text-2xl">skip_previous</span>
               </button>
               <button 
                 onClick={togglePlay}
                 aria-label={isPlaying ? "Pausar reproducción" : "Iniciar reproducción"}
-                className="bg-brand-orange text-black rounded-full p-2.5 hover:scale-105 transition-all cursor-pointer"
+                className="bg-brand-orange text-black rounded-full p-2 hover:scale-105 transition-all cursor-pointer shadow-[0_0_15px_rgba(242,240,235,0.3)]"
               >
                 <span className="material-symbols-outlined text-2xl font-bold">
                   {isPlaying ? "pause" : "play_arrow"}
@@ -245,64 +246,67 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
               <button 
                 onClick={playNext}
                 aria-label="Siguiente sesión"
-                className="text-white/60 hover:text-white transition-colors cursor-pointer select-none"
+                className="text-white/60 hover:text-white transition-colors cursor-pointer"
               >
                 <span className="material-symbols-outlined text-2xl">skip_next</span>
               </button>
             </div>
-
-            {/* Timeline Progress Slider */}
-            <div className="flex items-center gap-3 w-full font-mono text-[10px] text-white/50 select-none">
-              <span>{formatTime(currentTime)}</span>
-              <div 
-                onClick={handleTimelineClick}
-                onKeyDown={(e) => {
-                  if (!duration) return;
-                  if (e.key === "ArrowRight") {
-                    seekTo(Math.min(currentTime + 5, duration));
-                  } else if (e.key === "ArrowLeft") {
-                    seekTo(Math.max(currentTime - 5, 0));
-                  }
-                }}
-                tabIndex={0}
-                role="slider"
-                aria-label="Posición de reproducción"
-                aria-valuemin={0}
-                aria-valuemax={Math.round(duration) || 100}
-                aria-valuenow={Math.round(currentTime)}
-                aria-valuetext={`${formatTime(currentTime)} de ${formatTime(duration)}`}
-                className="flex-grow h-1.5 bg-white/10 rounded-full overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-1 focus:ring-brand-orange"
-              >
-                <div 
-                  className="absolute left-0 top-0 h-full bg-brand-orange rounded-full"
-                  style={{ width: `${progress}%` }}
-                ></div>
-                <div 
-                  className="absolute top-1/2 left-0 -translate-y-1/2 w-3 h-3 bg-white border border-black rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity" 
-                  style={{ left: `calc(${progress}% - 6px)` }}
-                ></div>
-              </div>
-              <span>{formatTime(duration) !== "0:00" ? formatTime(duration) : activeSession.duration}</span>
-            </div>
           </div>
 
-          {/* Volume / Close */}
-          <div className="flex items-center gap-4 self-end md:self-center select-none">
+          {/* Bottom Row: Timeline and Secondary Controls */}
+          <div className="flex items-center gap-3 w-full font-mono text-[10px] text-white/50 select-none">
+            <span>{formatTime(currentTime)}</span>
+            
+            {/* Timeline Progress Slider */}
+            <div 
+              onClick={handleTimelineClick}
+              onKeyDown={(e) => {
+                if (!duration) return;
+                if (e.key === "ArrowRight") {
+                  seekTo(Math.min(currentTime + 5, duration));
+                } else if (e.key === "ArrowLeft") {
+                  seekTo(Math.max(currentTime - 5, 0));
+                }
+              }}
+              tabIndex={0}
+              role="slider"
+              aria-label="Posición de reproducción"
+              aria-valuemin={0}
+              aria-valuemax={Math.round(duration) || 100}
+              aria-valuenow={Math.round(currentTime)}
+              aria-valuetext={`${formatTime(currentTime)} de ${formatTime(duration)}`}
+              className="flex-grow h-1 bg-white/10 rounded-full overflow-hidden relative cursor-pointer group focus:outline-none focus:ring-1 focus:ring-brand-orange"
+            >
+              <div 
+                className="absolute left-0 top-0 h-full bg-brand-orange rounded-full"
+                style={{ width: `${progress}%` }}
+              ></div>
+              <div 
+                className="absolute top-1/2 left-0 -translate-y-1/2 w-2 h-2 bg-white border border-black rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity" 
+                style={{ left: `calc(${progress}% - 4px)` }}
+              ></div>
+            </div>
+            
+            <span>{formatTime(duration) !== "0:00" ? formatTime(duration) : activeSession.duration}</span>
+
+            {/* Volume */}
             <button 
               onClick={toggleMute}
               aria-label={isMuted ? "Activar sonido" : "Silenciar sonido"}
-              className="text-white/60 hover:text-white transition-colors cursor-pointer"
+              className="text-white/60 hover:text-white transition-colors cursor-pointer ml-1"
             >
-              <span className="material-symbols-outlined">
+              <span className="material-symbols-outlined text-base">
                 {isMuted ? "volume_off" : "volume_up"}
               </span>
             </button>
+
+            {/* Close */}
             <button 
               onClick={closePlayer}
               aria-label="Cerrar reproductor"
               className="text-white/40 hover:text-white/80 transition-colors cursor-pointer"
             >
-              <span className="material-symbols-outlined text-xl">close</span>
+              <span className="material-symbols-outlined text-base">close</span>
             </button>
           </div>
         </div>
