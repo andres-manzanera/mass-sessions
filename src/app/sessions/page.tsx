@@ -199,7 +199,7 @@ function SessionsContent() {
                     <div className="w-full md:w-[226px] h-48 md:h-[226px] relative overflow-hidden flex-shrink-0">
                       <Image
                         alt={`Portada de ${session.title} por ${session.artist}`}
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className={`object-cover transition-all duration-700 group-hover:scale-105 ${isCurrent && isPlaying ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0"}`}
                         src={session.image}
                         fill
                         sizes="(max-width: 768px) 100vw, 226px"
@@ -213,7 +213,7 @@ function SessionsContent() {
                         <div className="flex justify-between items-start mb-2">
                           <div>
                             <div className="flex items-center gap-4">
-                              <h2 className="text-xl md:text-3xl font-extrabold uppercase tracking-tight text-white font-sora">
+                              <h2 className="text-xl md:text-3xl font-extrabold uppercase tracking-tight text-white font-sora group-hover:text-[#02E1EE] group-active:text-[#02E1EE] transition-colors duration-300">
                                 {session.title}
                               </h2>
                               {isCurrent && isPlaying && (
