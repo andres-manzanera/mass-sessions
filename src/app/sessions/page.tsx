@@ -227,7 +227,8 @@ function GridContent() {
         {/* The Grid List */}
         <div id="sessions-grid" className="flex flex-col gap-6 lg:gap-0 lg:block lg:border lg:border-brand-orange lg:bg-black/40">
           {paginatedSessions.length === 0 ? (
-            <div className="p-16 text-center text-on-surface-variant font-mono uppercase">
+            <div style={{ "--i": 0 } as React.CSSProperties} className="p-16 text-center text-brand-orange/60 font-mono text-sm uppercase tracking-widest session-card-page-anim">
+              No sessions available for {activeYear} yet.
             </div>
           ) : (
             paginatedSessions.map((session, index) => (
