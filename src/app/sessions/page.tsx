@@ -124,9 +124,9 @@ function GridContent() {
                         <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
                         <div className="font-mono text-sm mt-1">{session.date}</div>
                       </div>
-                      <div>
+                      <div className="text-right lg:text-left">
                         <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
-                        <div className="flex flex-wrap gap-2 mt-1">
+                        <div className="flex flex-wrap justify-end lg:justify-start gap-2 mt-1">
                           {session.genres.map((g, idx) => (
                             <span key={idx} className="font-mono text-[10px] text-brand-orange uppercase bg-transparent px-2 py-0.5 border border-brand-orange">
                               {g}
