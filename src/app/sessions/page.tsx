@@ -221,7 +221,7 @@ function GridContent() {
               {year}
             </button>
           ))}
-          <div className="flex-grow border-r border-b border-brand-orange pointer-events-none"></div>
+          <div style={{ "--i": 13 } as React.CSSProperties} className="flex-grow border-r border-b border-brand-orange pointer-events-none session-tab-anim"></div>
         </div>
 
         {/* The Grid List */}
