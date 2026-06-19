@@ -79,7 +79,7 @@ function GridContent() {
         </div>
 
         {/* The Grid List */}
-        <div className="border border-brand-orange bg-black/40">
+        <div className="flex flex-col gap-6 lg:gap-0 lg:block lg:border lg:border-brand-orange lg:bg-black/40">
           {paginatedSessions.length === 0 ? (
             <div className="p-16 text-center text-on-surface-variant font-mono uppercase">
               No sessions found in the archive for {activeYear}.
@@ -89,7 +89,7 @@ function GridContent() {
               const isCurrent = activeSession?.id === session.id;
               
               return (
-                <div key={session.id} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group ${index > 0 ? "border-t border-brand-orange" : ""}`}>
+                <div key={session.id} className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 lg:border-0 lg:bg-transparent ${index > 0 ? "lg:border-t lg:border-brand-orange" : ""}`}>
                   
                   {/* Image Column */}
                   <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
