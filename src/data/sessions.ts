@@ -14,7 +14,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "dvs1",
     title: "DEEP GROOVES",
-    artist: "DVS1 (MINNEAPOLIS)",
+    artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
     image: "/session_dvs1_pattern.jpg",
@@ -24,7 +24,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "rodhad",
     title: "SUNSET RHYTHMS",
-    artist: "RØDHÅD (BERLIN)",
+    artist: "MASS SESSIONS",
     duration: "48m 12s",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_rodhad_pattern.jpg",
@@ -35,7 +35,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "blawan",
     title: "MIDNIGHT PULSE",
-    artist: "BLAWAN (LONDON)",
+    artist: "MASS SESSIONS",
     duration: "1h 12m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_blawan_pattern.jpg",
@@ -45,7 +45,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "kerri",
     title: "RAW VIBRATIONS",
-    artist: "KERRI CHANDLER (NEW YORK)",
+    artist: "MASS SESSIONS",
     duration: "1h 00m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_kerri_pattern.png",
@@ -55,7 +55,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "analog-sync",
     title: "ANALOG SYNC",
-    artist: "BEN KLOCK (BERLIN)",
+    artist: "MASS SESSIONS",
     duration: "1h 03m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2024_02.jpg",
@@ -65,7 +65,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "dust-vinyl",
     title: "DUST & DIGITAL",
-    artist: "THEO PARRISH (DETROIT)",
+    artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
     image: "/session_vintage_pattern.png",
@@ -75,7 +75,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "autumn-grooves",
     title: "AUTUMN GROOVES",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 27m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2024_10.png",
@@ -85,7 +85,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "cold-pulse",
     title: "COLD PULSE",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 11m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2024_12.png",
@@ -95,7 +95,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "spring-rhythms",
     title: "SOLAR RHYTHMS",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "51m 25s",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2023_05.jpg",
@@ -106,7 +106,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "infinite-echo",
     title: "INFINITE ECHO",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "59m 33s",
     genres: ["DEEP HOUSE"],
     image: "/session_2022_04.jpg",
@@ -116,7 +116,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "vernal-chords",
     title: "VERNAL CHORDS",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2022_08.jpg",
@@ -126,7 +126,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "hi-resonance",
     title: "HI RESONANCE",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "54m 56s",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2021_10.jpg",
@@ -136,7 +136,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "frequencies",
     title: "FREQUENCIES",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 05m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2020_08.jpg",
@@ -146,7 +146,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "vernal-sounds",
     title: "VERNAL SOUNDS",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
     image: "/session_2019_05.jpg",
@@ -156,7 +156,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "spring-frequencies",
     title: "SPRING FREQUENCIES",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 13m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2018_05.jpg",
@@ -166,7 +166,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "autumn-raw",
     title: "AUTUMN RAW",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 02m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2017_09.jpg",
@@ -176,7 +176,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "retro-orbits",
     title: "RETRO ORBITS",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 30m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2017_12.jpg",
@@ -186,7 +186,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "organic-cell",
     title: "ORGANIC CELL",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 03m",
     genres: ["DEEP HOUSE", "TECHNO"],
     image: "/session_2017_11.jpg",
@@ -196,7 +196,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "solstice-sync",
     title: "SOLSTICE SYNC",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 26m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2015_06.jpg",
@@ -206,7 +206,7 @@ export const SESSIONS_DATA: Session[] = [
   {
     id: "hidden-pulse",
     title: "HIDDEN PULSE",
-    artist: "MASS RESIDENT (MADRID)",
+    artist: "MASS SESSIONS",
     duration: "1h 06m",
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2014_04.jpg",
