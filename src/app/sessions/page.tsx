@@ -44,7 +44,6 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       id={session.id}
       ref={ref} 
       style={{ "--i": index } as React.CSSProperties} 
-      tabIndex={0}
       className={`flex flex-col lg:flex-row lg:h-[200px] lg:hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 outline-none cursor-pointer ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
     >
       
@@ -52,7 +51,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
         <Image 
           alt={session.title} 
-          className={`w-full h-full object-cover transition-all duration-500 lg:group-hover:scale-105 group-active:scale-105 group-focus:scale-105 ${isCurrent ? "grayscale-0" : "grayscale lg:group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0"}`} 
+          className={`w-full h-full object-cover transition-all duration-500 lg:group-hover:scale-105 ${isCurrent ? "grayscale-0" : "grayscale lg:group-hover:grayscale-0"}`} 
           src={session.image}
           fill
           sizes="(max-width: 1024px) 100vw, 300px"
@@ -64,7 +63,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
         <div>
 
           <div className="flex items-center gap-4 mb-4">
-            <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white lg:group-hover:text-[#02E1EE] group-active:text-[#02E1EE] group-focus:text-[#02E1EE]"}`}>
+            <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white lg:group-hover:text-[#02E1EE]"}`}>
               {session.title}
             </h2>
             {isCurrent && isPlaying && (
@@ -81,7 +80,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
         <div className="grid grid-cols-2 gap-4">
           <div>
             <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
-            <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white group-hover:text-brand-accent group-active:text-brand-accent group-focus:text-brand-accent"}`}>{session.date}</div>
+            <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white lg:group-hover:text-brand-accent"}`}>{session.date}</div>
           </div>
           <div className="text-right lg:text-left">
             <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
