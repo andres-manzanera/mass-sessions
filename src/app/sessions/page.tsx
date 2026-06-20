@@ -108,8 +108,8 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       <div className="w-full lg:w-[250px] shrink-0 p-6 flex flex-col justify-between overflow-hidden">
         <div className="flex justify-between lg:flex-col lg:space-y-4">
           <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
-            <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">BPM</span>
-            <span className="font-mono text-sm text-brand-orange">124.00</span>
+            <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">BITRATE</span>
+            <span className="font-mono text-sm text-brand-orange">192kb/s</span>
           </div>
           <div className="flex items-center gap-2 lg:justify-between lg:border-b lg:border-brand-orange lg:pb-2">
             <span className="font-mono text-[10px] tracking-widest text-brand-orange uppercase">DURATION</span>
