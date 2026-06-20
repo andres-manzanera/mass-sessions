@@ -118,8 +118,8 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
             style={{ 
               WebkitTapHighlightColor: "transparent",
               backgroundColor: isCurrent && isPlaying ? "#02E1EE" : "transparent",
-              color: isCurrent && isPlaying ? "#000" : isCurrent && !isPlaying ? "#02E1EE" : "#FF5E00",
-              borderColor: isCurrent ? "#02E1EE" : "#FF5E00"
+              color: isCurrent && isPlaying ? "#000" : isCurrent && !isPlaying ? "#02E1EE" : "#F2F0EB",
+              borderColor: isCurrent ? "#02E1EE" : "#F2F0EB"
             }}
             className={`w-full py-3 border text-[10px] font-mono uppercase tracking-widest cursor-pointer transition-colors ${
               !isCurrent ? "lg:hover:bg-brand-orange lg:hover:text-black" : isPlaying ? "lg:hover:bg-brand-accent/80 lg:hover:border-brand-accent/80" : ""
