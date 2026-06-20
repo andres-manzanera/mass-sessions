@@ -51,8 +51,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+    const handlePlay = () => setIsPlaying(!audio.paused);
+    const handlePause = () => setIsPlaying(!audio.paused);
     const handleTimeUpdate = () => {
       setCurrentTime(audio.currentTime);
       const dur = audio.duration || 0;

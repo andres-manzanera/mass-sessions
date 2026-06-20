@@ -45,14 +45,14 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       ref={ref} 
       style={{ "--i": index } as React.CSSProperties} 
       tabIndex={0}
-      className={`flex flex-col lg:flex-row lg:h-[200px] hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 outline-none cursor-pointer ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
+      className={`flex flex-col lg:flex-row lg:h-[200px] lg:hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 outline-none cursor-pointer ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
     >
       
       {/* Image Column */}
       <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
         <Image 
           alt={session.title} 
-          className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-active:scale-105 group-focus:scale-105 ${isCurrent ? "grayscale-0" : "grayscale group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0"}`} 
+          className={`w-full h-full object-cover transition-all duration-500 lg:group-hover:scale-105 group-active:scale-105 group-focus:scale-105 ${isCurrent ? "grayscale-0" : "grayscale lg:group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0"}`} 
           src={session.image}
           fill
           sizes="(max-width: 1024px) 100vw, 300px"
@@ -64,7 +64,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
         <div>
 
           <div className="flex items-center gap-4 mb-4">
-            <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white group-hover:text-[#02E1EE] group-active:text-[#02E1EE] group-focus:text-[#02E1EE]"}`}>
+            <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white lg:group-hover:text-[#02E1EE] group-active:text-[#02E1EE] group-focus:text-[#02E1EE]"}`}>
               {session.title}
             </h2>
             {isCurrent && isPlaying && (
@@ -118,10 +118,10 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
             style={{ WebkitTapHighlightColor: "transparent" }}
             className={`w-full py-3 border text-[10px] font-mono uppercase tracking-widest cursor-pointer ${
               isCurrent && isPlaying
-                ? "transition-colors border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
+                ? "transition-colors border-brand-accent text-black bg-brand-accent lg:hover:bg-brand-accent/80"
                 : isCurrent && !isPlaying
                 ? "border-brand-accent text-brand-accent bg-transparent"
-                : "transition-colors border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-black"
+                : "transition-colors border-brand-orange text-brand-orange lg:hover:bg-brand-orange lg:hover:text-black"
             }`}
           >
             {isCurrent && isPlaying ? "PAUSE SESSION" : "PLAY SESSION"}
