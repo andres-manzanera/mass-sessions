@@ -213,4 +213,4 @@ export const SESSIONS_DATA: Session[] = [
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2014-4-BD-Hidden-Track.mp3",
     date: "2014-04"
   }
-];
+].sort((a, b) => b.date.localeCompare(a.date));
