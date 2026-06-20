@@ -121,13 +121,14 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
           <button 
             onClick={() => playSession(session.id)}
             style={{ 
-              WebkitTapHighlightColor: "transparent",
-              backgroundColor: isCurrent && isPlaying ? "#02E1EE" : "transparent",
-              color: isCurrent && isPlaying ? "#000" : isCurrent && !isPlaying ? "#02E1EE" : "#F2F0EB",
-              borderColor: isCurrent ? "#02E1EE" : "#F2F0EB"
+              WebkitTapHighlightColor: "transparent"
             }}
             className={`w-full py-3 border text-[10px] font-mono uppercase tracking-widest cursor-pointer transition-colors ${
-              !isCurrent ? "lg:hover:bg-brand-orange lg:hover:text-black" : isPlaying ? "lg:hover:bg-brand-accent/80 lg:hover:border-brand-accent/80" : ""
+              isCurrent && isPlaying 
+                ? "bg-[#02E1EE] text-black border-[#02E1EE] lg:hover:bg-brand-accent/80 lg:hover:border-brand-accent/80" 
+                : isCurrent && !isPlaying 
+                  ? "bg-transparent text-[#02E1EE] border-[#02E1EE]" 
+                  : "bg-transparent text-[#F2F0EB] border-[#F2F0EB] lg:hover:bg-[#F2F0EB] lg:hover:text-black"
             }`}
           >
             {isCurrent && isPlaying ? "PAUSE SESSION" : "PLAY SESSION"}
