@@ -41,6 +41,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
 
   return (
     <div 
+      id={session.id}
       ref={ref} 
       style={{ "--i": index } as React.CSSProperties} 
       tabIndex={0}
@@ -152,7 +153,23 @@ function GridContent() {
         // Ensure we only trigger play if it's not already playing this session
         if (activeSession?.id !== autoplayId) {
           // Add a tiny delay to ensure AudioContext can handle it after navigation
-          setTimeout(() => playSession(autoplayId), 100);
+          setTimeout(() => {
+            playSession(autoplayId);
+            const el = document.getElementById(autoplayId);
+            if (el) {
+              const y = el.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }, 150);
+        } else {
+          // If already playing, just scroll to it
+          setTimeout(() => {
+            const el = document.getElementById(autoplayId);
+            if (el) {
+              const y = el.getBoundingClientRect().top + window.scrollY - 100;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }, 150);
         }
       }
     }
