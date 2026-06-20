@@ -63,10 +63,15 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden">
         <div>
 
-          <div className="flex items-center gap-4 mb-4">
-            <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white lg:group-hover:text-[#02E1EE] group-active:text-[#02E1EE] group-focus:text-[#02E1EE]"}`}>
-              {session.title}
-            </h2>
+          <div className="flex flex-wrap items-center gap-4 mb-4">
+            <div className="flex items-center gap-3">
+              <h2 className={`font-sora text-2xl md:text-3xl font-bold uppercase transition-colors ${isCurrent ? "text-[#02E1EE]" : "text-white lg:group-hover:text-[#02E1EE] group-active:text-[#02E1EE] group-focus:text-[#02E1EE]"}`}>
+                {session.title}
+              </h2>
+              {session.isNew && (
+                <span className="bg-brand-accent text-black text-[10px] font-bold font-mono tracking-widest px-2 py-0.5 animate-pulse shrink-0 self-start mt-1.5 md:mt-2">NEW</span>
+              )}
+            </div>
             {isCurrent && isPlaying && (
               <div className="sound-wave select-none flex gap-1 items-end h-3">
                 <div className="w-[2px] bg-brand-accent animate-sound-bounce" style={{ animationDelay: "0.1s", height: "100%" }}></div>
