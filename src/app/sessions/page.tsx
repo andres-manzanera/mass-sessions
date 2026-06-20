@@ -167,7 +167,7 @@ function GridContent() {
             const el = document.getElementById(autoplayId);
             if (el) {
               const y = el.getBoundingClientRect().top + window.scrollY - 100;
-              window.scrollTo({ top: y, behavior: "smooth" });
+              window.scrollTo({ top: y, behavior: "instant" });
             }
           }, 150);
         } else {
@@ -176,7 +176,7 @@ function GridContent() {
             const el = document.getElementById(autoplayId);
             if (el) {
               const y = el.getBoundingClientRect().top + window.scrollY - 100;
-              window.scrollTo({ top: y, behavior: "smooth" });
+              window.scrollTo({ top: y, behavior: "instant" });
             }
           }, 150);
         }
@@ -242,7 +242,7 @@ function GridContent() {
                 const grid = document.getElementById("sessions-grid");
                 if (grid) {
                   const y = grid.getBoundingClientRect().top + window.scrollY - 100;
-                  window.scrollTo({ top: y, behavior: "smooth" });
+                  window.scrollTo({ top: y, behavior: "instant" });
                 }
               }}
               className={`cursor-pointer p-4 w-1/4 md:w-[calc(100%/7)] border border-brand-orange ml-[-1px] mt-[-1px] transition-colors font-mono text-sm ${
@@ -288,7 +288,7 @@ function GridContent() {
                   const grid = document.getElementById("sessions-grid");
                   if (grid) {
                     const y = grid.getBoundingClientRect().top + window.scrollY - 100;
-                    window.scrollTo({ top: y, behavior: "smooth" });
+                    window.scrollTo({ top: y, behavior: "instant" });
                   }
                 }
               }}
@@ -312,7 +312,7 @@ function GridContent() {
                       const grid = document.getElementById("sessions-grid");
                       if (grid) {
                         const y = grid.getBoundingClientRect().top + window.scrollY - 100;
-                        window.scrollTo({ top: y, behavior: "smooth" });
+                        window.scrollTo({ top: y, behavior: "instant" });
                       }
                     }}
                     className={`w-9 h-9 border-2 font-mono text-xs font-bold transition-all flex items-center justify-center cursor-pointer ${
@@ -333,7 +333,7 @@ function GridContent() {
                   const grid = document.getElementById("sessions-grid");
                   if (grid) {
                     const y = grid.getBoundingClientRect().top + window.scrollY - 100;
-                    window.scrollTo({ top: y, behavior: "smooth" });
+                    window.scrollTo({ top: y, behavior: "instant" });
                   }
                 }
               }}
