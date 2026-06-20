@@ -144,7 +144,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row w-full min-h-[60vh]">
             
             {/* Left Block */}
-            <div className="w-full md:w-1/3 bg-black border-b-2 md:border-b-0 md:border-r-2 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group">
+            <div tabIndex={0} className="w-full md:w-1/3 bg-black border-b-2 md:border-b-0 md:border-r-2 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group outline-none cursor-pointer">
               <div className="z-10">
                 <h2 className="text-4xl font-extrabold uppercase mb-4 tracking-tighter">NEXT<br />SESSION</h2>
                 <div className="font-mono text-xs font-semibold bg-brand-orange text-black inline-block px-3 py-1 mb-6">
@@ -157,10 +157,10 @@ export default function Home() {
 
               <Link 
                 href="/sessions"
-                className="mt-12 bg-black border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black transition-all duration-300 ease-in-out w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist z-10 cursor-pointer"
+                className="mt-12 bg-black border-2 border-brand-orange text-brand-orange px-8 py-4 font-bold text-lg uppercase hover:bg-brand-accent hover:border-brand-accent hover:text-black active:bg-brand-accent active:border-brand-accent active:text-black focus:bg-brand-accent focus:border-brand-accent focus:text-black transition-all duration-300 ease-in-out w-full text-left flex justify-between items-center group-hover:neon-glow-brutalist group-active:neon-glow-brutalist group-focus:neon-glow-brutalist z-10 cursor-pointer"
 >
                 SECURE ACCESS
-                <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+                <span className="material-symbols-outlined transition-transform group-hover:translate-x-2 group-active:translate-x-2 group-focus:translate-x-2">arrow_forward</span>
               </Link>
 
               {/* Decorative background texture */}

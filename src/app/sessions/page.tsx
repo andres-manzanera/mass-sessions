@@ -117,7 +117,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
             isCurrent && isPlaying
               ? "border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
               : isCurrent && !isPlaying
-              ? "border-brand-accent text-brand-accent animate-pulse hover:bg-brand-accent hover:text-black"
+              ? "border-brand-accent text-brand-accent animate-pulse bg-transparent"
               : "border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-black"
           }`}
         >
