@@ -218,7 +218,7 @@ function GridContent() {
         <div className="mb-8 border border-brand-orange p-8 bg-black/40 session-tab-anim">
           <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">SESSIONS</h1>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <p className="text-lg text-on-surface-variant font-sora max-w-md">
+            <p className="text-lg text-brand-orange opacity-60 font-sora max-w-md">
               Synchronized archival of high-fidelity auditory experiences. Technical performance logs.
             </p>
             <div className="font-mono text-xs text-brand-orange">STATUS: ONLINE // VERSION 2.0.6</div>
