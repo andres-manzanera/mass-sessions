@@ -112,19 +112,21 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
           </div>
         </div>
         
-        <button 
-          onClick={() => playSession(session.id)}
-          style={{ WebkitTapHighlightColor: "transparent" }}
-          className={`w-full mt-4 lg:mt-0 py-3 border text-[10px] font-mono uppercase tracking-widest shrink-0 cursor-pointer ${
-            isCurrent && isPlaying
-              ? "transition-colors border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
-              : isCurrent && !isPlaying
-              ? "border-brand-accent text-brand-accent animate-pulse bg-transparent"
-              : "transition-colors border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-black"
-          }`}
-        >
-          {isCurrent && isPlaying ? "PAUSE SESSION" : "PLAY SESSION"}
-        </button>
+        <div className={`w-full mt-4 lg:mt-0 shrink-0 ${isCurrent && !isPlaying ? "animate-pulse" : ""}`}>
+          <button 
+            onClick={() => playSession(session.id)}
+            style={{ WebkitTapHighlightColor: "transparent" }}
+            className={`w-full py-3 border text-[10px] font-mono uppercase tracking-widest cursor-pointer ${
+              isCurrent && isPlaying
+                ? "transition-colors border-brand-accent text-black bg-brand-accent hover:bg-brand-accent/80"
+                : isCurrent && !isPlaying
+                ? "border-brand-accent text-brand-accent bg-transparent"
+                : "transition-colors border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-black"
+            }`}
+          >
+            {isCurrent && isPlaying ? "PAUSE SESSION" : "PLAY SESSION"}
+          </button>
+        </div>
       </div>
     </div>
   );
