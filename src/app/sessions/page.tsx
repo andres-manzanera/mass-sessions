@@ -95,7 +95,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
                 {session.title}
               </h2>
               {session.isNew && (
-                <span className="border border-brand-accent text-brand-accent text-[10px] font-bold font-mono tracking-widest px-2 py-0.5 animate-pulse shrink-0 self-start mt-1.5 md:mt-2">NEW</span>
+                <span className="border border-brand-orange text-brand-orange text-[10px] font-bold font-mono tracking-widest px-2 py-0.5 animate-pulse shrink-0 self-start mt-1.5 md:mt-2">NEW</span>
               )}
             </div>
             {isCurrent && isPlaying && (
