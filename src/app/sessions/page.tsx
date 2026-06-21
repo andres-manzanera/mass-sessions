@@ -12,6 +12,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
   const isCurrent = activeSession?.id === session.id;
   const [isVisible, setIsVisible] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [isInViewForColor, setIsInViewForColor] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,6 +31,22 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       observer.observe(ref.current);
     }
     return () => observer.disconnect();
+  }, []);
+
+  // Nuevo IntersectionObserver continuo para dar color a la imagen en móvil
+  // cuando la tarjeta está visible en el viewport (ej. 60% visible)
+  useEffect(() => {
+    const colorObserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsInViewForColor(entry.isIntersecting);
+      },
+      { threshold: 0.6 }
+    );
+    
+    if (ref.current) {
+      colorObserver.observe(ref.current);
+    }
+    return () => colorObserver.disconnect();
   }, []);
 
   const animClass = isVisible 
@@ -51,7 +68,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       <div className="w-full lg:w-[200px] h-[300px] lg:h-full shrink-0 border-b lg:border-b-0 lg:border-r border-brand-orange relative overflow-hidden">
         <Image 
           alt={session.title} 
-          className={`w-full h-full object-cover transition-all duration-500 lg:group-hover:scale-105 group-active:scale-105 group-focus:scale-105 ${isCurrent ? "grayscale-0" : "grayscale lg:group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0"}`} 
+          className={`w-full h-full object-cover transition-all duration-500 lg:group-hover:scale-105 group-active:scale-105 group-focus:scale-105 ${isCurrent ? "grayscale-0" : `grayscale lg:group-hover:grayscale-0 group-active:grayscale-0 group-focus:grayscale-0 ${isInViewForColor ? "max-lg:grayscale-0" : ""}`}`} 
           src={session.image}
           fill
           sizes="(max-width: 1024px) 100vw, 300px"
