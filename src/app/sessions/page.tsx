@@ -43,8 +43,8 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
         const isNearTop = entry.boundingClientRect.top < window.innerHeight / 2;
         
         if (isNearTop) {
-          // Desaparece al perder 10% por arriba (ratio baja de 0.9)
-          setIsInViewForColor(ratio >= 0.9);
+          // Desaparece al perder 5% por arriba (ratio baja de 0.95)
+          setIsInViewForColor(ratio >= 0.95);
         } else {
           // Aparece al llegar al 80% por abajo (ratio >= 0.8)
           setIsInViewForColor(ratio >= 0.8);
