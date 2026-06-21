@@ -115,7 +115,7 @@ export default function Home() {
                 />
               </svg></span>
             </h1>
-            <p className="font-semibold text-sm sm:text-base md:text-xl mt-4 bg-black py-4 px-6 border-2 border-brand-orange inline-block max-w-[280px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-none lg:whitespace-nowrap hero-tagline">
+            <p className="hidden md:inline-block font-semibold text-sm sm:text-base md:text-xl mt-4 bg-black py-4 px-6 border-2 border-brand-orange max-w-[280px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-none lg:whitespace-nowrap hero-tagline">
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
@@ -126,6 +126,13 @@ export default function Home() {
             <p className="font-mono text-xs uppercase tracking-widest mt-2">Volume Warning</p>
           </div>
         </section>
+
+        {/* Mobile Tagline (Appears on scroll) */}
+        <div className="md:hidden w-full bg-black border-b-2 border-brand-orange p-8 flex justify-center items-center relative z-10">
+          <p className="font-semibold text-sm sm:text-base bg-black py-4 px-6 border-2 border-brand-orange inline-block text-center text-brand-orange">
+            NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
+          </p>
+        </div>
 
         {/* Marquee Divider */}
         <div className="marquee-container">
