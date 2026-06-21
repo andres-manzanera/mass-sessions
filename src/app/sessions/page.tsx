@@ -8,8 +8,6 @@ import Header from "@/components/Header";
 import { useAudio } from "@/context/AudioContext";
 import { SESSIONS_DATA } from "@/data/sessions";
 
-let hasLoadedGridInitially = false;
-
 function SessionCard({ session, index, activeSession, isPlaying, playSession, isInitialGridLoad }: any) {
   const isCurrent = activeSession?.id === session.id;
   const [isVisible, setIsVisible] = useState(false);
@@ -146,11 +144,10 @@ function GridContent() {
   const itemsPerPage = 6;
   const { activeSession, isPlaying, playSession } = useAudio();
   const searchParams = useSearchParams();
-  const [isInitialGridLoad, setIsInitialGridLoad] = useState(!hasLoadedGridInitially);
+  const [isInitialGridLoad, setIsInitialGridLoad] = useState(true);
 
   useEffect(() => {
-    hasLoadedGridInitially = true;
-    const t = setTimeout(() => setIsInitialGridLoad(false), 4500);
+    const t = setTimeout(() => setIsInitialGridLoad(false), 3000);
     return () => clearTimeout(t);
   }, []);
 
