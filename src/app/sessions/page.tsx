@@ -71,7 +71,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       ref={ref} 
       style={{ "--i": index } as React.CSSProperties} 
       tabIndex={0}
-      className={`flex flex-col lg:flex-row lg:h-[200px] lg:hover:bg-surface-container transition-colors group border border-brand-orange bg-black outline-none cursor-pointer ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
+      className={`flex flex-col lg:flex-row lg:h-[200px] lg:hover:bg-surface-container transition-colors group border border-brand-orange bg-black outline-none ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
     >
       
       {/* Image Column */}
