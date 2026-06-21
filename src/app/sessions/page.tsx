@@ -250,7 +250,7 @@ function GridContent() {
         </div>
 
         {/* The Grid List */}
-        <div id="sessions-grid" className="flex flex-col gap-6 lg:gap-0 lg:block">
+        <div id="sessions-grid" className="grid grid-cols-1 md:grid-cols-2 lg:block gap-6 lg:gap-0">
           {paginatedSessions.length === 0 ? (
             <div style={{ "--i": 0 } as React.CSSProperties} className="p-16 text-center text-brand-orange/60 font-mono text-sm uppercase tracking-widest session-card-page-anim lg:border lg:border-brand-orange lg:bg-black">
               No sessions available for {activeYear} yet.
