@@ -5,23 +5,27 @@ import Header from "@/components/Header";
 import { useEffect, useRef, useState } from "react";
 
 export default function InfoPage() {
+  const [isRulesVisible, setIsRulesVisible] = useState(false);
   const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const rulesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsAboutVisible(true);
-          observer.disconnect();
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === rulesRef.current) setIsRulesVisible(true);
+            if (entry.target === aboutRef.current) setIsAboutVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
       },
       { threshold: 0.2 }
     );
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
+    if (rulesRef.current) observer.observe(rulesRef.current);
+    if (aboutRef.current) observer.observe(aboutRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -59,7 +63,12 @@ export default function InfoPage() {
         {/* Info Content Grid */}
         <div className="space-y-12">
           {/* Rules Block */}
-          <div className="rules-block-anim">
+          <div 
+            ref={rulesRef}
+            className={`transition-all duration-1000 ease-out delay-[800ms] ${
+              isRulesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <h2 className="text-2xl md:text-3xl font-extrabold uppercase mb-6 tracking-tight text-white">
               THE RULES
             </h2>
@@ -79,7 +88,7 @@ export default function InfoPage() {
           {/* About Block */}
           <div 
             ref={aboutRef}
-            className={`border-t-2 border-brand-orange pt-12 transition-all duration-1000 ease-out ${
+            className={`border-t-2 border-brand-orange pt-12 transition-all duration-1000 ease-out delay-[200ms] md:delay-[1200ms] ${
               isAboutVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
