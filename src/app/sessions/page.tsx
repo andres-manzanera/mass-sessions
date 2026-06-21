@@ -117,7 +117,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
           </div>
         </div>
         
-        <div className={`w-full mt-4 lg:mt-0 shrink-0 ${isCurrent && !isPlaying ? "animate-pulse" : ""}`}>
+        <div key={`btn-${isCurrent}-${isPlaying}`} className={`w-full mt-4 lg:mt-0 shrink-0 ${isCurrent && !isPlaying ? "animate-pulse" : ""}`}>
           <button 
             onClick={() => playSession(session.id)}
             style={{ 
