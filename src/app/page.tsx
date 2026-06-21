@@ -15,6 +15,19 @@ export default function Home() {
   const [fastAnim, setFastAnim] = useState(false);
   const [activeTouchSession, setActiveTouchSession] = useState<number | null>(null);
   const [soundBgActive, setSoundBgActive] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setHasScrolled(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Check initial scroll position
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const alreadyShown = sessionStorage.getItem("ms_loading_shown");
@@ -78,7 +91,7 @@ export default function Home() {
       <main className="pt-20 min-h-screen flex flex-col">
         
         {/* Hero Section - Massive Background Image & Text */}
-        <section className="relative w-full h-[calc(100vh-5rem)] min-h-[500px] md:min-h-[700px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 md:pb-44 lg:pb-16 overflow-hidden">
+        <section className="relative w-full min-h-[calc(100dvh-5rem)] md:h-[calc(100vh-5rem)] md:min-h-[700px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 md:pb-44 lg:pb-16 overflow-hidden">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <Image
@@ -115,7 +128,10 @@ export default function Home() {
                 />
               </svg></span>
             </h1>
-            <p className="hidden md:inline-block font-semibold text-sm sm:text-base md:text-xl mt-4 bg-black py-4 px-6 border-2 border-brand-orange max-w-[280px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-none lg:whitespace-nowrap hero-tagline">
+            <p 
+              className={`font-semibold text-sm sm:text-base md:text-xl mt-4 bg-black py-4 px-6 border-2 border-brand-orange max-w-[280px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-none lg:whitespace-nowrap md:inline-block ${hasScrolled ? "inline-block hero-tagline" : "hidden md:hero-tagline"}`}
+              style={{ animationDelay: hasScrolled && typeof window !== 'undefined' && window.innerWidth < 768 ? '0s' : undefined }}
+            >
               NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
             </p>
           </div>
@@ -126,13 +142,6 @@ export default function Home() {
             <p className="font-mono text-xs uppercase tracking-widest mt-2">Volume Warning</p>
           </div>
         </section>
-
-        {/* Mobile Tagline (Appears on scroll) */}
-        <div className="md:hidden w-full bg-black border-b-2 border-brand-orange p-8 flex justify-center items-center relative z-10">
-          <p className="font-semibold text-sm sm:text-base bg-black py-4 px-6 border-2 border-brand-orange inline-block text-center text-brand-orange">
-            NO COMPROMISE. HIGH FIDELITY HOUSE MUSIC IN THE RAWEST ENVIRONMENTS.
-          </p>
-        </div>
 
         {/* Marquee Divider */}
         <div className="marquee-container">
