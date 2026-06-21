@@ -138,10 +138,10 @@ export default function Home() {
 
         {/* Dense Grid Section */}
         <section className="w-full">
-          <div className="flex flex-col md:flex-row w-full min-h-[60vh]">
+          <div className="flex flex-col lg:flex-row w-full min-h-[60vh]">
             
             {/* Left Block */}
-            <div tabIndex={0} className="w-full md:w-1/3 bg-black border-b-2 md:border-b-0 md:border-r-2 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group outline-none cursor-pointer">
+            <div tabIndex={0} className="w-full lg:w-1/3 bg-black border-b-2 lg:border-b-0 lg:border-r-2 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group outline-none cursor-pointer">
               <div className="z-10">
                 <h2 className="text-4xl font-extrabold uppercase mb-4 tracking-tighter">NEXT<br />SESSION</h2>
                 <div className="font-mono text-xs font-semibold bg-brand-orange text-black inline-block px-3 py-1 mb-6">
@@ -166,7 +166,7 @@ export default function Home() {
 
             {/* Middle Image Block */}
             <div
-              className="w-full md:w-1/3 border-b-2 md:border-b-0 md:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden flex flex-col justify-between p-4"
+              className="w-full lg:w-1/3 border-b-2 lg:border-b-0 lg:border-r-2 border-brand-orange min-h-[400px] relative overflow-hidden flex flex-col justify-between p-4"
               aria-label="Gear Porn — imágenes de equipamiento de sonido"
             >
               {/* Grayscale background layer */}
@@ -174,7 +174,7 @@ export default function Home() {
                 src="/gear.jpg"
                 alt="Equipamiento de sonido de alta fidelidad — mesa de mezclas y reproductores analógicos"
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover object-center grayscale pointer-events-none"
               />
               {/* Color overlay layer that fades in/out */}
@@ -183,7 +183,7 @@ export default function Home() {
                   src="/gear.jpg"
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover object-center"
                 />
               </div>
@@ -196,7 +196,7 @@ export default function Home() {
             </div>
 
             {/* Right Block List */}
-            <div className="w-full md:w-1/3 bg-black p-0 flex flex-col justify-center select-none">
+            <div className="w-full lg:w-1/3 bg-black p-0 flex flex-col justify-center select-none">
               <Link 
                 href="/sessions?autoplay=rodhad" 
                 onTouchStart={() => setActiveTouchSession(0)}
