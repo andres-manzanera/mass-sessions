@@ -60,13 +60,8 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       </div>
 
       {/* Info Column */}
-      <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden relative">
-        {/* Dots background texture on hover */}
-        <div 
-          className="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none lg:group-hover:opacity-10 group-active:opacity-10 group-focus:opacity-10"
-          style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
-        />
-        <div className="relative z-10">
+      <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden">
+        <div>
 
           <div className="flex flex-wrap items-center gap-4 mb-4">
             <div className="flex items-center gap-3">
@@ -88,7 +83,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4 relative z-10">
+        <div className="grid grid-cols-2 gap-4">
           <div>
             <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
             <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white group-hover:text-brand-accent group-active:text-brand-accent group-focus:text-brand-accent"}`}>{session.date}</div>
@@ -203,6 +198,12 @@ function GridContent() {
 
   return (
     <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-20 md:pb-32 relative">
+      
+      {/* Dots background texture for the whole page */}
+      <div 
+        className="absolute inset-0 opacity-10 pointer-events-none z-0"
+        style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+      />
       
       {/* Existing Global Header */}
       <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
