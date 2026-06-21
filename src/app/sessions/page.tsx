@@ -4,6 +4,7 @@ import { useState, Suspense, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import Header from "@/components/Header";
 import { useAudio } from "@/context/AudioContext";
 import { SESSIONS_DATA } from "@/data/sessions";
 
@@ -205,23 +206,7 @@ function GridContent() {
         style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
       />
       
-      {/* Existing Global Header */}
-      <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20">
-        <Link href="/" aria-label="Ir a la página principal de Mass Sessions" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange whitespace-nowrap">
-          MASS SESSIONS
-        </Link>
-        <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
-          <Link href="/" aria-label="Inicio" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
-            HOME
-          </Link>
-          <Link href="/sessions" aria-current="page" aria-label="Sesiones — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
-            SESSIONS
-          </Link>
-          <Link href="/info" aria-label="Información sobre Mass Sessions" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent text-brand-orange">
-            INFO
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       {/* Main Content (The Grid System Design) */}
       <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 pt-8 relative z-10">

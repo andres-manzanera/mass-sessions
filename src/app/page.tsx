@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LoadingScreen from "@/components/LoadingScreen";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -65,27 +66,7 @@ export default function Home() {
   return (
     <div className={`bg-black text-brand-orange font-sora min-h-screen selection:bg-brand-orange selection:text-black${fastAnim ? " fast-anim" : ""}`}>
       <LoadingScreen />
-      <header className="fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 h-20 hero-navbar">
-        <Link href="/" className="font-extrabold tracking-normal text-2xl md:text-3xl border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer whitespace-nowrap">
-          MASS SESSIONS
-        </Link>
-        <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
-          <Link href="/" aria-current="page" aria-label="Inicio — página actual" className="font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 border-b-2 border-brand-orange text-brand-orange">
-            HOME
-          </Link>
-
-          <Link href="/sessions" aria-label="Ver sesiones" className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent">
-            SESSIONS
-          </Link>
-          <Link
-            href="/info"
-            aria-label="Ver información sobre Mass Sessions"
-            className="opacity-70 hover:opacity-100 font-bold uppercase tracking-wider text-sm transition-opacity h-full flex items-center px-2 border-b-2 border-transparent hover:border-brand-accent hover:text-brand-accent"
-          >
-            INFO
-          </Link>
-        </nav>
-      </header>
+      <Header className="hero-navbar" />
 
       {/* Main Content Canvas */}
       <main className="pt-20 min-h-screen flex flex-col">
