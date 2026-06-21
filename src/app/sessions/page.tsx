@@ -232,7 +232,7 @@ function GridContent() {
         </div>
 
         {/* Filters Grid */}
-        <div className="mb-8 flex flex-wrap bg-black/40 pl-[1px] pt-[1px] overflow-hidden">
+        <div className="mb-8 grid grid-cols-4 md:grid-cols-7 bg-black/40 pl-[1px] pt-[1px] overflow-hidden">
           {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year, idx) => (
             <button
               key={year}
@@ -246,7 +246,7 @@ function GridContent() {
                   window.scrollTo({ top: y, behavior: "instant" });
                 }
               }}
-              className={`cursor-pointer p-4 w-1/4 md:w-[calc(100%/7)] border border-brand-orange ml-[-1px] mt-[-1px] transition-colors font-mono text-sm ${
+              className={`cursor-pointer p-4 border border-brand-orange ml-[-1px] mt-[-1px] transition-colors font-mono text-sm ${
                 activeYear === year
                   ? "bg-brand-orange text-black font-bold"
                   : "text-brand-orange hover:bg-white/10"
@@ -255,7 +255,7 @@ function GridContent() {
               {year}
             </button>
           ))}
-          <div style={{ "--i": 13 } as React.CSSProperties} className="flex-grow border border-brand-orange ml-[-1px] mt-[-1px] pointer-events-none session-tab-anim"></div>
+          <div style={{ "--i": 13 } as React.CSSProperties} className="col-span-3 md:col-span-1 border border-brand-orange ml-[-1px] mt-[-1px] pointer-events-none session-tab-anim"></div>
         </div>
 
         {/* The Grid List */}
