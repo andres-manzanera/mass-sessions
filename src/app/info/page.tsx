@@ -2,8 +2,30 @@
 
 import Link from "next/link";
 import Header from "@/components/Header";
+import { useEffect, useRef, useState } from "react";
 
 export default function InfoPage() {
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsAboutVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-brand-bg-dark bg-wavy-lines text-white font-sora min-h-screen flex flex-col pt-20 pb-0 selection:bg-brand-orange selection:text-black">
       {/* Dots background texture */}
@@ -55,7 +77,12 @@ export default function InfoPage() {
           </div>
 
           {/* About Block */}
-          <div className="border-t-2 border-brand-orange pt-12 about-block-anim">
+          <div 
+            ref={aboutRef}
+            className={`border-t-2 border-brand-orange pt-12 transition-all duration-1000 ease-out ${
+              isAboutVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <h2 className="text-2xl md:text-3xl font-extrabold uppercase mb-6 tracking-tight text-white">
               SOUND SYSTEM CULTURE
             </h2>
