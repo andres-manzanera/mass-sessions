@@ -45,7 +45,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       ref={ref} 
       style={{ "--i": index } as React.CSSProperties} 
       tabIndex={0}
-      className={`flex flex-col lg:flex-row lg:h-[200px] lg:hover:bg-surface-container transition-colors group border border-brand-orange bg-black/40 outline-none cursor-pointer ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
+      className={`flex flex-col lg:flex-row lg:h-[200px] lg:hover:bg-surface-container transition-colors group border border-brand-orange bg-black outline-none cursor-pointer ${animClass} ${index > 0 ? "lg:border-t-0" : ""}`}
     >
       
       {/* Image Column */}
@@ -227,7 +227,7 @@ function GridContent() {
       <main className="flex-grow w-full max-w-7xl mx-auto px-4 md:px-16 pt-8 relative z-10">
         
         {/* Page Header */}
-        <div className="mb-8 border border-brand-orange p-8 bg-black/40 session-tab-anim">
+        <div className="mb-8 border border-brand-orange p-8 bg-black session-tab-anim">
           <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">SESSIONS</h1>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <p className="text-lg text-brand-orange opacity-60 font-sora max-w-md">
@@ -238,7 +238,7 @@ function GridContent() {
         </div>
 
         {/* Filters Grid */}
-        <div className="mb-8 grid grid-cols-4 md:grid-cols-7 bg-black/40 pl-[1px] pt-[1px] overflow-hidden">
+        <div className="mb-8 grid grid-cols-4 md:grid-cols-7 bg-black pl-[1px] pt-[1px] overflow-hidden">
           {["ALL", "2026", "2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2015", "2014"].map((year, idx) => (
             <button
               key={year}
@@ -267,7 +267,7 @@ function GridContent() {
         {/* The Grid List */}
         <div id="sessions-grid" className="flex flex-col gap-6 lg:gap-0 lg:block">
           {paginatedSessions.length === 0 ? (
-            <div style={{ "--i": 0 } as React.CSSProperties} className="p-16 text-center text-brand-orange/60 font-mono text-sm uppercase tracking-widest session-card-page-anim lg:border lg:border-brand-orange lg:bg-black/40">
+            <div style={{ "--i": 0 } as React.CSSProperties} className="p-16 text-center text-brand-orange/60 font-mono text-sm uppercase tracking-widest session-card-page-anim lg:border lg:border-brand-orange lg:bg-black">
               No sessions available for {activeYear} yet.
             </div>
           ) : (
