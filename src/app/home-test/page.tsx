@@ -37,7 +37,7 @@ export default function HomeTest() {
             <span className="text-sm tracking-wider mt-4">LOCAL TERMINAL ONLINE</span>
           </div>
           <div className="bg-[#0A0A0A] p-4 flex flex-col justify-between text-center md:border-l-0">
-            <span className="text-[#EAEAEA] opacity-50 text-[10px] tracking-widest">>>> CONNECTION.SECURE</span>
+            <span className="text-[#EAEAEA] opacity-50 text-[10px] tracking-widest">&gt;&gt;&gt; CONNECTION.SECURE</span>
             <span className="text-sm tracking-wider mt-4">EST. 2014 // MAD</span>
           </div>
           <div className="bg-[#0A0A0A] p-4 flex flex-col justify-between text-right">
