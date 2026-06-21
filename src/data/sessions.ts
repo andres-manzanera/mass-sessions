@@ -8,6 +8,7 @@ export interface Session {
   audioUrl: string;
   date: string;
   isNew?: boolean;
+  bitrate?: string;
 }
 
 export const SESSIONS_DATA: Session[] = [
@@ -151,7 +152,8 @@ export const SESSIONS_DATA: Session[] = [
     genres: ["DEEP HOUSE"],
     image: "/session_2019_05.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2019-05.mp3",
-    date: "2019-05"
+    date: "2019-05",
+    bitrate: "128kb/s"
   },
   {
     id: "spring-frequencies",
