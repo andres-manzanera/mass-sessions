@@ -40,7 +40,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       ([entry]) => {
         setIsInViewForColor(entry.isIntersecting);
       },
-      { threshold: 0.6 }
+      { threshold: 1.0 }
     );
     
     if (ref.current) {
