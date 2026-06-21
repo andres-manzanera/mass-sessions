@@ -60,8 +60,13 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
       </div>
 
       {/* Info Column */}
-      <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden">
-        <div>
+      <div className="flex-grow p-6 flex flex-col justify-between lg:border-r border-brand-orange overflow-hidden relative">
+        {/* Dots background texture on hover */}
+        <div 
+          className="absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none lg:group-hover:opacity-10 group-active:opacity-10 group-focus:opacity-10"
+          style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+        />
+        <div className="relative z-10">
 
           <div className="flex flex-wrap items-center gap-4 mb-4">
             <div className="flex items-center gap-3">
@@ -83,7 +88,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 relative z-10">
           <div>
             <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
             <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white group-hover:text-brand-accent group-active:text-brand-accent group-focus:text-brand-accent"}`}>{session.date}</div>
