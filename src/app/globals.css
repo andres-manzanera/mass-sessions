@@ -500,11 +500,11 @@ body {
   animation-delay: calc(0.12s * var(--i, 0));
 }
 
-/* Session card — stagger via --i custom property, delayed to start after year tabs finish (~1.5s base) */
+/* Session card — stagger via --i custom property, delayed to start after year tabs finish (~2.4s base) */
 .session-card-anim {
   opacity: 0;
   animation: fade-up-card-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(1.5s + 0.15s * var(--i, 0));
+  animation-delay: calc(2.4s + 0.15s * var(--i, 0));
 }
 
 /* Session card on page change — quick stagger, no 1.5s initial delay */

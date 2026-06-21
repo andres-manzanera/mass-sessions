@@ -149,7 +149,7 @@ function GridContent() {
 
   useEffect(() => {
     hasLoadedGridInitially = true;
-    const t = setTimeout(() => setIsInitialGridLoad(false), 2000);
+    const t = setTimeout(() => setIsInitialGridLoad(false), 4500);
     return () => clearTimeout(t);
   }, []);
 
