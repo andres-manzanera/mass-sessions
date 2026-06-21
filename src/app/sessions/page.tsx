@@ -36,11 +36,21 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
   // Nuevo IntersectionObserver continuo para dar color a la imagen en móvil
   // cuando la tarjeta está visible en el viewport (ej. 60% visible)
   useEffect(() => {
+    const buildThresholds = () => Array.from({ length: 21 }, (_, i) => i * 0.05);
     const colorObserver = new IntersectionObserver(
       ([entry]) => {
-        setIsInViewForColor(entry.isIntersecting);
+        const ratio = entry.intersectionRatio;
+        const isNearTop = entry.boundingClientRect.top < window.innerHeight / 2;
+        
+        if (isNearTop) {
+          // Desaparece al perder 10% por arriba (ratio baja de 0.9)
+          setIsInViewForColor(ratio >= 0.9);
+        } else {
+          // Aparece al llegar al 80% por abajo (ratio >= 0.8)
+          setIsInViewForColor(ratio >= 0.8);
+        }
       },
-      { threshold: 0.8 }
+      { threshold: buildThresholds() }
     );
     
     if (ref.current) {
