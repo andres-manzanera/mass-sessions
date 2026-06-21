@@ -354,7 +354,7 @@ body {
 }
 
 /* Tagline box width reveal */
-@utility hero-tagline {
+.hero-tagline {
   opacity: 0;
   animation: hero-expand-width 1s cubic-bezier(0.77, 0, 0.18, 1) forwards;
   animation-delay: 5.6s;
