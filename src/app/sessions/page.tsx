@@ -33,9 +33,9 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
   }, []);
 
   const animClass = isVisible 
-    ? (isInitialLoad 
-        ? (isInitialGridLoad ? "session-card-anim" : "session-card-page-anim") 
-        : "session-card-scroll-anim")
+    ? (isInitialGridLoad 
+        ? "session-card-anim" 
+        : (isInitialLoad ? "session-card-page-anim" : "session-card-scroll-anim"))
     : "opacity-0";
 
   return (
