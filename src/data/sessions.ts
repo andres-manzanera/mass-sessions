@@ -101,8 +101,7 @@ export const SESSIONS_DATA: Session[] = [
     genres: ["DEEP HOUSE", "HOUSE"],
     image: "/session_2023_05.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2023-05.mp3",
-    date: "2023-05",
-    isNew: true
+    date: "2023-05"
   },
   {
     id: "infinite-echo",
@@ -112,7 +111,8 @@ export const SESSIONS_DATA: Session[] = [
     genres: ["DEEP HOUSE"],
     image: "/session_2022_04.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2022-08.mp3",
-    date: "2022-08"
+    date: "2022-08",
+    isNew: true
   },
   {
     id: "vernal-chords",
