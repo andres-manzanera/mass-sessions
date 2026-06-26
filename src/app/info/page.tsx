@@ -32,10 +32,16 @@ export default function InfoPage() {
 
   return (
     <div className="bg-brand-bg-dark bg-wavy-lines text-white font-sora min-h-screen flex flex-col pt-20 pb-0 selection:bg-brand-orange selection:text-black">
-      {/* Dots background texture */}
+      {/* Dots background texture with irregular masking */}
       <div 
-        className="absolute inset-0 opacity-10 pointer-events-none z-0"
-        style={{ backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', backgroundSize: '20px 20px' }}
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{ 
+          backgroundImage: 'radial-gradient(#F2F0EB 1px, transparent 1px)', 
+          backgroundSize: '20px 20px',
+          opacity: 0.15,
+          WebkitMaskImage: 'linear-gradient(120deg, black 10%, transparent 30%, black 50%, transparent 70%, black 90%)',
+          maskImage: 'linear-gradient(120deg, black 10%, transparent 30%, black 50%, transparent 70%, black 90%)'
+        }}
       />
       
       <Header />
