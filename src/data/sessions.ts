@@ -214,5 +214,27 @@ export const SESSIONS_DATA: Session[] = [
     image: "/session_2014_04.jpg",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2014-4-BD-Hidden-Track.mp3",
     date: "2014-04"
+  },
+  {
+    id: "raw-echoes",
+    title: "RAW ECHOES",
+    artist: "MASS SESSIONS",
+    duration: "1h 07m",
+    genres: ["DEEP HOUSE", "HOUSE"],
+    image: "/session_2016_05.png",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/06/2016-05.mp3",
+    date: "2016-05",
+    bitrate: "192kb/s"
+  },
+  {
+    id: "steel-rhythms",
+    title: "STEEL RHYTHMS",
+    artist: "MASS SESSIONS",
+    duration: "1h 00m",
+    genres: ["DEEP HOUSE", "HOUSE"],
+    image: "/session_2016_08.png",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/06/2016-08.mp3",
+    date: "2016-08",
+    bitrate: "192kb/s"
   }
 ].sort((a, b) => b.date.localeCompare(a.date));
