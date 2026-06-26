@@ -31,7 +31,7 @@ export default function InfoPage() {
   }, []);
 
   return (
-    <div className="bg-brand-bg-dark bg-wavy-lines text-white font-sora min-h-screen flex flex-col pt-20 pb-0 selection:bg-brand-orange selection:text-black">
+    <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-0 selection:bg-brand-orange selection:text-black relative">
       {/* Dots background texture with irregular masking */}
       <div 
         className="absolute inset-0 pointer-events-none z-0"
