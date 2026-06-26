@@ -35,7 +35,7 @@ export default function Header({ className = "" }: HeaderProps) {
       >
         MASS SESSIONS
       </Link>
-      <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto border-l-2 border-brand-orange pl-6 md:pl-16">
+      <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto lg:border-l-2 border-brand-orange pl-6 md:pl-16">
         <Link 
           href="/" 
           aria-current={pathname === "/" ? "page" : undefined} 
