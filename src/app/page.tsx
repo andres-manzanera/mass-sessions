@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LoadingScreen from "@/components/LoadingScreen";
 import Header from "@/components/Header";
+import { SESSIONS_DATA } from "@/data/sessions";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -143,12 +144,16 @@ export default function Home() {
             {/* Left Block */}
             <div tabIndex={0} className="w-full lg:w-1/3 bg-black border-b-2 lg:border-b-0 lg:border-r-2 border-brand-orange p-8 flex flex-col justify-between relative overflow-hidden group outline-none cursor-pointer">
               <div className="z-10">
-                <h2 className="text-4xl md:text-6xl lg:text-4xl font-extrabold uppercase mb-4 tracking-tighter">NEXT<br />SESSION</h2>
+                <h2 className="text-4xl md:text-6xl lg:text-8xl font-extrabold uppercase mb-4 tracking-tighter">NEXT<br />SESSION</h2>
                 <div className="font-mono text-xs font-semibold bg-brand-orange text-black inline-block px-3 py-1 mb-6">
                   DATE: 08.24.2026
                 </div>
                 <p className="text-sm uppercase opacity-85 max-w-xs font-semibold">
                   Explore our full catalog of raw high-fidelity recordings and live sets.
+                </p>
+                <div className="h-4"></div>
+                <p className="text-sm uppercase opacity-85 max-w-xs font-semibold text-brand-orange">
+                  TOTAL SESSIONS: {SESSIONS_DATA.length}
                 </p>
               </div>
 
