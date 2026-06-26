@@ -168,7 +168,7 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
 function GridContent() {
   const [activeYear, setActiveYear] = useState("ALL");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 8;
   const { activeSession, isPlaying, playSession } = useAudio();
   const searchParams = useSearchParams();
   const [isInitialGridLoad, setIsInitialGridLoad] = useState(true);
