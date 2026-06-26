@@ -276,7 +276,7 @@ function GridContent() {
               {year}
             </button>
           ))}
-          <div style={{ "--i": 13 } as React.CSSProperties} className="col-span-3 md:col-span-1 border border-brand-orange ml-[-1px] mt-[-1px] pointer-events-none session-tab-anim"></div>
+          <div style={{ "--i": 14 } as React.CSSProperties} className="col-span-2 md:hidden border border-brand-orange ml-[-1px] mt-[-1px] pointer-events-none session-tab-anim"></div>
         </div>
 
         {/* The Grid List */}
