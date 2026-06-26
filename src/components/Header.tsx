@@ -31,7 +31,7 @@ export default function Header({ className = "" }: HeaderProps) {
       <Link 
         href="/" 
         aria-label="Ir a la página principal de Mass Sessions" 
-        className={`font-extrabold tracking-normal border-r-2 border-brand-orange px-6 md:px-16 h-full flex items-center select-none cursor-pointer text-brand-orange whitespace-nowrap transition-all duration-300 ${isScrolled ? "text-xl md:text-xl" : "text-2xl md:text-3xl"}`}
+        className={`font-extrabold tracking-normal border-r-2 border-brand-orange px-8 h-full flex items-center select-none cursor-pointer text-brand-orange whitespace-nowrap transition-all duration-300 ${isScrolled ? "text-xl md:text-xl" : "text-2xl md:text-3xl"}`}
       >
         MASS SESSIONS
       </Link>
