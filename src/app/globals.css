@@ -598,3 +598,22 @@ body {
   animation: color-fade 8s ease-in-out infinite;
   will-change: opacity;
 }
+
+/* ── Hero Section — iPad responsive fixes ───────────────────────────────── */
+
+/* iPad Air portrait (≈820×1180 viewport in portrait) —
+   "justify-end" keeps text at the bottom, but we need enough
+   padding so the block sits comfortably above the bottom edge */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .hero-section {
+    padding-bottom: 8rem; /* 128px — pushes text noticeably toward the bottom */
+  }
+}
+
+/* iPad Air landscape (≈1180×820 viewport) — the hero is shorter in this
+   orientation so we tighten the bottom padding to prevent clipping */
+@media screen and (min-width: 768px) and (orientation: landscape) and (max-height: 900px) {
+  .hero-section {
+    padding-bottom: 2.5rem; /* 40px — just enough clearance, nothing clipped */
+  }
+}
