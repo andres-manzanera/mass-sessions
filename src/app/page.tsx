@@ -124,32 +124,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Diagonal Crossing Marquees */}
-        <div className="diagonal-marquee-wrapper">
-          {/* Band A — tilted /, moves left */}
-          <div className="diagonal-band diagonal-band--a">
-            <div className="diagonal-marquee-content select-none">
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-            </div>
-            <div className="diagonal-marquee-content select-none" aria-hidden="true">
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-            </div>
+        {/* Marquee Divider */}
+        <div className="marquee-container">
+          <div className="marquee-content select-none">
+            // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
+            // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
           </div>
-          {/* Band B — tilted \, moves right */}
-          <div className="diagonal-band diagonal-band--b">
-            <div className="diagonal-marquee-content-rev select-none">
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-            </div>
-            <div className="diagonal-marquee-content-rev select-none" aria-hidden="true">
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-              // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE //&nbsp;
-            </div>
+          <div className="marquee-content select-none" aria-hidden="true">
+            // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
+            // UNDERGROUND SESSIONS // NO PHONES ON THE DANCEFLOOR // FEEL THE BASS // RESPECT THE SPACE // SONIC PULSE // &nbsp;
           </div>
         </div>
-
 
         {/* Dense Grid Section */}
         <section className="w-full">
