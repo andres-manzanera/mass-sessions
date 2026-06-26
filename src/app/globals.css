@@ -601,19 +601,24 @@ body {
 
 /* ── Hero Section — iPad responsive fixes ───────────────────────────────── */
 
-/* iPad Air portrait (≈820×1180 viewport in portrait) —
-   "justify-end" keeps text at the bottom, but we need enough
-   padding so the block sits comfortably above the bottom edge */
+/* iPad Air portrait (≈820×1180 viewport in portrait) */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .hero-section {
-    padding-bottom: 8rem; /* 128px — pushes text noticeably toward the bottom */
+    padding-bottom: 8rem;
   }
 }
 
-/* iPad Air landscape (≈1180×820 viewport) — the hero is shorter in this
-   orientation so we tighten the bottom padding to prevent clipping */
+/* iPad Air / tablet landscape — viewport height is ~740-850px usable.
+   Scale down the title and reduce bottom padding so nothing clips.       */
 @media screen and (min-width: 768px) and (orientation: landscape) and (max-height: 900px) {
   .hero-section {
-    padding-bottom: 2.5rem; /* 40px — just enough clearance, nothing clipped */
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+  }
+
+  /* Scale hero title down so two stacked lines fit comfortably */
+  .hero-section h1 {
+    font-size: clamp(3rem, 8vw, 6.5rem) !important;
+    line-height: 0.9;
   }
 }
