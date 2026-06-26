@@ -220,7 +220,7 @@ export const SESSIONS_DATA: Session[] = [
     title: "RAW ECHOES",
     artist: "MASS SESSIONS",
     duration: "1h 07m",
-    genres: ["DEEP HOUSE", "HOUSE"],
+    genres: ["DEEP HOUSE", "HOUSE", "TECHNO"],
     image: "/session_2016_05.png",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/06/2016-05.mp3",
     date: "2016-05",
