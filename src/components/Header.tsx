@@ -26,7 +26,7 @@ export default function Header({ className = "" }: HeaderProps) {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center pr-0 md:pr-16 transition-all duration-300 ${isScrolled ? "h-12" : "h-20"} ${className}`}
+      className={`fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center transition-all duration-300 ${isScrolled ? "h-12" : "h-20"} ${className}`}
     >
       <Link 
         href="/" 
@@ -35,7 +35,7 @@ export default function Header({ className = "" }: HeaderProps) {
       >
         MASS SESSIONS
       </Link>
-      <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto lg:border-l-2 border-brand-orange pl-6 md:pl-16">
+      <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 h-full justify-end ml-auto lg:border-l-2 border-brand-orange px-8">
         <Link 
           href="/" 
           aria-current={pathname === "/" ? "page" : undefined} 
