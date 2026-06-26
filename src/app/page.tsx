@@ -77,7 +77,7 @@ export default function Home() {
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <Image
-              src="/hero.jpg"
+              src="/hero.webp"
               alt="Mass Sessions — Sesión de música house en directo en un espacio industrial"
               fill
               priority
@@ -176,7 +176,7 @@ export default function Home() {
             >
               {/* Grayscale background layer */}
               <Image
-                src="/gear.jpg"
+                src="/gear.webp"
                 alt="Equipamiento de sonido de alta fidelidad — mesa de mezclas y reproductores analógicos"
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
@@ -185,7 +185,7 @@ export default function Home() {
               {/* Color overlay layer that fades in/out */}
               <div className="absolute inset-0 animate-color-fade pointer-events-none">
                 <Image
-                  src="/gear.jpg"
+                  src="/gear.webp"
                   alt=""
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"

@@ -18,7 +18,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
-    image: "/session_dvs1_pattern.jpg",
+    image: "/session_dvs1_pattern.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-06.mp3",
     date: "2018-06"
   },
@@ -28,7 +28,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "48m 12s",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_rodhad_pattern.jpg",
+    image: "/session_rodhad_pattern.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2025/01/2025-01.mp3",
     date: "2025-01",
     isNew: true
@@ -39,7 +39,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 12m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_blawan_pattern.jpg",
+    image: "/session_blawan_pattern.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-08.mp3",
     date: "2017-08"
   },
@@ -49,7 +49,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 00m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_kerri_pattern.png",
+    image: "/session_kerri_pattern.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2024-01.mp3",
     date: "2024-01"
   },
@@ -59,7 +59,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 03m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2024_02.jpg",
+    image: "/session_2024_02.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/03/2024-02.mp3",
     date: "2024-02"
   },
@@ -69,7 +69,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
-    image: "/session_vintage_pattern.png",
+    image: "/session_vintage_pattern.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2022/08/Mass-Sessions_2024-07-online-audio-converter.com_.mp3",
     date: "2024-07"
   },
@@ -79,7 +79,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 27m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2024_10.png",
+    image: "/session_2024_10.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2024-10.mp3",
     date: "2024-10"
   },
@@ -89,7 +89,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 11m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2024_12.png",
+    image: "/session_2024_12.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2024-12.mp3",
     date: "2024-12"
   },
@@ -99,7 +99,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "51m 25s",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2023_05.jpg",
+    image: "/session_2023_05.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2023-05.mp3",
     date: "2023-05"
   },
@@ -109,7 +109,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "59m 33s",
     genres: ["DEEP HOUSE"],
-    image: "/session_2022_04.jpg",
+    image: "/session_2022_04.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2022-08.mp3",
     date: "2022-08",
     isNew: true
@@ -120,7 +120,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2022_08.jpg",
+    image: "/session_2022_08.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2022-04.mp3",
     date: "2022-04"
   },
@@ -130,7 +130,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "54m 56s",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2021_10.jpg",
+    image: "/session_2021_10.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2021-10.mp3",
     date: "2021-10"
   },
@@ -140,7 +140,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 05m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2020_08.jpg",
+    image: "/session_2020_08.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/01/2020-08.mp3",
     date: "2020-08"
   },
@@ -150,7 +150,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 09m",
     genres: ["DEEP HOUSE"],
-    image: "/session_2019_05.jpg",
+    image: "/session_2019_05.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2019-05.mp3",
     date: "2019-05",
     bitrate: "128kb/s"
@@ -161,7 +161,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 13m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2018_05.jpg",
+    image: "/session_2018_05.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2018-05.mp3",
     date: "2018-05"
   },
@@ -171,7 +171,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 02m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2017_09.jpg",
+    image: "/session_2017_09.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2017-09.mp3",
     date: "2017-09"
   },
@@ -181,7 +181,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 30m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2017_12.jpg",
+    image: "/session_2017_12.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/07/2017-12.mp3",
     date: "2017-12"
   },
@@ -191,7 +191,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 03m",
     genres: ["DEEP HOUSE", "TECHNO"],
-    image: "/session_2017_11.jpg",
+    image: "/session_2017_11.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/04/2017-11.mp3",
     date: "2017-11"
   },
@@ -201,7 +201,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 26m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2015_06.jpg",
+    image: "/session_2015_06.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/MassSessions-2015-06.mp3",
     date: "2015-06"
   },
@@ -211,7 +211,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 06m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2014_04.jpg",
+    image: "/session_2014_04.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2024/11/2014-4-BD-Hidden-Track.mp3",
     date: "2014-04"
   },
@@ -221,7 +221,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 07m",
     genres: ["DEEP HOUSE", "HOUSE", "TECHNO"],
-    image: "/session_2016_05.png",
+    image: "/session_2016_05.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/06/2016-05.mp3",
     date: "2016-05",
     bitrate: "192kb/s"
@@ -232,7 +232,7 @@ export const SESSIONS_DATA: Session[] = [
     artist: "MASS SESSIONS",
     duration: "1h 00m",
     genres: ["DEEP HOUSE", "HOUSE"],
-    image: "/session_2016_08.png",
+    image: "/session_2016_08.webp",
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/06/2016-08.mp3",
     date: "2016-08",
     bitrate: "192kb/s"
