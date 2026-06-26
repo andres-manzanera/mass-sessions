@@ -91,7 +91,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-0"></div>
 
           {/* Overlay Text — anchored to bottom of hero */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 select-none p-6 pb-10 md:p-16 md:pb-12 lg:p-20 lg:pb-14 hero-text-block">
+          <div className="absolute bottom-0 left-0 right-0 z-10 select-none p-6 pb-24 md:p-16 md:pb-12 lg:p-20 lg:pb-14 hero-text-block">
             <h1 className="text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8vw] leading-none uppercase font-extrabold tracking-normal break-words text-brand-orange">
               <span className="hero-mass">MASS</span><br />
               <span className="hero-sessions"><svg 
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           {/* Absolute brutalist elements */}
-          <div className="absolute top-8 right-8 border-2 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none block z-10">
+          <div className="absolute top-24 right-10 border-2 border-brand-orange p-4 bg-black/90 backdrop-blur-sm transform rotate-3 select-none block z-10">
             <span className="material-symbols-outlined text-4xl text-brand-orange">warning</span>
             <p className="font-mono text-xs uppercase tracking-widest mt-2">Volume Warning</p>
           </div>
