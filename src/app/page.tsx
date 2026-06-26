@@ -69,10 +69,10 @@ export default function Home() {
       <Header className="hero-navbar" />
 
       {/* Main Content Canvas */}
-      <main className="pt-20 min-h-screen flex flex-col">
+      <main className="min-h-screen flex flex-col">
         
-        {/* Hero Section - Massive Background Image & Text */}
-        <section className="relative w-full min-h-[calc(100dvh-5rem)] md:min-h-[calc(100vh-5rem)] md:min-h-[700px] border-b-2 border-brand-orange flex flex-col justify-end p-6 pb-24 md:p-16 md:pb-16 lg:pb-16 hero-section">
+        {/* Hero Section - Full viewport, behind fixed header */}
+        <section className="relative w-full h-[100dvh] border-b-2 border-brand-orange overflow-hidden hero-section">
           {/* Zooming background image wrapper */}
           <div className="absolute inset-0 overflow-hidden z-0">
             <Image
@@ -90,8 +90,8 @@ export default function Home() {
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-0"></div>
 
-          {/* Overlay Text */}
-          <div className="z-10 relative select-none">
+          {/* Overlay Text — anchored to bottom of hero */}
+          <div className="absolute bottom-0 left-0 right-0 z-10 select-none p-6 pb-10 md:p-16 md:pb-12 lg:p-20 lg:pb-14 hero-text-block">
             <h1 className="text-[12vw] sm:text-[11vw] md:text-[10vw] lg:text-[8vw] leading-none uppercase font-extrabold tracking-normal break-words text-brand-orange">
               <span className="hero-mass">MASS</span><br />
               <span className="hero-sessions"><svg 

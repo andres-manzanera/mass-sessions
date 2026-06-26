@@ -599,26 +599,17 @@ body {
   will-change: opacity;
 }
 
-/* ── Hero Section — iPad responsive fixes ───────────────────────────────── */
+/* ── Hero Section — responsive fixes ────────────────────────────────────── */
 
-/* iPad Air portrait (≈820×1180 viewport in portrait) */
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .hero-section {
-    padding-bottom: 8rem;
-  }
-}
-
-/* iPad Air / tablet landscape — viewport height is ~740-850px usable.
-   Scale down the title and reduce bottom padding so nothing clips.       */
+/* Tablet / iPad landscape — viewport height is short (~740-850px).
+   Scale down the title so MASS + SESSIONS + tagline all fit above the fold. */
 @media screen and (min-width: 768px) and (orientation: landscape) and (max-height: 900px) {
-  .hero-section {
-    padding-bottom: 1.5rem;
-    padding-top: 1rem;
+  .hero-text-block h1 {
+    font-size: clamp(2.5rem, 7.5vw, 6rem) !important;
+    line-height: 0.9;
   }
 
-  /* Scale hero title down so two stacked lines fit comfortably */
-  .hero-section h1 {
-    font-size: clamp(3rem, 8vw, 6.5rem) !important;
-    line-height: 0.9;
+  .hero-text-block {
+    padding-bottom: 2rem;
   }
 }
