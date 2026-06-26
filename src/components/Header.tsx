@@ -39,21 +39,21 @@ export default function Header({ className = "" }: HeaderProps) {
         <Link 
           href="/" 
           aria-current={pathname === "/" ? "page" : undefined} 
-          className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/" ? "border-b-2 border-brand-orange text-brand-orange" : "border-b-2 border-transparent text-brand-orange opacity-70 hover:opacity-100 hover:border-brand-accent hover:text-brand-accent"}`}
+          className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-4 transition-colors ${pathname === "/" ? "bg-[#02E1EE] text-black" : "text-brand-orange opacity-70 hover:opacity-100 hover:bg-[#02E1EE]/10 hover:text-[#02E1EE]"}`}
         >
           HOME
         </Link>
         <Link 
           href="/sessions" 
           aria-current={pathname === "/sessions" ? "page" : undefined} 
-          className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/sessions" ? "border-b-2 border-brand-orange text-brand-orange" : "border-b-2 border-transparent text-brand-orange opacity-70 hover:opacity-100 hover:border-brand-accent hover:text-brand-accent"}`}
+          className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-4 transition-colors ${pathname === "/sessions" ? "bg-[#02E1EE] text-black" : "text-brand-orange opacity-70 hover:opacity-100 hover:bg-[#02E1EE]/10 hover:text-[#02E1EE]"}`}
         >
           SESSIONS
         </Link>
         <Link
           href="/info"
           aria-current={pathname === "/info" ? "page" : undefined} 
-          className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/info" ? "border-b-2 border-brand-orange text-brand-orange" : "border-b-2 border-transparent text-brand-orange opacity-70 hover:opacity-100 hover:border-brand-accent hover:text-brand-accent"}`}
+          className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-4 transition-colors ${pathname === "/info" ? "bg-[#02E1EE] text-black" : "text-brand-orange opacity-70 hover:opacity-100 hover:bg-[#02E1EE]/10 hover:text-[#02E1EE]"}`}
         >
           INFO
         </Link>
