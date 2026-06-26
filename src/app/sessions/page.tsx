@@ -224,10 +224,35 @@ function GridContent() {
   return (
     <div className="bg-brand-bg-dark text-white font-sora min-h-screen flex flex-col pt-20 pb-20 md:pb-32 relative">
       
-      {/* Scratch texture for the whole page */}
+      {/* Scratch texture for the whole page — irregular mask */}
       <div 
         className="absolute inset-0 pointer-events-none z-0"
-        style={{ opacity: 0.04, backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cline x1='12' y1='0' x2='8' y2='400' stroke='%23F2F0EB' stroke-width='0.6'/%3E%3Cline x1='55' y1='0' x2='60' y2='400' stroke='%23F2F0EB' stroke-width='0.4'/%3E%3Cline x1='90' y1='30' x2='85' y2='370' stroke='%23F2F0EB' stroke-width='0.8'/%3E%3Cline x1='130' y1='0' x2='128' y2='400' stroke='%23F2F0EB' stroke-width='0.3'/%3E%3Cline x1='170' y1='50' x2='175' y2='400' stroke='%23F2F0EB' stroke-width='0.5'/%3E%3Cline x1='200' y1='0' x2='198' y2='380' stroke='%23F2F0EB' stroke-width='0.7'/%3E%3Cline x1='240' y1='20' x2='245' y2='400' stroke='%23F2F0EB' stroke-width='0.4'/%3E%3Cline x1='275' y1='0' x2='270' y2='350' stroke='%23F2F0EB' stroke-width='0.9'/%3E%3Cline x1='310' y1='60' x2='315' y2='400' stroke='%23F2F0EB' stroke-width='0.3'/%3E%3Cline x1='350' y1='0' x2='348' y2='400' stroke='%23F2F0EB' stroke-width='0.6'/%3E%3Cline x1='385' y1='10' x2='390' y2='390' stroke='%23F2F0EB' stroke-width='0.5'/%3E%3Cline x1='30' y1='0' x2='32' y2='180' stroke='%23F2F0EB' stroke-width='0.4'/%3E%3Cline x1='110' y1='200' x2='112' y2='400' stroke='%23F2F0EB' stroke-width='0.5'/%3E%3Cline x1='220' y1='0' x2='218' y2='150' stroke='%23F2F0EB' stroke-width='0.3'/%3E%3Cline x1='330' y1='180' x2='328' y2='400' stroke='%23F2F0EB' stroke-width='0.6'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat', backgroundSize: '400px 400px' }}
+        style={{
+          opacity: 0.12,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cline x1='12' y1='0' x2='8' y2='400' stroke='%23F2F0EB' stroke-width='0.6'/%3E%3Cline x1='55' y1='0' x2='60' y2='400' stroke='%23F2F0EB' stroke-width='0.4'/%3E%3Cline x1='90' y1='30' x2='85' y2='370' stroke='%23F2F0EB' stroke-width='0.8'/%3E%3Cline x1='130' y1='0' x2='128' y2='400' stroke='%23F2F0EB' stroke-width='0.3'/%3E%3Cline x1='170' y1='50' x2='175' y2='400' stroke='%23F2F0EB' stroke-width='0.5'/%3E%3Cline x1='200' y1='0' x2='198' y2='380' stroke='%23F2F0EB' stroke-width='0.7'/%3E%3Cline x1='240' y1='20' x2='245' y2='400' stroke='%23F2F0EB' stroke-width='0.4'/%3E%3Cline x1='275' y1='0' x2='270' y2='350' stroke='%23F2F0EB' stroke-width='0.9'/%3E%3Cline x1='310' y1='60' x2='315' y2='400' stroke='%23F2F0EB' stroke-width='0.3'/%3E%3Cline x1='350' y1='0' x2='348' y2='400' stroke='%23F2F0EB' stroke-width='0.6'/%3E%3Cline x1='385' y1='10' x2='390' y2='390' stroke='%23F2F0EB' stroke-width='0.5'/%3E%3Cline x1='30' y1='0' x2='32' y2='180' stroke='%23F2F0EB' stroke-width='0.4'/%3E%3Cline x1='110' y1='200' x2='112' y2='400' stroke='%23F2F0EB' stroke-width='0.5'/%3E%3Cline x1='220' y1='0' x2='218' y2='150' stroke='%23F2F0EB' stroke-width='0.3'/%3E%3Cline x1='330' y1='180' x2='328' y2='400' stroke='%23F2F0EB' stroke-width='0.6'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px 400px',
+          /* Irregular mask: multiple elliptic radial gradients at different positions.
+             Where gradient is black → texture visible. Where transparent → texture hidden. */
+          maskImage: [
+            'radial-gradient(ellipse 65% 40% at 8% 15%,  black 0%, transparent 80%)',
+            'radial-gradient(ellipse 45% 55% at 90% 35%, black 0%, transparent 70%)',
+            'radial-gradient(ellipse 55% 30% at 40% 60%, black 0%, transparent 75%)',
+            'radial-gradient(ellipse 40% 50% at 70% 85%, black 0%, transparent 65%)',
+            'radial-gradient(ellipse 35% 45% at 20% 88%, black 0%, transparent 70%)',
+            'radial-gradient(ellipse 50% 38% at 60% 22%, black 0%, transparent 72%)',
+          ].join(', '),
+          WebkitMaskImage: [
+            'radial-gradient(ellipse 65% 40% at 8% 15%,  black 0%, transparent 80%)',
+            'radial-gradient(ellipse 45% 55% at 90% 35%, black 0%, transparent 70%)',
+            'radial-gradient(ellipse 55% 30% at 40% 60%, black 0%, transparent 75%)',
+            'radial-gradient(ellipse 40% 50% at 70% 85%, black 0%, transparent 65%)',
+            'radial-gradient(ellipse 35% 45% at 20% 88%, black 0%, transparent 70%)',
+            'radial-gradient(ellipse 50% 38% at 60% 22%, black 0%, transparent 72%)',
+          ].join(', '),
+          maskComposite: 'add',
+          WebkitMaskComposite: 'source-over',
+        }}
       />
       
       <Header />
