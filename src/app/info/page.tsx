@@ -132,7 +132,7 @@ export default function InfoPage() {
           <span className="font-mono text-3xl font-light mr-1 opacity-0">[</span>
           <div className="flex flex-col items-center gap-1">
             <span className="material-symbols-outlined text-2xl">graphic_eq</span>
-            <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
+            <span className="font-mono text-[9px] uppercase font-bold">Archive</span>
           </div>
           <span className="font-mono text-3xl font-light ml-1 opacity-0">]</span>
         </Link>

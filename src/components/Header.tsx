@@ -48,7 +48,7 @@ export default function Header({ className = "" }: HeaderProps) {
           aria-current={pathname === "/sessions" ? "page" : undefined} 
           className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/sessions" ? "text-[#02E1EE]" : "text-brand-orange opacity-70 hover:opacity-100 hover:text-[#02E1EE]"}`}
         >
-          <span className={pathname === "/sessions" ? "" : "opacity-0"}>[ </span>SESSIONS<span className={pathname === "/sessions" ? "" : "opacity-0"}> ]</span>
+          <span className={pathname === "/sessions" ? "" : "opacity-0"}>[ </span>ARCHIVE<span className={pathname === "/sessions" ? "" : "opacity-0"}> ]</span>
         </Link>
         <Link
           href="/info"

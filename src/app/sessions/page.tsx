@@ -243,7 +243,7 @@ function GridContent() {
         
         {/* Page Header */}
         <div className="mb-8 border border-brand-orange p-8 bg-black session-tab-anim">
-          <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">SESSIONS</h1>
+          <h1 className="font-sora text-[48px] font-extrabold tracking-wider text-white mb-2 leading-none uppercase">ARCHIVE</h1>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <p className="text-lg text-brand-orange opacity-60 font-sora max-w-md">
               Synchronized archival of high-fidelity auditory experiences. Technical performance logs.
@@ -386,7 +386,7 @@ function GridContent() {
           <span className="font-mono text-3xl font-light mr-1">[</span>
           <div className="flex flex-col items-center gap-1">
             <span className="material-symbols-outlined text-2xl font-bold" aria-hidden="true">graphic_eq</span>
-            <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
+            <span className="font-mono text-[9px] uppercase font-bold">Archive</span>
           </div>
           <span className="font-mono text-3xl font-light ml-1">]</span>
         </Link>
