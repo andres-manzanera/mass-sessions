@@ -41,21 +41,21 @@ export default function Header({ className = "" }: HeaderProps) {
           aria-current={pathname === "/" ? "page" : undefined} 
           className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/" ? "text-[#02E1EE]" : "text-brand-orange opacity-70 hover:opacity-100 hover:text-[#02E1EE]"}`}
         >
-          {pathname === "/" ? "[ HOME ]" : "HOME"}
+          <span className={pathname === "/" ? "" : "opacity-0"}>[ </span>HOME<span className={pathname === "/" ? "" : "opacity-0"}> ]</span>
         </Link>
         <Link 
           href="/sessions" 
           aria-current={pathname === "/sessions" ? "page" : undefined} 
           className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/sessions" ? "text-[#02E1EE]" : "text-brand-orange opacity-70 hover:opacity-100 hover:text-[#02E1EE]"}`}
         >
-          {pathname === "/sessions" ? "[ SESSIONS ]" : "SESSIONS"}
+          <span className={pathname === "/sessions" ? "" : "opacity-0"}>[ </span>SESSIONS<span className={pathname === "/sessions" ? "" : "opacity-0"}> ]</span>
         </Link>
         <Link
           href="/info"
           aria-current={pathname === "/info" ? "page" : undefined} 
           className={`font-bold uppercase tracking-wider text-sm h-full flex items-center px-2 transition-colors ${pathname === "/info" ? "text-[#02E1EE]" : "text-brand-orange opacity-70 hover:opacity-100 hover:text-[#02E1EE]"}`}
         >
-          {pathname === "/info" ? "[ INFO ]" : "INFO"}
+          <span className={pathname === "/info" ? "" : "opacity-0"}>[ </span>INFO<span className={pathname === "/info" ? "" : "opacity-0"}> ]</span>
         </Link>
       </nav>
     </header>
