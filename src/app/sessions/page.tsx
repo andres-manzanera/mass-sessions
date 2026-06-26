@@ -368,17 +368,29 @@ function GridContent() {
 
       {/* Unified Brutalist Mobile bottom menu */}
       <nav aria-label="Navegación móvil" className="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-black border-t-2 border-brand-orange flex items-center justify-around h-20 select-none">
-        <Link href="/" aria-label="Inicio" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
-          <span className="material-symbols-outlined text-2xl" aria-hidden="true">home</span>
-          <span className="font-mono text-[9px] uppercase font-bold">Home</span>
+        <Link href="/" aria-label="Inicio" className="text-brand-orange flex items-center p-2 opacity-70 hover:opacity-100 transition-colors">
+          <span className="font-mono text-3xl font-light mr-1 opacity-0">[</span>
+          <div className="flex flex-col items-center gap-1">
+            <span className="material-symbols-outlined text-2xl" aria-hidden="true">home</span>
+            <span className="font-mono text-[9px] uppercase font-bold">Home</span>
+          </div>
+          <span className="font-mono text-3xl font-light ml-1 opacity-0">]</span>
         </Link>
-        <Link href="/sessions" aria-current="page" aria-label="Sesiones — página actual" className="text-brand-orange flex flex-col items-center gap-1 p-2 border-t-2 border-brand-orange">
-          <span className="material-symbols-outlined text-2xl font-bold" aria-hidden="true">graphic_eq</span>
-          <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
+        <Link href="/sessions" aria-current="page" aria-label="Sesiones — página actual" className="text-[#02E1EE] flex items-center p-2 transition-colors">
+          <span className="font-mono text-3xl font-light mr-1">[</span>
+          <div className="flex flex-col items-center gap-1">
+            <span className="material-symbols-outlined text-2xl font-bold" aria-hidden="true">graphic_eq</span>
+            <span className="font-mono text-[9px] uppercase font-bold">Sessions</span>
+          </div>
+          <span className="font-mono text-3xl font-light ml-1">]</span>
         </Link>
-        <Link href="/info" aria-label="Información" className="text-brand-orange flex flex-col items-center gap-1 opacity-70 hover:opacity-100 p-2">
-          <span className="material-symbols-outlined text-2xl" aria-hidden="true">info</span>
-          <span className="font-mono text-[9px] uppercase font-bold">Info</span>
+        <Link href="/info" aria-label="Información" className="text-brand-orange flex items-center p-2 opacity-70 hover:opacity-100 transition-colors">
+          <span className="font-mono text-3xl font-light mr-1 opacity-0">[</span>
+          <div className="flex flex-col items-center gap-1">
+            <span className="material-symbols-outlined text-2xl" aria-hidden="true">info</span>
+            <span className="font-mono text-[9px] uppercase font-bold">Info</span>
+          </div>
+          <span className="font-mono text-3xl font-light ml-1 opacity-0">]</span>
         </Link>
       </nav>
     </div>
