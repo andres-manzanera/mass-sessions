@@ -26,7 +26,7 @@ export default function Header({ className = "" }: HeaderProps) {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center transition-all duration-300 ${isScrolled ? "h-12" : "h-20"} ${className}`}
+      className={`fixed top-0 w-full z-[100] bg-black border-b-2 border-brand-orange flex justify-between items-center transition-all duration-300 ${isScrolled ? "h-16" : "h-20"} ${className}`}
     >
       <Link 
         href="/" 
