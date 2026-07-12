@@ -236,5 +236,17 @@ export const SESSIONS_DATA: Session[] = [
     audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/06/2016-08.mp3",
     date: "2016-08",
     bitrate: "192kb/s"
+  },
+  {
+    id: "autumn-vibes",
+    title: "AUTUMN VIBES",
+    artist: "MASS SESSIONS",
+    duration: "56m 15s",
+    genres: ["DEEP HOUSE", "HOUSE"],
+    image: "/session_2015_09.webp",
+    audioUrl: "https://mass-sessions.and7pm.com/wp-content/uploads/2026/07/Mass-Sessions_2015-09.mp3",
+    date: "2015-09",
+    bitrate: "192kb/s",
+    isNew: true
   }
 ].sort((a, b) => b.date.localeCompare(a.date));
