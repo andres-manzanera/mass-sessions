@@ -109,12 +109,12 @@ function SessionCard({ session, index, activeSession, isPlaying, playSession, is
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4">
-          <div>
+        <div className="grid grid-cols-5 lg:grid-cols-2 gap-4">
+          <div className="col-span-2 lg:col-span-1">
             <div className="font-mono text-[10px] tracking-widest text-brand-orange">DATE</div>
             <div className={`font-mono text-sm mt-1 transition-colors ${isCurrent ? "text-brand-accent" : "text-white"}`}>{session.date}</div>
           </div>
-          <div className="text-right lg:text-left">
+          <div className="col-span-3 lg:col-span-1 text-right lg:text-left">
             <div className="font-mono text-[10px] tracking-widest text-brand-orange">TAGS</div>
             <div className="flex flex-wrap justify-end lg:justify-start gap-2 mt-1">
               {session.genres.map((g: string, idx: number) => (
